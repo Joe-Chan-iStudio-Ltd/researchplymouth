@@ -1,14 +1,14 @@
 /* zoho_root.css */
 
 :root {
-    --body-font: Nunito;
+    --body-font: 'Roboto', sans-serif;
     --page-bg-clr: 11, 62, 120;
     --page-bg-opacity: 1.0;
     --form-cont-bg-clr: 21, 83, 154;
     --form-cont-bg-opacity: 1.0;
     --form-cont-shadow-clr: transparent;
     --popup-bg-clr: 21, 83, 154;
-    --header-font: Nunito;
+    --header-font: 'Roboto', sans-serif;
     --hdr-bg-clr: 14, 52, 98;
     --header-bg-opacity: 1.0;
     --title-txt-clr: #ffffff;
