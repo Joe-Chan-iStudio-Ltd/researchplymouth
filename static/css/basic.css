@@ -13,7 +13,8 @@ header {
     padding: 20px;
     text-align: center;
 }
-header h1 a:hover a:visited {
+header h1 a:hover,
+header h1 a:visited {
     text-decoration: none;
     color: white;
     margin: 0;
@@ -79,7 +80,8 @@ a:hover {
     max-height: 40px;     
     margin-right: 20px;
 }
-.brandinglogo h2 a:hover a:visited {
+.brandinglogo h2 a:hover,
+.brandinglogo h2 a:visited {
     text-decoration: none;
     color: white;
     margin: 0;
