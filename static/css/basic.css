@@ -74,13 +74,13 @@ footer {
     color: hsl(0, 0%, 47%);
 }
 
-.blink {
+.blink a {
     position: relative;
     text-decoration: none;
-    color: inherit;
+    color: #0e3462;
 }
 
-.blink::after {
+.blink a::after{
     content: '';
     position: absolute;
     width: 100%;
@@ -92,7 +92,7 @@ footer {
     animation: blink 1s infinite;
 }
 
-.blink:hover::after {
+.blink a:hover::after {
     visibility: visible;
 }
 
