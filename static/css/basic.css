@@ -13,9 +13,10 @@ header {
     padding: 20px;
     text-align: center;
 }
-header a:hover {
+header h1 a:hover {
     text-decoration: none;
-    color: inherit;
+    color: white;
+    margin: 0;
 }
 .logo {
     max-width: 100px; 
@@ -77,4 +78,9 @@ a:hover {
     max-width: 40px; 
     max-height: 40px;     
     margin-right: 20px;
+}
+.brandinglogo h2 a:hover {
+    text-decoration: none;
+    color: white;
+    margin: 0;
 }
