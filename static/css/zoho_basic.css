@@ -1,5 +1,13 @@
 /* zoho_basic.css */
 
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
 .fieldContWrapper {
     width: 100%;
     max-width: calc(var(--form-width) + var(--form-cont-space-right) + var(--form-cont-space-left));
@@ -67,14 +75,6 @@
 
 
 
-
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
 
 
 
