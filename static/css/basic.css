@@ -74,7 +74,9 @@ footer {
     color: hsl(0, 0%, 47%);
 }
 
-.blink a {
+.blink a,
+.blink a:hover,
+.blink a:visited {
     color: #18549c;
     text-decoration: none;
     position: relative;
