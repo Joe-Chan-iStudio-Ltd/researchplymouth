@@ -1,25 +1,30 @@
 /* basic.css */
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
 }
 header {
-    background: #007bff;
+    background: #0e3462;
     color: white;
     padding: 20px;
     text-align: center;
 }
+.logo {
+    max-width: 100px; 
+    max-height: 100px; 
+    margin: 10px 0;
+}
 h1 {
+    color: white;
     margin: 0;
 }
-.logo {
-    max-width: 100px; /* Adjust size as needed */
-    max-height: 100px; /* Adjust size as needed */
-    margin: 10px 0;
+.slogan {
+    color: #92bcee;
+    margin: 0;
 }
 section {
     margin: 20px auto;
