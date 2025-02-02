@@ -62,19 +62,11 @@ a:hover {
 }
 .brandingheader {
     align-items: center;
-    background: #0e3462;
-    color: white;
     display: flex;
-    padding: 20px;
     text-align: center;
 }
-.brandingheader .logo {
+.brandinglogo {
     max-width: 40px; 
     max-height: 40px;     
     margin-right: 20px;
-}
-.brandingheader h2 {
-    color: white;
-    margin: 0;
-    font-size: 2em;
 }
