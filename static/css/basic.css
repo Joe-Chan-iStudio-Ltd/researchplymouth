@@ -9,12 +9,11 @@ body {
 }
 header {
     background: #0e3462;
-    color: white;
     padding: 20px;
     text-align: center;
 }
-header h1 a:hover,
-header h1 a:visited {
+.banner a:hover,
+.banner a:visited {
     text-decoration: none;
     color: white;
     margin: 0;
@@ -24,18 +23,22 @@ header h1 a:visited {
     max-height: 100px; 
     margin: 10px 0;
 }
-header h1 {
-    color: white;
-    margin: 0;
-}
-header h2 {
-    color: white;
-    margin: 0;
-}
 .slogan {
     color: #92bcee;
     margin: 0;
 }
+
+.brandingheader {
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+.brandinglogo {
+    max-width: 48px; 
+    max-height: 48px;     
+    margin-right: 20px;
+}
+
 section {
     margin: 20px auto;
     max-width: 800px;
@@ -44,21 +47,22 @@ section {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.section h1 {
+h1 {
     color: #0e3462;
+    margin: 0;
 }
-section h2 {
+h2 {
     color: #18549c;
     margin: 0;
 }
-section h3 {
+h3 {
     color: #18549c;
 }
-section ul {
+ul {
     list-style-type: none;
     padding: 0;
 }
-section li {
+li {
     background: #e9ecef;
     margin: 5px 0;
     padding: 10px;
@@ -70,12 +74,12 @@ footer {
     font-size: 0.8em;
     color: hsl(0, 0%, 47%);
 }
-section a {
+.blink a {
     color: #18549c;
     text-decoration: none;
     position: relative;
 }
-section a::after {
+.blink a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -86,29 +90,14 @@ section a::after {
     visibility: hidden;
     animation: blink 1s infinite;
 }
-section a:hover::after {
+.blink a:hover::after {
     visibility: visible;
 }
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
-.brandingheader {
-    align-items: center;
-    display: flex;
-    text-align: center;
-}
-.brandingheader h2 a:hover,
-.brandingheader h2 a:visited {
-    text-decoration: none;
-    color: white;
-    margin: 0;
-}
-.brandinglogo {
-    max-width: 48px; 
-    max-height: 48px;     
-    margin-right: 20px;
-}
+
 .qrcode-container {
     text-align: center;
     margin: 20px 0;
