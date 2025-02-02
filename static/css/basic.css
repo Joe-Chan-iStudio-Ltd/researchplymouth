@@ -86,3 +86,23 @@ a:hover {
     max-height: 48px;     
     margin-right: 20px;
 }
+.qrcode-container {
+    text-align: center;
+    margin: 20px 0;
+}
+.qrcode {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+.qrcode-container p {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+}
+.qrcode-container a {
+    text-decoration: none;
+    color: #0073e6;
+}
+.qrcode-container a:hover {
+    text-decoration: underline;
+}
