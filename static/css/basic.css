@@ -18,7 +18,7 @@ header {
     max-height: 100px; 
     margin: 10px 0;
 }
-h1 {
+h2 {
     color: white;
     margin: 0;
 }
@@ -34,8 +34,8 @@ section {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-h2 {
-    color: #007bff;
+h3 {
+    color: ##18549c;
 }
 ul {
     list-style-type: none;
@@ -54,7 +54,7 @@ footer {
     color: #777;
 }
 a {
-    color: #007bff;
+    color: ##18549c;
     text-decoration: none;
 }
 a:hover {
