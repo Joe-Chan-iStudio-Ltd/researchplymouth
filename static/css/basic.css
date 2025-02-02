@@ -12,7 +12,7 @@ header {
     padding: 20px;
     text-align: center;
 }
-.banner {
+.banner a {
     text-decoration: none;
     color: white;
     margin: 0;
@@ -73,7 +73,7 @@ footer {
     font-size: 0.8em;
     color: hsl(0, 0%, 47%);
 }
-.blink {
+.blink a {
     color: #18549c;
     text-decoration: none;
     position: relative;
