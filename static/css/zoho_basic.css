@@ -9,6 +9,19 @@
     float: var(--form-align);
 }
 
+.centerContainer {
+    box-sizing: border-box;
+    background: rgba(var(--form-cont-bg-clr), var(--form-cont-bg-opacity));
+    border: var(--form-cont-bdr-width) var(--form-cont-bdr-style) var(--form-cont-bdr-clr);
+    border-top-left-radius: var(--form-cont-bdr-topleft-radius);
+    border-top-right-radius: var(--form-cont-bdr-topright-radius);
+    border-bottom-left-radius: var(--form-cont-bdr-bottomleft-radius);
+    border-bottom-right-radius: var(--form-cont-bdr-bottomright-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px var(--form-cont-shadow-spread) 0px var(--form-cont-shadow-clr);
+    margin: 0 auto;
+}
+
 .logo {
     max-width: 100px; /* Adjust size as needed */
     max-height: 100px; /* Adjust size as needed */
