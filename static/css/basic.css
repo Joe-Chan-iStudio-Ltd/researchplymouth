@@ -87,6 +87,7 @@ footer {
     height: 2px;
     bottom: 0;
     left: 0;
+    background-color: #0e3462;
     visibility: hidden;
     animation: blink 1s infinite;
 }
