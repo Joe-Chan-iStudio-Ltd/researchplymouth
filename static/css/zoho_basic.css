@@ -1,0 +1,162 @@
+/* zoho_basic.css */
+
+.fieldContWrapper {
+    width: 100%;
+    max-width: calc(var(--form-width) + var(--form-cont-space-right) + var(--form-cont-space-left));
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: var(--form-cont-space-top) var(--form-cont-space-right) var(--form-cont-space-bottom) var(--form-cont-space-left);
+    float: var(--form-align);
+}
+
+.logo {
+    max-width: 100px; /* Adjust size as needed */
+    max-height: 100px; /* Adjust size as needed */
+    margin: 10px 0;
+}
+
+
+.zfFormHeader {
+    background: rgba(var(--hdr-bg-clr), var(--header-bg-opacity));
+    position: relative;
+    top: 0;
+    display: block;
+    border-top-left-radius: var(--header-topleft-radius);
+    border-top-right-radius: var(--header-topright-radius);
+    border-bottom-left-radius: var(--header-bottomleft-radius);
+    border-bottom-right-radius: var(--header-bottomright-radius);
+    margin: var(--header-space-outer-top) var(--header-space-outer-right) var(--header-space-outer-bottom) var(--header-space-outer-left);
+    box-sizing: border-box;
+    border-width: var(--header-bdr-top-width) var(--header-bdr-right-width) var(--header-bdr-bottom-width) var(--header-bdr-left-width);
+    border-color: var(--header-bdr-clr);
+    border-style: var(--header-bdr-style);
+    text-align: var(--header-text-align);
+    padding: var(--header-space-inner-top) var(--header-space-inner-right) var(--header-space-inner-bottom) var(--header-space-inner-left);
+    overflow: hidden;
+}
+
+.zfFormHeader h2 {
+    font-size: var(--title-txt-size);
+    color: var(--title-txt-clr);
+    font-weight: var(--header-title-weight);
+    font-style: var(--header-title-style);
+    font-family: var(--header-font);
+}
+
+.zfDesText {
+    font-size: var(--description-txt-size);
+    color: var(--description-txt-clr);
+    font-weight: var(--description-txt-weight);
+    font-style: var(--description-txt-style);
+    padding-top: 8px;
+    font-family: var(--header-font);
+}
+
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+
+h1 {
+    margin: 0;
+}
+section {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    color: #007bff;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    background: #e9ecef;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+footer {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 0.8em;
+    color: #777;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid #388E3C;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .main-content {
+            background: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .main-content h2 {
+            color: #4CAF50;
+        }
+        .main-content p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .main-content a {
+            display: inline-block;
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .main-content a:hover {
+            background: #388E3C;
+        }
+        footer {
+            background: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
