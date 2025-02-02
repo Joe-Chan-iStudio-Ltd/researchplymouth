@@ -75,14 +75,14 @@ a:hover {
     display: flex;
     text-align: center;
 }
+.brandingheader h2 a:hover,
+.brandingheader h2 a:visited {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+}
 .brandinglogo {
     max-width: 40px; 
     max-height: 40px;     
     margin-right: 20px;
-}
-.brandinglogo h2 a:hover,
-.brandinglogo h2 a:visited {
-    text-decoration: none;
-    color: white;
-    margin: 0;
 }
