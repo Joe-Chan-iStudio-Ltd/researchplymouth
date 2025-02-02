@@ -12,6 +12,7 @@ header {
     padding: 20px;
     text-align: center;
 }
+.banner a,
 .banner a:hover,
 .banner a:visited {
     text-decoration: none;
