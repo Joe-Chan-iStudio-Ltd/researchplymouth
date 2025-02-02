@@ -70,3 +70,7 @@ a:hover {
     max-height: 40px;     
     margin-right: 20px;
 }
+.notextdecoration {
+    text-decoration: none;
+    color inherit;
+}
