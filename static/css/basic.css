@@ -12,9 +12,7 @@ header {
     padding: 20px;
     text-align: center;
 }
-.banner a,
-.banner a:hover,
-.banner a:visited {
+.banner a {
     text-decoration: none;
     color: white;
     margin: 0;
@@ -26,7 +24,7 @@ header {
 }
 .slogan {
     color: #92bcee;
-    margin: 0;
+    margin: 10px 0;
 }
 
 .brandingheader {
@@ -79,10 +77,6 @@ footer {
     color: #18549c;
     text-decoration: none;
     position: relative;
-}
-.blink a::after {
-    content: '';
-    position: absolute;
     width: 100%;
     height: 2px;
     bottom: 0;
@@ -90,9 +84,6 @@ footer {
     background-color: #18549c;
     visibility: hidden;
     animation: blink 1s infinite;
-}
-.blink a:hover::after {
-    visibility: visible;
 }
 @keyframes blink {
     0%, 100% { opacity: 1; }
