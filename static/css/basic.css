@@ -73,7 +73,7 @@ footer {
     font-size: 0.8em;
     color: hsl(0, 0%, 47%);
 }
-.blink a {
+.blink {
     color: #18549c;
     text-decoration: none;
     position: relative;
@@ -81,7 +81,6 @@ footer {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #18549c;
     visibility: hidden;
     animation: blink 1s infinite;
 }
