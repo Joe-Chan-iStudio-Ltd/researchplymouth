@@ -44,21 +44,21 @@ section {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-h1 {
+section h1 {
     color: #0e3462;
 }
-h2 {
+section h2 {
     color: #18549c;
     margin: 0;
 }
-h3 {
+section h3 {
     color: #18549c;
 }
-ul {
+section ul {
     list-style-type: none;
     padding: 0;
 }
-li {
+section li {
     background: #e9ecef;
     margin: 5px 0;
     padding: 10px;
@@ -68,14 +68,14 @@ footer {
     text-align: center;
     margin: 20px 0;
     font-size: 0.8em;
-    color: #777;
+    color: hsl(0, 0%, 47%);
 }
-a {
+section a {
     color: #18549c;
     text-decoration: none;
     position: relative;
 }
-a::after {
+section a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -86,7 +86,7 @@ a::after {
     visibility: hidden;
     animation: blink 1s infinite;
 }
-a:hover::after {
+section a:hover::after {
     visibility: visible;
 }
 @keyframes blink {
