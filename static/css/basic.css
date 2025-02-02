@@ -18,6 +18,10 @@ header {
     max-height: 100px; 
     margin: 10px 0;
 }
+h1 {
+    color: white;
+    margin: 0;
+}
 h2 {
     color: white;
     margin: 0;
