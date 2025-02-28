@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "GD Sherpa";
+  src: url('//img1.wsimg.com/blobby/go/ux/fonts/sherpa/1.1/gdsherpa-regular.woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GD Sherpa";
+  font-weight: bold;
+  src: url('//img1.wsimg.com/blobby/go/ux/fonts/sherpa/1.1/gdsherpa-bold.woff2');
+  font-display: swap;
+}
+
+.gd-ad-wrapper {
+  box-sizing: border-box;
+  background-color: #FFF;
+  font-family: GD Sherpa, Helvetica, Arial, sans_serif;
+  width: 100%;
+  z-index: 10000;
+}
+
+.banner.native-v1 {
+  align-items: center;
+  border-bottom: 5px solid #00a4a6;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  min-height: 50px;
+  justify-content: center;
+  text-decoration: none;
+  padding: 2px;
+}
+
+.banner.short {
+  font-size: 12px !important;
+}
+
+.banner:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.banner-logo {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.banner-logo img {
+  height: 100%;
+  width: 100%;
+  max-height: 1.5rem;
+  max-width: 4rem;
+}
+
+.banner-psuedo-link {
+  color: #09757a;
+  text-decoration: underline;
+}
+
+.banner-content-container {
+  align-items: center;
+  display: flex;
+}
+
+.banner-content {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.banner-mobile {
+  display: none;
+}
+
+.banner-text-bold {
+  font-weight: bold;
+}
+
+.banner-button {
+  background-color: #fff;
+  border: 1px solid #8995a9;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 8px 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .banner.native-v1 {
+    font-size: 12px;
+    min-height: 40px;
+  }
+
+  .banner-desktop {
+    display: none;
+  }
+
+  .banner-mobile {
+    display: inline-block;
+  }
+
+  .banner-logo img {
+    max-height: 1.5rem;
+  }
+}
