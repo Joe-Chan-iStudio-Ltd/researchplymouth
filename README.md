@@ -2,7 +2,7 @@
 
 Please visit us at <https://www.researchplymouth.com>.
 
-Powered by iStudio.Ltd
+Powered by innoservo.com
 
 © 2025 Research Plymouth. All rights reserved.
 
