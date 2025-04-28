@@ -45,7 +45,7 @@ $(document).ready(function() {
 
                 // Check if the row length matches expected columns
                 if (processedRow.length === expectedColumns) {
-                    const tr = $('<tr></tr>');
+                    const tr = $('<tr></tr>').addClass('ajgTableRow'); // Add ajgTableRow class
                     processedRow.forEach(cell => {
                         tr.append($('<td></td>').text(cell)); // Append the processed cell
                     });

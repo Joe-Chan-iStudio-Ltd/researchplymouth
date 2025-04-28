@@ -22,11 +22,11 @@ th {
 }
 
 /* Zebra striping for rows */
-tr:nth-child(odd) {
+.ajgTableRow:nth-child(odd) {
     background-color: #ffffff; /* White for odd rows */
 }
 
-tr:nth-child(even) {
+.ajgTableRow:nth-child(even) {
     background-color: #c7c7c7; /* Light grey for even rows */
 }
 
