@@ -32,7 +32,7 @@ $(document).ready(function() {
                     // Replace 0 with dash
                     if (cell === 0) return '-';
                     // Format last four columns as percentage, but skip the last column
-                    if (index >= expectedColumns - 5 && index < expectedColumns - 1 && typeof cell === 'number') {
+                    if (index >= expectedColumns - 4 && index < expectedColumns - 1 && typeof cell === 'number') {
                         return (cell * 100).toFixed(2) + '%'; // Convert to percentage
                     }
                     // Format last column to 3 decimal places
@@ -42,7 +42,7 @@ $(document).ready(function() {
                     // Replace empty cells with a dash
                     return (cell === "" || cell === undefined) ? '-' : cell;
                 });
-                
+
                 // Check if the row length matches expected columns
                 if (processedRow.length === expectedColumns) {
                     const tr = $('<tr></tr>');
