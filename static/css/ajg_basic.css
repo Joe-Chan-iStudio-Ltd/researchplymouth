@@ -18,8 +18,9 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #e2e2e2;
 }
+
 
 /* Zebra striping for rows */
 tr:nth-child(odd) {
@@ -27,10 +28,15 @@ tr:nth-child(odd) {
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9; /* Light grey for even rows */
+    background-color: #f2f2f2; /* Light grey for even rows */
 }
 
 /* Remove all borders */
 th, td {
     border: none; /* No borders for cells */
+}
+
+/* Set width of the second column to 150% */
+td:nth-child(2), th:nth-child(2) {
+    width: 150%; /* Set width for the second column */
 }
