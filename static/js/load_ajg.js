@@ -10,7 +10,6 @@ $(document).ready(function() {
             return response.arrayBuffer();
         })
         .then(data => {
-            console.log('load cabs_ajg_2024.xlsx');
             const workbook = XLSX.read(data, {type: 'array'});
             const worksheet = workbook.Sheets[workbook.SheetNames[0]];
             const json = XLSX.utils.sheet_to_json(worksheet, {header: 1});
@@ -23,10 +22,13 @@ $(document).ready(function() {
             // Clear previous data
             $('#tableBody').empty();
 
+            // Get the expected number of columns from the first row
+            const expectedColumns = json[0].length;
+
             // Populate table with valid data
             json.forEach((row, index) => {
-                console.log(index);
-                if (row.some(cell => cell !== "")) { // Only append non-empty rows
+                // Check if the row length matches expected columns
+                if (row.length === expectedColumns && row.some(cell => cell !== "")) {
                     const tr = $('<tr></tr>');
                     row.forEach(cell => {
                         tr.append($('<td></td>').text(cell || '')); // Handle undefined cells
