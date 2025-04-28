@@ -30,7 +30,7 @@ $(document).ready(function() {
                 // Process each cell
                 const processedRow = row.map((cell, index) => {
                     // Replace 0 with dash
-                    if (cell === 0) return '-';
+                    if (cell === 0) return '----';
                     // Format last four columns as percentage, but skip the last column
                     if (index >= expectedColumns - 6 && index < expectedColumns - 3 && typeof cell === 'number') {
                         return (cell * 100).toFixed(0) + '%'; // Convert to percentage
