@@ -10,7 +10,6 @@ $(document).ready(function() {
             return response.arrayBuffer();
         })
         .then(data => {
-            console.log('load cabs_ajg_2024.xlsx');
             const workbook = XLSX.read(data, {type: 'array'});
             const worksheet = workbook.Sheets[workbook.SheetNames[0]];
             const json = XLSX.utils.sheet_to_json(worksheet, {header: 1});
