@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJG 2024 Journal Rankings</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h1>AJG 2024 Journal Rankings</h1>
+<table id="journalTable" style="display:none;">
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Journal Title</th>
+            <th>AJG 2024</th>
+            <th>AJG 2021</th>
+            <th>Citscore Rank</th>
+            <th>SNIP Rank</th>
+            <th>SJR Rank</th>
+            <th>JIF Rank</th>
+            <th>SDG Content (2017-21)</th>
+            <th>International co-authorship (2017-21)</th>
+            <th>Academic-non-academic Collaborations (2017-21)</th>
+            <th>Citations Policy Docs (2017-21)</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Load the Excel file
+        fetch('cabs_ajg_2024.xlsx')
+            .then(response => response.arrayBuffer())
+            .then(data => {
+                const workbook = XLSX.read(data, {type: 'array'});
+                const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+                const json = XLSX.utils.sheet_to_json(worksheet, {header: 1});
+                
+                // Clear previous data
+                $('#tableBody').empty();
+
+                // Populate table with data
+                json.forEach((row, index) => {
+                    if (index > 0) { // Skip header row
+                        const tr = $('<tr></tr>');
+                        row.forEach(cell => {
+                            tr.append($('<td></td>').text(cell));
+                        });
+                        $('#tableBody').append(tr);
+                    }
+                });
+
+                // Initialize DataTable
+                $('#journalTable').DataTable().destroy(); // Destroy if already initialized
+                $('#journalTable').show();
+                $('#journalTable').DataTable({
+                    "paging": true,
+                    "searching": true
+                });
+            })
+            .catch(error => console.error('Error loading the Excel file:', error));
+    });
+</script>
+
+</body>
+</html>
