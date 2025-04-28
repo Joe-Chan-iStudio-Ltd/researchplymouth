@@ -37,13 +37,18 @@ th, td {
 
 /* Set width of the second column */
 td:nth-child(2), th:nth-child(2) {
-    min-width: 20vw; /* Set minimum width for the second column */
+    min-width: 15vw; /* Set minimum width for the second column */
+}
+
+/* Set width of the second column */
+td:nth-child(3), th:nth-child(3) {
+    min-width: 15vw; /* Set minimum width for the second column */
 }
 
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
     /* Hide columns beyond the first four */
-    td:nth-child(n+5), th:nth-child(n+5) {
+    td:nth-child(3), th:nth-child(3), td:nth-child(n+5), th:nth-child(n+5) {
         display: none; /* Hide columns 5 and beyond */
     }
 }
