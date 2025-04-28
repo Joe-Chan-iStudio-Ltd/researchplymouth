@@ -37,7 +37,7 @@ th, td {
 
 /* Set width of the second column */
 td:nth-child(2), th:nth-child(2) {
-    min-width: 25vw; /* Set minimum width for the second column */
+    min-width: 20vw; /* Set minimum width for the second column */
 }
 
 /* Responsive design for mobile devices */

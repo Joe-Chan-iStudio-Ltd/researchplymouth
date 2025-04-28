@@ -32,15 +32,15 @@ $(document).ready(function() {
                     // Replace 0 with dash
                     if (cell === 0) return '-';
                     // Format last four columns as percentage, but skip the last column
-                    if (index >= expectedColumns - 4 && index < expectedColumns - 1 && typeof cell === 'number') {
+                    if (index >= expectedColumns - 6 && index < expectedColumns - 3 && typeof cell === 'number') {
                         return (cell * 100).toFixed(0) + '%'; // Convert to percentage
                     }
                     // Format last column to 3 decimal places
-                    if (index === expectedColumns - 1 && typeof cell === 'number') {
+                    if (index === expectedColumns - 3 && typeof cell === 'number') {
                         return cell.toFixed(3);
                     }
                     // Replace empty cells with a dash
-                    return (cell === "" || cell === undefined) ? '-' : cell;
+                    return (cell === "" || cell === undefined) ? '----' : cell;
                 });
 
                 // Check if the row length matches expected columns
