@@ -27,7 +27,7 @@ th {
 }
 
 .ajgTableRow:nth-child(even) {
-    background-color: #c7c7c7; /* Light grey for even rows */
+    background-color: #f2f2f2; /* Light grey for even rows */
 }
 
 /* Remove all borders */
