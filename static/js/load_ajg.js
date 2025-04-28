@@ -27,8 +27,21 @@ $(document).ready(function() {
 
             // Populate table with valid data
             json.slice(1).forEach(row => { // Skip the first row
-                // Replace empty cells with a dash and ensure row length matches expected columns
-                const processedRow = row.map(cell => (cell === "" || cell === undefined) ? '-' : cell);
+                // Process each cell
+                const processedRow = row.map((cell, index) => {
+                    // Replace 0 with dash
+                    if (cell === 0) return '-';
+                    // Format last four columns as percentage
+                    if (index >= expectedColumns - 4 && typeof cell === 'number') {
+                        return (cell * 100).toFixed(2) + '%'; // Convert to percentage
+                    }
+                    // Format last column to 3 decimal places
+                    if (index === expectedColumns - 1 && typeof cell === 'number') {
+                        return cell.toFixed(3);
+                    }
+                    // Replace empty cells with a dash
+                    return (cell === "" || cell === undefined) ? '-' : cell;
+                });
 
                 // Check if the row length matches expected columns
                 if (processedRow.length === expectedColumns) {
@@ -45,7 +58,9 @@ $(document).ready(function() {
             $('#journalTable').show();
             $('#journalTable').DataTable({
                 "paging": true,
-                "searching": true
+                "searching": true,
+                "pageLength": 50, // Default entries to show
+                "lengthMenu": [50, 100, 500, -1] // Display entries options
             });
         })
         .catch(error => {
