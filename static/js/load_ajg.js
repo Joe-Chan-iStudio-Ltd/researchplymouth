@@ -25,6 +25,7 @@ $(document).ready(function() {
 
             // Populate table with valid data
             json.forEach((row, index) => {
+                console.log(index);
                 if (row.some(cell => cell !== "")) { // Only append non-empty rows
                     const tr = $('<tr></tr>');
                     row.forEach(cell => {
