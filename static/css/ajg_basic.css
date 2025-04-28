@@ -40,9 +40,16 @@ td:nth-child(2), th:nth-child(2) {
     min-width: 15vw; /* Set minimum width for the second column */
 }
 
-/* Set width of the second column */
 td:nth-child(3), th:nth-child(3) {
-    min-width: 15vw; /* Set minimum width for the second column */
+    min-width: 10vw; /* Set minimum width for the second column */
+}
+
+td:nth-child(17), th:nth-child(17) {
+    min-width: 4vw; /* Set minimum width for the second column */
+}
+
+td:nth-child(18), th:nth-child(18) {
+    min-width: 4vw; /* Set minimum width for the second column */
 }
 
 /* Responsive design for mobile devices */
