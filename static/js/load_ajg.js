@@ -28,7 +28,7 @@ $(document).ready(function() {
             // Populate table with valid data
             json.forEach((row, index) => {
                 // Check if the row length matches expected columns
-                if (row.length === expectedColumns && row.some(cell => cell !== "")) {
+                if (row.length === expectedColumns && row.some(cell => cell !== "" && index < 1822)) {
                     const tr = $('<tr></tr>');
                     row.forEach(cell => {
                         tr.append($('<td></td>').text(cell || '')); // Handle undefined cells
