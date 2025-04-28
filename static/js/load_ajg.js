@@ -22,16 +22,19 @@ $(document).ready(function() {
             // Clear previous data
             $('#tableBody').empty();
 
-            // Get the expected number of columns from the first row
+            // Skip the first header row and get the expected number of columns
             const expectedColumns = json[0].length;
 
             // Populate table with valid data
-            json.forEach((row, index) => {
-                // Check if the row length matches expected columns and has no empty cells
-                if (row.length === expectedColumns && row.every(cell => cell !== "" && cell !== undefined)) {
+            json.slice(1).forEach(row => { // Skip the first row
+                // Replace empty cells with a dash and ensure row length matches expected columns
+                const processedRow = row.map(cell => (cell === "" || cell === undefined) ? '-' : cell);
+
+                // Check if the row length matches expected columns
+                if (processedRow.length === expectedColumns) {
                     const tr = $('<tr></tr>');
-                    row.forEach(cell => {
-                        tr.append($('<td></td>').text(cell || '')); // Handle undefined cells
+                    processedRow.forEach(cell => {
+                        tr.append($('<td></td>').text(cell)); // Append the processed cell
                     });
                     $('#tableBody').append(tr);
                 }
