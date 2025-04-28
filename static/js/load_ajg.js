@@ -27,7 +27,6 @@ $(document).ready(function() {
 
             // Populate table with valid data
             json.forEach((row, index) => {
-                console.log(index);
                 // Check if the row length matches expected columns
                 if (row.length === expectedColumns && row.some(cell => cell !== "" && index < 1800)) {
                     const tr = $('<tr></tr>');
@@ -35,6 +34,7 @@ $(document).ready(function() {
                         tr.append($('<td></td>').text(cell || '')); // Handle undefined cells
                     });
                     $('#tableBody').append(tr);
+                    console.log(index, tr);
                 }
             });
 
