@@ -11,12 +11,11 @@ $(document).ready(function() {
         })
         .then(data => {
             console.log('load cabs_ajg_2024.xlsx');
-
             const workbook = XLSX.read(data, {type: 'array'});
             const worksheet = workbook.Sheets[workbook.SheetNames[0]];
             const json = XLSX.utils.sheet_to_json(worksheet, {header: 1});
 
-            // Check for empty data
+            // Check if there's valid data
             if (json.length < 2) {
                 throw new Error('The Excel file is empty or not formatted correctly.');
             }
@@ -24,13 +23,15 @@ $(document).ready(function() {
             // Clear previous data
             $('#tableBody').empty();
 
-            // Populate table with data
+            // Populate table with valid data
             json.forEach((row, index) => {
-                const tr = $('<tr></tr>');
-                row.forEach(cell => {
-                    tr.append($('<td></td>').text(cell || '')); // Handle undefined cells
-                });
-                $('#tableBody').append(tr);
+                if (row.some(cell => cell !== "")) { // Only append non-empty rows
+                    const tr = $('<tr></tr>');
+                    row.forEach(cell => {
+                        tr.append($('<td></td>').text(cell || '')); // Handle undefined cells
+                    });
+                    $('#tableBody').append(tr);
+                }
             });
 
             // Initialize DataTable
