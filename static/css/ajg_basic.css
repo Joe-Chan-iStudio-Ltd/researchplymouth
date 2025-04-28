@@ -48,7 +48,7 @@ td:nth-child(3), th:nth-child(3) {
 /* Responsive design for mobile devices */
 @media (max-width: 768px) {
     /* Hide columns beyond the first four */
-    td:nth-child(3), th:nth-child(3), td:nth-child(n+5), th:nth-child(n+5) {
+    td:nth-child(n+5), th:nth-child(n+5) {
         display: none; /* Hide columns 5 and beyond */
     }
 }
