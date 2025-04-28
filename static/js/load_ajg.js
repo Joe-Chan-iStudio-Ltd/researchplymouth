@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
     // Load the Excel file
-    fetch('/static/xlsx/cabs_ajg_2024.xlsx')
+    fetch('/static/xlsx/ajg2024.xlsx')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
