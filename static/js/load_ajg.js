@@ -59,8 +59,21 @@ $(document).ready(function() {
             $('#journalTable').DataTable({
                 "paging": true,
                 "searching": true,
-                "pageLength": 50, // Default entries to show
-                "lengthMenu": [50, 100, 500, -1] // Display entries options
+                "pageLength": 100, // Default entries to show
+                "lengthMenu": [50, 100, 500, -1], // Display entries options
+                "initComplete": function() {
+                    // Add column search inputs
+                    this.api().columns().every(function() {
+                        const column = this;
+                        const input = $('<input type="text" placeholder="Search"/>')
+                            .appendTo($(column.footer()).empty())
+                            .on('keyup change clear', function() {
+                                if (column.search() !== this.value) {
+                                    column.search(this.value).draw();
+                                }
+                            });
+                    });
+                }
             });
         })
         .catch(error => {
