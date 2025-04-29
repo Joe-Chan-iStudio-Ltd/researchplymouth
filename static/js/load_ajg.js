@@ -59,7 +59,7 @@ $(document).ready(function() {
             $('#journalTable').DataTable({
                 "paging": true,
                 "searching": true,
-                "pageLength": 100, // Default entries to show
+                "pageLength": 50, // Default entries to show
                 "lengthMenu": [50, 100, 500, -1], // Display entries options
                 "initComplete": function() {
                     // Add column search inputs
