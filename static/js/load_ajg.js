@@ -60,8 +60,10 @@ $(document).ready(function() {
                 "paging": true,
                 "searching": true,
                 "pageLength": 50, // Default entries to show
-                "lengthMenu": [50, 100, 500, -1], // Display entries options
-            });
+                "lengthMenu": [
+                    [50, 100, 500, -1], 
+                    [50, 100, 500, "All"] // Display entries options with "All" for -1
+                ],            });
         })
         .catch(error => {
             console.error('Error loading the Excel file:', error);
