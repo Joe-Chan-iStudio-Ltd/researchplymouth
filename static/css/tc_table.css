@@ -27,3 +27,11 @@ th {
 th, td {
     border: none; /* No borders for cells */
 }
+
+.dataTable_filter {
+    size: 50%;
+}
+
+#dataTables_filter {
+    size: 50%;
+}
