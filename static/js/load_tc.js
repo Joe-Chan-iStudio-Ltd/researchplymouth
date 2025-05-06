@@ -94,8 +94,8 @@ async function loadExcel() {
             searching: true,
             pageLength: 50,
             lengthMenu: [
-                [50, 100, 500, -1],
-                [50, 100, 500, "All"]
+                [25, 50, 100, -1],
+                [25, 50, 100, "All"]
             ]
         });
 
