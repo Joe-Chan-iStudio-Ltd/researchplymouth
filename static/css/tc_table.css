@@ -29,5 +29,5 @@ th, td {
 }
 
 #dataTable_filter input[type="search"] {
-    width: 50%;    /* Set the width to 50% */
+    width: 50vw;    /* Set the width to 50% */
 }
