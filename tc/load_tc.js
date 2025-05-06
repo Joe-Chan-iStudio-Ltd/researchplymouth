@@ -1,6 +1,7 @@
 /* load_tc.js */
 
 async function readExcel() {
+    console.log("readExcel...");
     const response = await fetch('data.xlsx');
     const data = await response.arrayBuffer();
     const workbook = XLSX.read(data);
@@ -12,6 +13,7 @@ async function readExcel() {
 }
 
 async function loadMarkdown() {
+    console.log("loadMarkdown...");
     const response = await fetch('data.md');
     const text = await response.text();
     const lines = text.split('\n');
@@ -30,6 +32,7 @@ async function loadMarkdown() {
 }
 
 function generateTable(data) {
+    console.log("generateTable...");
     const table = $('#dataTable').DataTable({
         data: data.slice(2),
         columns: data[0].map((header, index) => ({
@@ -47,10 +50,10 @@ function generateTable(data) {
 }
 
 async function init() {
+    console.log("init...");
     const excelData = await readExcel();
     const markdownData = await loadMarkdown();
     generateTable(excelData);
 }
 
 $(document).ready(init);
-console.log("load_tc.js...");
