@@ -28,10 +28,10 @@ th, td {
     border: none; /* No borders for cells */
 }
 
-.dataTable_filter {
-    size: 50%;
+.dataTable_wrapper {
+    width: 50vw;
 }
 
-#dataTables_filter {
-    size: 50%;
+#dataTables_wrapper {
+    width: 50vw;
 }
