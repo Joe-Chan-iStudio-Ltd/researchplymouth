@@ -3,17 +3,21 @@
 async function readExcel() {
     try {
         const response = await fetch('data.xlsx');
-        if (!response.ok) throw new Error('Network response was not ok');
+        if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`);
+        }
+        
         const data = await response.arrayBuffer();
         const workbook = XLSX.read(data);
         const sheetName = workbook.SheetNames[0];
         const worksheet = workbook.Sheets[sheetName];
         
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-        console.log('Excel Data:', jsonData); // Log the data for debugging
+        console.log('Excel Data:', jsonData); // Log the processed data
         return jsonData;
     } catch (error) {
         console.error('Error reading Excel file:', error);
+        return undefined; // Explicitly return undefined on error
     }
 }
 
