@@ -28,10 +28,6 @@ th, td {
     border: none; /* No borders for cells */
 }
 
-.dataTable_wrapper {
-    width: 50vw;
-}
-
-#dataTables_wrapper {
-    width: 50vw;
+#dataTable_filter input[type="search"] {
+    width: 50%;    /* Set the width to 50% */
 }
