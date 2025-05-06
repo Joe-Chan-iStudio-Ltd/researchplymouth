@@ -53,3 +53,4 @@ async function init() {
 }
 
 $(document).ready(init);
+console.log("load_tc.js...");
