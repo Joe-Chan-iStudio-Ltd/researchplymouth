@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literature Review Data Table</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="pageTitle"></h1>
+<p id="introduction"></p>
+<input type="text" id="searchInput" placeholder="Search...">
+
+<table id="dataTable"></table>
+
+<h2>Citations</h2>
+<pre id="citations"></pre>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+<script>
+    async function readExcel() {
+        const response = await fetch('data.xlsx');
+        const data = await response.arrayBuffer();
+        const workbook = XLSX.read(data);
+        const sheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
+        
+        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+        return jsonData;
+    }
+
+    async function loadMarkdown() {
+        const response = await fetch('data.md');
+        const text = await response.text();
+        const lines = text.split('\n');
+        
+        document.getElementById('pageTitle').textContent = lines[0].replace(/^#\s*/, '');
+        document.getElementById('introduction').textContent = lines.slice(1).join('\n').split('## Citations')[0].trim();
+        
+        const citationStart = lines.join('\n').indexOf('## Citations');
+        document.getElementById('citations').textContent = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n').trim() : '';
+    }
+
+    function generateTable(data) {
+        const table = $('#dataTable').DataTable({
+            data: data.slice(2),
+            columns: data[0].map((header, index) => ({
+                title: header,
+                width: data[1][index] + 'vw'
+            })),
+            paging: true,
+            searching: true,
+        });
+
+        // Adjust column widths based on second row
+        table.columns().every(function (index) {
+            this.header().style.width = data[1][index] + 'vw';
+        });
+    }
+
+    async function init() {
+        const excelData = await readExcel();
+        const markdownData = await loadMarkdown();
+        generateTable(excelData);
+    }
+
+    $(document).ready(init);
+</script>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABS Journal Ranking 2024</title>
+    <link rel="icon" href="/static/svg/RP-Favicon.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/static/css/basic.css">
+    <link rel="stylesheet" href="/static/css/tc_table.css">
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="ABS Journal Ranking 2024">
+    <meta property="og:description" content="This page is dedicated to providing searchable information on ABS Journal Ranking 2024.">
+    <meta property="og:image" content="https://www.researchplymouth.com/static/images/RP-Logo-100x100.png">
+    <meta property="og:url" content="https://www.researchplymouth.com">
+    <!-- Twitter Card meta tags (optional) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ABS Journal Ranking 2024">
+    <meta name="twitter:description" content="This page is dedicated to providing searchable information on ABS Journal Ranking 2024.">
+    <meta name="twitter:image" content="https://www.researchplymouth.com/static/images/RP-Logo-100x100.png">
+</head>
+<body>
+    <header class="brandingheader">
+        <img src="/static/svg/RP-Logo.svg" alt="Research Plymouth Logo" class="brandinglogo">
+        <h2 class="banner"><a href="https://www.researchplymouth.com/">Research Plymouth</a></h2>
+    </header>
+    
+    <section style="max-width: 95vw; ">
+        <h1 id="pageTitle"></h1>
+        <p id="introduction"></p>
+        <input type="text" id="searchInput" placeholder="Search...">
+        
+        <table id="dataTable"></table>
+        
+        <h2>Citations</h2>
+        <pre id="citations"></pre>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Research Plymouth. All rights reserved.</p>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+<script type="text/javascript" src="/static/js/load_tc.js" crossorigin="anonymous"></script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c4399dd2cc0740109ff1533e34ec9a73"}'></script>
+</body>
+</html>
