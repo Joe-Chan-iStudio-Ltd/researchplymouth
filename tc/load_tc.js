@@ -48,8 +48,8 @@ async function loadExcel() {
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
-        // Check if there's valid data
-        if (jsonData.length < 3) {
+        // Check if jsonData is defined and has at least 3 rows
+        if (!jsonData || jsonData.length < 3) {
             throw new Error('The Excel file does not contain enough data.');
         }
 
@@ -59,6 +59,11 @@ async function loadExcel() {
         // Extract headers and column widths
         const headers = jsonData[0];
         const columnWidths = jsonData[1];
+
+        // Check if headers and columnWidths are defined
+        if (!headers || !columnWidths || headers.length !== columnWidths.length) {
+            throw new Error('Invalid header or width data in the Excel file.');
+        }
 
         // Populate table with headers
         const thead = $('<thead></thead>');
