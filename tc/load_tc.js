@@ -1,15 +1,20 @@
 /* load_tc.js */
 
 async function readExcel() {
-    console.log("readExcel...");
-    const response = await fetch('data.xlsx');
-    const data = await response.arrayBuffer();
-    const workbook = XLSX.read(data);
-    const sheetName = workbook.SheetNames[0];
-    const worksheet = workbook.Sheets[sheetName];
-    
-    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-    return jsonData;
+    try {
+        const response = await fetch('data.xlsx');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const data = await response.arrayBuffer();
+        const workbook = XLSX.read(data);
+        const sheetName = workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
+        
+        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+        console.log('Excel Data:', jsonData); // Log the data for debugging
+        return jsonData;
+    } catch (error) {
+        console.error('Error reading Excel file:', error);
+    }
 }
 
 async function loadMarkdown() {
@@ -18,7 +23,6 @@ async function loadMarkdown() {
     const text = await response.text();
     const lines = text.split('\n');
     
-    // Check if the first line is a valid string
     if (typeof lines[0] === 'string') {
         document.getElementById('pageTitle').textContent = lines[0].replace(/^#\s*/, '');
     } else {
@@ -33,6 +37,11 @@ async function loadMarkdown() {
 
 function generateTable(data) {
     console.log("generateTable...");
+    if (data.length < 2 || !Array.isArray(data[1])) {
+        console.error('Invalid data for DataTable:', data);
+        return;
+    }
+
     const table = $('#dataTable').DataTable({
         data: data.slice(2),
         columns: data[0].map((header, index) => ({
@@ -43,17 +52,18 @@ function generateTable(data) {
         searching: true,
     });
 
-    // Adjust column widths based on second row
     table.columns().every(function (index) {
         this.header().style.width = data[1][index] + 'vw';
     });
 }
 
 async function init() {
-    console.log("init...");
     const excelData = await readExcel();
-    const markdownData = await loadMarkdown();
-    generateTable(excelData);
+    console.log('Excel Data:', excelData); // Log the data structure
+    if (excelData) {
+        await loadMarkdown();
+        generateTable(excelData);
+    }
 }
 
 $(document).ready(init);
