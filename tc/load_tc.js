@@ -2,7 +2,8 @@
 
 async function loadMarkdown() {
     try {
-        const response = await fetch('data.md');
+        const markdownFilePath = `${basePath}/data.md`; // Use basePath to construct the path
+        const response = await fetch(markdownFilePath);
         if (!response.ok) {
             throw new Error('Network response was not ok: ' + response.statusText);
         }
@@ -38,7 +39,8 @@ async function loadMarkdown() {
 
 async function loadExcel() {
     try {
-        const response = await fetch('data.xlsx');
+        const excelFilePath = `${basePath}/data.xlsx`; // Use basePath to construct the path
+        const response = await fetch(excelFilePath);
         if (!response.ok) {
             throw new Error('Network response was not ok: ' + response.statusText);
         }
