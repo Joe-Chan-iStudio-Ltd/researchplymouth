@@ -29,5 +29,15 @@ th, td {
 }
 
 #dataTable_filter input[type="search"] {
-    width: 50vw;    /* Set the width to 50vw */
+    float: none; /* Remove float */
+    width: 25vw;    /* Set the width to 50vw */
+}
+
+.scroll-box {
+    max-height: 130px; /* Adjust based on line height (5 lines x ~26px) */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: add a border */
+    padding: 10px; /* Optional: add some padding */
+    font-size: 14px; /* Optional: adjust font size */
+    line-height: 1.5; /* Adjust line height for readability */
 }
