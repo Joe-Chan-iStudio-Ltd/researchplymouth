@@ -16,7 +16,13 @@ async function loadMarkdown() {
     const text = await response.text();
     const lines = text.split('\n');
     
-    document.getElementById('pageTitle').textContent = lines[0].replace(/^#\s*/, '');
+    // Check if the first line is a valid string
+    if (typeof lines[0] === 'string') {
+        document.getElementById('pageTitle').textContent = lines[0].replace(/^#\s*/, '');
+    } else {
+        console.error('First line is not a string:', lines[0]);
+    }
+    
     document.getElementById('introduction').textContent = lines.slice(1).join('\n').split('## Citations')[0].trim();
     
     const citationStart = lines.join('\n').indexOf('## Citations');
