@@ -5,10 +5,25 @@ table {
     border-collapse: collapse;
 }
 
-input {
-    margin-bottom: 10px;
+th, td {
     padding: 8px;
-    width: 100%;
-    box-sizing: border-box;
+    text-align: left; /* Default text alignment for all */
 }
 
+th {
+    background-color: #e9ecef;
+}
+
+/* Zebra striping for rows */
+.dataTableRow:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+.dataTableRow:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey for even rows */
+}
+
+/* Remove all borders */
+th, td {
+    border: none; /* No borders for cells */
+}

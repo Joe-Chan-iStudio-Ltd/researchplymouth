@@ -1,7 +1,7 @@
-# title datatable
+# Data Table
 
-introduction text
+Excel file included here for automatic loading.
 
 ## citation
 
-citation text
+Here are the citations.

@@ -78,7 +78,7 @@ async function loadExcel() {
         // Populate table with data
         const tbody = $('<tbody></tbody>');
         jsonData.slice(2).forEach(row => { // Skip header and width rows
-            const tr = $('<tr></tr>');
+            const tr = $('<tr></tr>').addClass('dataTableRow');
             row.forEach(cell => {
                 tr.append($('<td></td>').text(cell));
             });
