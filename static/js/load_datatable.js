@@ -37,6 +37,7 @@ async function loadMarkdown() {
     }
 }
 
+
 async function loadExcel() {
     try {
         console.log('Starting to load Excel file...');
@@ -82,7 +83,7 @@ async function loadExcel() {
             throw new Error('Invalid header or width data in the Excel file.');
         }
 
-        // Initialize DataTable with columns
+        // Initialize DataTable with columns and enable horizontal scroll
         const dataTable = $('#dataTable').DataTable({
             data: jsonData.slice(2), // Data starts from the third row
             columns: headers.map((header, index) => ({
@@ -96,9 +97,7 @@ async function loadExcel() {
                 [25, 50, 100, -1],
                 [25, 50, 100, "All"]
             ],
-            fixedColumns: true,
-            scrollCollapse: true,
-            scrollX: true
+            scrollX: true // Enable horizontal scrolling
         });
 
         console.log('DataTable initialized with data.');
