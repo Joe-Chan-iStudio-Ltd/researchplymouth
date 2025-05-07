@@ -95,7 +95,10 @@ async function loadExcel() {
             lengthMenu: [
                 [25, 50, 100, -1],
                 [25, 50, 100, "All"]
-            ]
+            ],
+            fixedColumns: true,
+            scrollCollapse: true,
+            scrollX: true
         });
 
         console.log('DataTable initialized with data.');
