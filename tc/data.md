@@ -4,4 +4,4 @@ Excel file included here for automatic loading.
 
 ## citation
 
-Here are the citations.
+Benguria, F., et al. (2022). "Anxiety or pain? The impact of tariffs and uncertainty on Chinese firms in the trade war." Journal of International Economics 137: 103608.
