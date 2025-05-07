@@ -39,7 +39,7 @@ async function loadMarkdown() {
 
 async function loadExcel() {
     try {
-        const excelFilePath = `${basePath}/data.xlsx`; // Use basePath to construct the path
+        const excelFilePath = `${basePath}/data.xlsx`;
         const response = await fetch(excelFilePath);
         if (!response.ok) {
             throw new Error('Network response was not ok: ' + response.statusText);
@@ -47,12 +47,19 @@ async function loadExcel() {
 
         const data = await response.arrayBuffer();
         const workbook = XLSX.read(data, { type: 'array' });
+
+        if (!workbook.SheetNames.length) {
+            throw new Error('No sheets found in the Excel file.');
+        }
+
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
+        console.log(jsonData); // Debugging output
+
         // Check if jsonData is defined and has at least 3 rows
-        if (!jsonData || jsonData.length < 3) {
-            throw new Error('The Excel file does not contain enough data.');
+        if (!Array.isArray(jsonData) || jsonData.length < 3) {
+            throw new Error('The Excel file does not contain enough data or is not valid.');
         }
 
         // Clear previous data
