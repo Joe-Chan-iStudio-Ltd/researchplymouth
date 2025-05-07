@@ -92,7 +92,12 @@ async function loadExcel() {
         jsonData.slice(2).forEach(row => { // Skip header and width rows
             const tr = $('<tr></tr>').addClass('dataTableRow');
             row.forEach(cell => {
-                tr.append($('<td></td>').text(cell));
+                // Check if the cell is empty or not
+                if (cell === null || cell === undefined || cell === '') {
+                    tr.append($('<td></td>')); // Append an empty cell
+                } else {
+                    tr.append($('<td></td>').text(cell)); // Append cell content
+                }
             });
             tbody.append(tr);
         });
