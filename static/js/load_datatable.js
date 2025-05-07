@@ -43,6 +43,7 @@ async function loadExcel() {
         console.log('Starting to load Excel file...');
         const excelFilePath = `${basePath}/data.xlsx`;
         const response = await fetch(excelFilePath);
+        const scrollYHeight = `calc(100vh-400px)`;
         
         if (!response.ok) {
             throw new Error('Network response was not ok: ' + response.statusText);
@@ -92,11 +93,14 @@ async function loadExcel() {
             })),
             paging: true,
             searching: true,
-            pageLength: -1,
+            pageLength: 10,
             lengthMenu: [
-                [25, 50, 100, -1],
-                [25, 50, 100, "All"]
+                [10, 25, 50, 100, -1],
+                [10, 25, 50, 100, "All"]
             ],
+            fixedColumns: true,
+            scrollCollapse: true,
+            scrollY: scrollYHeight,
             scrollX: true // Enable horizontal scrolling
         });
 
