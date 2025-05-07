@@ -55,8 +55,6 @@ async function loadExcel() {
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
-        console.log(jsonData); // Debugging output
-
         // Check if jsonData is defined and has at least 3 rows
         if (!Array.isArray(jsonData) || jsonData.length < 3) {
             throw new Error('The Excel file does not contain enough data or is not valid.');
@@ -84,7 +82,6 @@ async function loadExcel() {
             if (typeof columnWidths[index] === 'number' && !isNaN(columnWidths[index])) {
                 th.css('width', columnWidths[index] + 'vw'); // Apply width if valid
             }
-            console.log(header, ' ... ', columnWidths[index]);
             headerRow.append(th);
         });
         thead.append(headerRow);
