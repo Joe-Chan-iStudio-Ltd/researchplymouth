@@ -84,7 +84,7 @@ async function loadExcel() {
             if (typeof columnWidths[index] === 'number' && !isNaN(columnWidths[index])) {
                 th.css('width', columnWidths[index] + 'vw'); // Apply width if valid
             }
-            
+            console.log(header, ' ... ', columnWidths[index]);
             headerRow.append(th);
         });
         thead.append(headerRow);
