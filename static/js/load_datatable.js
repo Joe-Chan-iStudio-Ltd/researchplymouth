@@ -82,44 +82,13 @@ async function loadExcel() {
             throw new Error('Invalid header or width data in the Excel file.');
         }
 
-        // Populate table with headers
-        const thead = $('<thead></thead>');
-        const headerRow = $('<tr></tr>');
-        headers.forEach((header, index) => {
-            const th = $('<th></th>').text(header);
-            
-            // Check if columnWidths[index] is a valid number
-            if (typeof columnWidths[index] === 'number' && !isNaN(columnWidths[index])) {
-                th.css('width', columnWidths[index] + 'vw'); // Apply width if valid
-            }
-            headerRow.append(th);
-        });
-        thead.append(headerRow);
-        $('#dataTable').append(thead);
-        console.log('Table headers populated.');
-
-        // Populate table with data
-        const tbody = $('<tbody></tbody>');
-        jsonData.slice(2).forEach(row => { // Skip header and width rows
-            const tr = $('<tr></tr>').addClass('dataTableRow');
-
-            // Use eachCell to iterate over each cell in the row
-            row.forEach((cell, colNumber) => {
-                // Check if the cell is empty or not
-                if (cell === null || cell === undefined || cell === '') {
-                    tr.append($('<td></td>')); // Append an empty cell
-                } else {
-                    tr.append($('<td></td>').text(cell)); // Append cell content
-                }
-            });
-
-            tbody.append(tr);
-        });
-        $('#dataTable').append(tbody);
-        console.log('Table body populated with data.');
-
-        // Initialize DataTable
-        $('#dataTable').DataTable({
+        // Initialize DataTable with columns
+        const dataTable = $('#dataTable').DataTable({
+            data: jsonData.slice(2), // Data starts from the third row
+            columns: headers.map((header, index) => ({
+                title: header,
+                width: columnWidths[index] + 'vw' // Set column width
+            })),
             paging: true,
             searching: true,
             pageLength: -1,
@@ -128,7 +97,8 @@ async function loadExcel() {
                 [25, 50, 100, "All"]
             ]
         });
-        console.log('DataTable initialized.');
+
+        console.log('DataTable initialized with data.');
 
     } catch (error) {
         console.error('Error loading the Excel file:', error);
