@@ -107,7 +107,7 @@ async function loadExcel() {
         $('#dataTable').DataTable({
             paging: true,
             searching: true,
-            pageLength: 50,
+            pageLength: -1,
             lengthMenu: [
                 [25, 50, 100, -1],
                 [25, 50, 100, "All"]
