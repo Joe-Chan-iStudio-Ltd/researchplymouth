@@ -78,7 +78,13 @@ async function loadExcel() {
         const thead = $('<thead></thead>');
         const headerRow = $('<tr></tr>');
         headers.forEach((header, index) => {
-            const th = $('<th></th>').text(header).css('width', columnWidths[index] + 'vw');
+            const th = $('<th></th>').text(header);
+            
+            // Check if columnWidths[index] is a valid number
+            if (typeof columnWidths[index] === 'number' && !isNaN(columnWidths[index])) {
+                th.css('width', columnWidths[index] + 'vw'); // Apply width if valid
+            }
+            
             headerRow.append(th);
         });
         thead.append(headerRow);
