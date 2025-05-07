@@ -39,13 +39,17 @@ async function loadMarkdown() {
 
 async function loadExcel() {
     try {
+        console.log('Starting to load Excel file...');
         const excelFilePath = `${basePath}/data.xlsx`;
         const response = await fetch(excelFilePath);
+        
         if (!response.ok) {
             throw new Error('Network response was not ok: ' + response.statusText);
         }
 
         const data = await response.arrayBuffer();
+        console.log('Excel file fetched successfully.');
+
         const workbook = XLSX.read(data, { type: 'array' });
 
         if (!workbook.SheetNames.length) {
@@ -55,6 +59,8 @@ async function loadExcel() {
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
+        console.log('Sheet data converted to JSON:', jsonData);
+
         // Check if jsonData is defined and has at least 3 rows
         if (!Array.isArray(jsonData) || jsonData.length < 3) {
             throw new Error('The Excel file does not contain enough data or is not valid.');
@@ -62,10 +68,14 @@ async function loadExcel() {
 
         // Clear previous data
         $('#dataTable').empty();
+        console.log('Previous data cleared from the table.');
 
         // Extract headers and column widths
         const headers = jsonData[0];
         const columnWidths = jsonData[1];
+
+        console.log('Headers:', headers);
+        console.log('Column widths:', columnWidths);
 
         // Check if headers and columnWidths are defined
         if (!headers || !columnWidths || headers.length !== columnWidths.length) {
@@ -86,6 +96,7 @@ async function loadExcel() {
         });
         thead.append(headerRow);
         $('#dataTable').append(thead);
+        console.log('Table headers populated.');
 
         // Populate table with data
         const tbody = $('<tbody></tbody>');
@@ -93,7 +104,7 @@ async function loadExcel() {
             const tr = $('<tr></tr>').addClass('dataTableRow');
 
             // Use eachCell to iterate over each cell in the row
-            row.eachCell({ includeEmpty: true }, (cell, colNumber) => {
+            row.forEach((cell, colNumber) => {
                 // Check if the cell is empty or not
                 if (cell === null || cell === undefined || cell === '') {
                     tr.append($('<td></td>')); // Append an empty cell
@@ -105,7 +116,8 @@ async function loadExcel() {
             tbody.append(tr);
         });
         $('#dataTable').append(tbody);
-        
+        console.log('Table body populated with data.');
+
         // Initialize DataTable
         $('#dataTable').DataTable({
             paging: true,
@@ -116,6 +128,7 @@ async function loadExcel() {
                 [25, 50, 100, "All"]
             ]
         });
+        console.log('DataTable initialized.');
 
     } catch (error) {
         console.error('Error loading the Excel file:', error);
