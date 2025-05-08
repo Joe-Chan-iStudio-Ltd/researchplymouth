@@ -101,7 +101,11 @@ async function loadExcel() {
             fixedColumns: true,
             scrollCollapse: true,
             scrollY: scrollYHeight,
-            scrollX: true // Enable horizontal scrolling
+            scrollX: true, // Enable horizontal scrolling
+            rowClass: 'dataTableRow', // Add the class to each row
+            createdRow: function (row) {
+                $(row).addClass('dataTableRow');
+            }
         });
 
         console.log('DataTable initialized with data.');
