@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Plymouth</title>
+    <link rel="icon" href="/static/svg/RP-Favicon.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/static/css/basic.css">
+    <link rel="stylesheet" href="/static/css/tc_table.css">
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Research Plymouth">
+    <meta property="og:description" content="This page is dedicated to providing searchable information.">
+    <meta property="og:image" content="https://www.researchplymouth.com/static/images/RP-Logo-100x100.png">
+    <meta property="og:url" content="https://www.researchplymouth.com">
+    <!-- Twitter Card meta tags (optional) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Research Plymouth">
+    <meta name="twitter:description" content="This page is dedicated to providing searchable information.">
+    <meta name="twitter:image" content="https://www.researchplymouth.com/static/images/RP-Logo-100x100.png">
+</head>
+<body>
+    <header class="brandingheader">
+        <img src="/static/svg/RP-Logo.svg" alt="Research Plymouth Logo" class="brandinglogo">
+        <h2 class="banner"><a href="https://www.researchplymouth.com/">Research Plymouth</a></h2>
+    </header>
+    
+    <section style="max-width: 95vw; ">
+        <h1 id="pageTitle"></h1>
+        <p id="introduction"></p>
+        <div id="uploadSection">
+            <input type="file" id="excelUpload" accept=".xlsx, .xls">
+            <p>Upload your own Excel file to view its contents in the table below.</p>
+        </div>        
+        <table id="dataTable"></table>
+        
+        <p style="margin-top: 20px; font-style: italic;">Bibliographical Reference:</p>
+        <div id="citations" class="scroll-box"></div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Research Plymouth. All rights reserved.</p>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+<script>
+    // Set the base path dynamically based on the current URL
+    const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+</script>
+<script type="text/javascript" src="/static/js/load_datatables.js" crossorigin="anonymous"></script>
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c4399dd2cc0740109ff1533e34ec9a73"}'></script>
+</body>
+</html>
