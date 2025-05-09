@@ -4,8 +4,12 @@ let dataTable; // Declare dataTable in a wider scope
 
 function showStatus(elementId, message, isError = false) {
     const statusDiv = document.getElementById(elementId);
-    statusDiv.textContent = message;
-    statusDiv.className = isError ? 'error' : 'success'; // Add classes for styling (optional)
+    if (statusDiv) {
+        statusDiv.textContent = message;
+        statusDiv.className = isError ? 'error' : 'success'; // Add classes for styling (optional)
+    } else {
+        console.warn(`Element with ID '${elementId}' not found. Cannot display status message.`);
+    }
 }
 
 async function loadMarkdown() {
