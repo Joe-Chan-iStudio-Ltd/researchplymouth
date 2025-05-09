@@ -2,9 +2,8 @@
 
 let dataTable; // Declare dataTable in a wider scope
 
-// --- Helper Functions ---
-function showStatus(message, isError = false) {
-    const statusDiv = document.getElementById('uploadStatus');
+function showStatus(elementId, message, isError = false) {
+    const statusDiv = document.getElementById(elementId);
     statusDiv.textContent = message;
     statusDiv.className = isError ? 'error' : 'success'; // Add classes for styling (optional)
 }
@@ -35,17 +34,17 @@ async function loadMarkdown() {
 
     } catch (error) {
         console.error('Error loading Markdown:', error);
-        showStatus(`Error loading Markdown: ${error.message}`, true);
+        showStatus('statusMessage', `Error loading Markdown: ${error.message}`, true);
     }
 }
 
 async function loadExcel(excelFile = null) {
     try {
-        showStatus('Loading Excel data...'); // Initial status message
+        showStatus('statusMessage', 'Loading Excel data...'); // Initial status message
 
         let data;
         if (excelFile) {
-            showStatus('Processing uploaded file...');
+            showStatus('statusMessage', 'Processing uploaded file...');
             data = await new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.onload = (e) => resolve(e.target.result);
@@ -129,11 +128,13 @@ async function loadExcel(excelFile = null) {
             }
         });
 
-        showStatus('Excel data loaded successfully!', false);
+        if (excelFile) {
+            showStatus('statusMessage', 'Excel data loaded successfully!', false);
+        }
 
     } catch (error) {
         console.error('Error loading Excel:', error);
-        showStatus(`Error loading Excel: ${error.message}`, true);
+        showStatus('statusMessage', `Error loading Excel: ${error.message}`, true);
     }
 }
 
