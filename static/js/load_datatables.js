@@ -65,15 +65,34 @@ async function loadExcel(excelFile = null) {
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: "" }); // Handle empty cells
 
-        if (!Array.isArray(jsonData) || jsonData.length < 3) {
-            throw new Error('Excel file must contain at least a header row, a width row, and a data row.');
+        if (!Array.isArray(jsonData) || jsonData.length < 1) { // Minimum 1 row (header)
+            throw new Error('Excel file must contain at least a header row.');
         }
 
         const headers = jsonData[0];
-        const columnWidths = jsonData[1];
+        let columnWidths = null;
+        let dataStartRow = 1; // Default data starts from row 1 (after header)
 
-        if (!headers || !columnWidths || headers.length !== columnWidths.length) {
-            throw new Error('Invalid header or width data in the Excel file.');
+        // Check if the second row exists and contains only numbers (column widths)
+        if (jsonData.length > 1) {
+            const secondRow = jsonData[1];
+            const allNumbers = secondRow.every(value => !isNaN(parseFloat(value)) && isFinite(value) && value !== "");  // Check if all values are numbers
+
+            if (allNumbers && secondRow.length === headers.length) {
+                columnWidths = secondRow;
+                dataStartRow = 2; // Data starts from row 2 (after header and widths)
+            } else {
+                console.log("Second row is not valid column widths, treating as data.");
+            }
+        }
+
+        // Validation based on whether column widths are present
+        if (columnWidths === null && jsonData.length < 2) {
+            throw new Error('Excel file must contain at least a header row and a data row when no column widths are provided.');
+        }
+
+        if (columnWidths && headers.length !== columnWidths.length) {
+            throw new Error('Number of column widths must match the number of headers.');
         }
 
         // Destroy existing DataTable
@@ -85,10 +104,10 @@ async function loadExcel(excelFile = null) {
         const scrollYHeight = `calc(100vh-400px)`;
 
         dataTable = $('#dataTable').DataTable({
-            data: jsonData.slice(2),
+            data: jsonData.slice(dataStartRow),
             columns: headers.map((header, index) => ({
                 title: header,
-                width: columnWidths[index] + 'vw'
+                width: columnWidths ? columnWidths[index] + 'vw' : null // Use null for auto width
             })),
             paging: true,
             searching: true,
