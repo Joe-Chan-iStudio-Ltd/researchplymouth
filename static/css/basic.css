@@ -57,16 +57,27 @@ h2 {
 h3 {
     color: #18549c;
 }
-.padded-list ul {
+ul {
     list-style-type: none;
     padding: 0;
 }
-.padded-list li {
+li {
     background: #e9ecef;
     margin: 5px 0;
     padding: 10px;
     border-radius: 4px;
 }
+padded-list {
+    list-style-type: none;
+    padding: 0;
+}
+padded-list li {
+    background: #e9ecef;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
 footer {
     text-align: center;
     margin: 20px 0;
