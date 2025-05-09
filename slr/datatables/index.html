@@ -29,10 +29,13 @@
     <section style="max-width: 95vw; ">
         <h1 id="pageTitle"></h1>
         <p id="introduction"></p>
+        <!-- Excel Upload Section -->
         <div id="uploadSection">
             <input type="file" id="excelUpload" accept=".xlsx, .xls">
             <p>Upload your own Excel file to view its contents in the table below.</p>
-        </div>        
+            <div id="uploadStatus"></div> <!-- For status messages -->
+        </div>
+
         <table id="dataTable"></table>
         
         <p style="margin-top: 20px; font-style: italic;">Bibliographical Reference:</p>

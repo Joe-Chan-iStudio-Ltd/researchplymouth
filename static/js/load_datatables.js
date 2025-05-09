@@ -1,119 +1,94 @@
-/* load_datatables.js */
-
-async function loadMarkdown() {
-    try {
-        const markdownFilePath = `${basePath}/data.md`; // Use basePath to construct the path
-        const response = await fetch(markdownFilePath);
-        if (!response.ok) {
-            throw new Error('Network response was not ok: ' + response.statusText);
-        }
-        
-        const text = await response.text();
-        const lines = text.split('\n');
-
-        // Extract title (first line)
-        const title = lines[0].replace(/^#\s*/, '');
-        document.getElementById('pageTitle').innerHTML = title;
-
-        // Extract introduction (lines between title and citation)
-        const introductionStart = 1; // Start after title
-        const citationStart = lines.findIndex(line => line.startsWith('## citation'));
-
-        // Get introduction content
-        let introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('\n').trim();
-        document.getElementById('introduction').innerHTML = introductionContent;
-
-        // Extract citation content
-        if (citationStart !== -1) {
-            const citationContent = lines.slice(citationStart + 1).join('\n').trim();
-            document.getElementById('citations').innerHTML = citationContent;
-        } else {
-            document.getElementById('citations').innerHTML = ''; // No citations found
-        }
-
-    } catch (error) {
-        console.error('Error loading the Markdown file:', error);
-        alert('Error loading the Markdown file: ' + error.message);
-    }
-}
+/* load_datatable.js */
 
 let dataTable; // Declare dataTable in a wider scope
 
-async function loadExcel(excelFile = null) {
-    try {
-        console.log('Starting to load Excel file...');
-        let excelFilePath = `${basePath}/data.xlsx`; // Default file path
+// --- Helper Functions ---
+function showStatus(message, isError = false) {
+    const statusDiv = document.getElementById('uploadStatus');
+    statusDiv.textContent = message;
+    statusDiv.className = isError ? 'error' : 'success'; // Add classes for styling (optional)
+}
 
-        if (excelFile) {
-            console.log('Loading uploaded Excel file.');
+async function loadMarkdown() {
+    try {
+        const markdownFilePath = `${basePath}/data.md`;
+        const response = await fetch(markdownFilePath);
+
+        if (!response.ok) {
+            throw new Error(`Failed to load Markdown: ${response.status} ${response.statusText}`);
         }
 
-        const scrollYHeight = `calc(100vh-400px)`;
-        let data;
+        const text = await response.text();
+        const lines = text.split('\n');
 
+        const title = lines[0].replace(/^#\s*/, '');
+        document.getElementById('pageTitle').innerHTML = title;
+
+        const introductionStart = 1;
+        const citationStart = lines.findIndex(line => line.startsWith('## citation'));
+
+        const introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('\n').trim();
+        document.getElementById('introduction').innerHTML = introductionContent;
+
+        const citationsElement = document.getElementById('citations');
+        citationsElement.innerHTML = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n').trim() : '';
+
+    } catch (error) {
+        console.error('Error loading Markdown:', error);
+        showStatus(`Error loading Markdown: ${error.message}`, true);
+    }
+}
+
+async function loadExcel(excelFile = null) {
+    try {
+        showStatus('Loading Excel data...'); // Initial status message
+
+        let data;
         if (excelFile) {
+            showStatus('Processing uploaded file...');
             data = await new Promise((resolve, reject) => {
                 const reader = new FileReader();
-                reader.onload = (e) => {
-                    const arrayBuffer = e.target.result;
-                    resolve(arrayBuffer);
-                };
-                reader.onerror = (error) => {
-                    reject(error);
-                };
+                reader.onload = (e) => resolve(e.target.result);
+                reader.onerror = (error) => reject(error);
                 reader.readAsArrayBuffer(excelFile);
             });
         } else {
+            const excelFilePath = `${basePath}/data.xlsx`;
             const response = await fetch(excelFilePath);
             if (!response.ok) {
-                throw new Error('Network response was not ok: ' + response.statusText);
+                throw new Error(`Failed to load default Excel: ${response.status} ${response.statusText}`);
             }
             data = await response.arrayBuffer();
         }
 
-        console.log('Excel file fetched successfully.');
-
         const workbook = XLSX.read(data, { type: 'array' });
-
-        if (!workbook.SheetNames.length) {
-            throw new Error('No sheets found in the Excel file.');
-        }
-
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: "" }); // Handle empty cells
 
-        console.log('Sheet data converted to JSON:', jsonData);
-
-        // Check if jsonData is defined and has at least 3 rows
         if (!Array.isArray(jsonData) || jsonData.length < 3) {
-            throw new Error('The Excel file does not contain enough data or is not valid.');
+            throw new Error('Excel file must contain at least a header row, a width row, and a data row.');
         }
 
-        // Clear previous data
-        if ($.fn.DataTable.isDataTable('#dataTable')) {
-            dataTable.destroy();
-        }
-        $('#dataTable').empty();
-        console.log('Previous data cleared from the table.');
-
-        // Extract headers and column widths
         const headers = jsonData[0];
         const columnWidths = jsonData[1];
 
-        console.log('Headers:', headers);
-        console.log('Column widths:', columnWidths);
-
-        // Check if headers and columnWidths are defined
         if (!headers || !columnWidths || headers.length !== columnWidths.length) {
             throw new Error('Invalid header or width data in the Excel file.');
         }
 
-        // Initialize DataTable with columns and enable horizontal scroll
+        // Destroy existing DataTable
+        if ($.fn.DataTable.isDataTable('#dataTable')) {
+            dataTable.destroy();
+        }
+        $('#dataTable').empty();
+
+        const scrollYHeight = `calc(100vh-400px)`;
+
         dataTable = $('#dataTable').DataTable({
-            data: jsonData.slice(2), // Data starts from the third row
+            data: jsonData.slice(2),
             columns: headers.map((header, index) => ({
                 title: header,
-                width: columnWidths[index] + 'vw' // Set column width
+                width: columnWidths[index] + 'vw'
             })),
             paging: true,
             searching: true,
@@ -125,30 +100,34 @@ async function loadExcel(excelFile = null) {
             fixedColumns: true,
             scrollCollapse: true,
             scrollY: scrollYHeight,
-            scrollX: true, // Enable horizontal scrolling
-            rowClass: 'dataTableRow', // Add the class to each row
+            scrollX: true,
+            rowClass: 'dataTableRow',
             createdRow: function (row) {
                 $(row).addClass('dataTableRow');
+            },
+            language: {  // Optional: Customize DataTables text
+                emptyTable: "No data available in table"
             }
         });
 
-        console.log('DataTable initialized with data.');
+        showStatus('Excel data loaded successfully!', false);
 
     } catch (error) {
-        console.error('Error loading the Excel file:', error);
-        alert('Error loading the Excel file: ' + error.message);
+        console.error('Error loading Excel:', error);
+        showStatus(`Error loading Excel: ${error.message}`, true);
     }
 }
 
 async function init() {
     await loadMarkdown();
-    await loadExcel(); // Load default Excel file
+    await loadExcel();
 
-    // Event listener for Excel upload
-    document.getElementById('excelUpload').addEventListener('change', function(event) {
+    document.getElementById('excelUpload').addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
-            loadExcel(file); // Load uploaded Excel file
+            loadExcel(file);
+        } else {
+            showStatus('No file selected.', true);
         }
     });
 }
