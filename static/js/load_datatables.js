@@ -40,11 +40,11 @@ async function loadMarkdown() {
 
 async function loadExcel(excelFile = null) {
     try {
-        showStatus('statusMessage', 'Loading Excel data...'); // Initial status message
+        showStatus('statusMessage', `Loading Excel data from ${excelFile}...`); // Initial status message
 
         let data;
         if (excelFile) {
-            showStatus('statusMessage', 'Processing uploaded file...');
+            showStatus('statusMessage', `Processing uploaded file ${excelFile}...`);
             data = await new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.onload = (e) => resolve(e.target.result);
@@ -129,7 +129,9 @@ async function loadExcel(excelFile = null) {
         });
 
         if (excelFile) {
-            showStatus('statusMessage', 'Excel data loaded successfully!', false);
+            showStatus('statusMessage', `${excelFile} is loaded onto table above successfully.`, false);
+        } else {
+            showStatus('statusMessage', 'Table is loaded for demonstration purposes.', false);
         }
 
     } catch (error) {
