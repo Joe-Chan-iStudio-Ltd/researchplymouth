@@ -29,12 +29,9 @@
     <section style="max-width: 95vw; ">
         <h1 id="pageTitle"></h1>
         <p id="introduction"></p>
-        <div id="uploadSection">
-            <span>
-                <div id="uploadInstruction">Load your own Excel file to view its contents in the table below.</div>
-                <input type="file" id="excelUpload" accept=".xlsx, .xls">
-                <div id="uploadStatus"></div> 
-            </span>
+        <div id="uploadSection"">
+            <label for="excelUpload">Excel file:</label>
+            <input type="file" id="excelUpload" accept=".xlsx, .xls" />
         </div>
 
         <table id="dataTable"></table>

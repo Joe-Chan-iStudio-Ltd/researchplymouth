@@ -57,11 +57,11 @@ h2 {
 h3 {
     color: #18549c;
 }
-ul {
+.padded-list ul {
     list-style-type: none;
     padding: 0;
 }
-li {
+.padded-list li {
     background: #e9ecef;
     margin: 5px 0;
     padding: 10px;
