@@ -50,11 +50,11 @@ th, td {
 }
 
 #statusMessage.success {
-    background-color: #92bcee;
+    background-color: #e9ecef;
 }
 
 #statusMessage.error {
-    background-color: #f8d7da;
+    background-color: #878a8d;
 }
 
 .spinner {
