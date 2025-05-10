@@ -14,7 +14,6 @@ header {
 }
 .rp-banner a {
     font-family: 'Roboto', sans-serif;
-    font-weight: none;
     text-decoration: none;
     color: white;
     margin: 0;
@@ -50,14 +49,17 @@ section {
 }
 h1 {
     color: #0e3462;
+    font-weight: bold;
     margin: 0;
 }
 h2 {
     color: #18549c;
+    font-weight: bold;
     margin: 0;
 }
 h3 {
     color: #18549c;
+    font-weight: bold;
 }
 .padded-item {
     background: #e9ecef;
