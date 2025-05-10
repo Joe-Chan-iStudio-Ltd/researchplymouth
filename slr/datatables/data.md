@@ -12,4 +12,6 @@ Please ensure your Excel file is formatted according to the guidelines for optim
 
 ## citation
 
-Jardine, A.  (2025).  <i>DataTables.</i>  Available at: <a href="http://datatables.net">http://datatables.net</a> (Accessed: May 10, 2025)
+<i>Bibliographical Reference:</i>
+
+Jardine, A.  (2025).  <i>DataTables.</i>  Available at: <a href="http://datatables.net" target="_blank" rel="noopener noreferrer">http://datatables.net</a> (Accessed: May 10, 2025)
