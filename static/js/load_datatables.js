@@ -28,11 +28,11 @@ async function loadMarkdown() {
         const introductionStart = 1;
         const citationStart = lines.findIndex(line => line.startsWith('## citation'));
 
-        const introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('<br />').trim();
+        const introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('\n>').trim();
         document.getElementById('introduction').innerHTML = introductionContent;
 
         const citationsElement = document.getElementById('citation');
-        citationsElement.innerHTML = citationStart !== -1 ? lines.slice(citationStart + 1).join('<br />').trim() : '';
+        citationsElement.innerHTML = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n>').trim() : '';
 
     } catch (error) {
         console.error('Error loading Markdown:', error);
