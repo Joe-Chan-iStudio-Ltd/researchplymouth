@@ -1,5 +1,14 @@
 /* basic.css */
 
+/* archivo-black-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Archivo Black';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/static/fonts/woff2/archivo-black-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -48,18 +57,17 @@ section {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 h1 {
+    font-family: 'Archivo Black', sans-serif;
     color: #0e3462;
-    font-weight: bold;
     margin: 0;
 }
 h2 {
+    font-family: 'Archivo Black', sans-serif;
     color: #18549c;
-    font-weight: bold;
     margin: 0;
 }
 h3 {
     color: #18549c;
-    font-weight: bold;
 }
 .padded-item {
     background: #e9ecef;
