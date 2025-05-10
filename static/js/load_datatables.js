@@ -78,14 +78,15 @@ async function loadExcel(excelFile = null) {
         // Check if the second row exists and contains only numbers (column widths)
         if (jsonData.length > 1) {
             const secondRow = jsonData[1];
-            const allNumbers = secondRow.every(value => !isNaN(parseFloat(value)) && isFinite(value) && value !== "");  // Check if all values are numbers
+            const allNumbers = secondRow.every(value => {
+                const num = Number(value);
+                return !isNaN(num) && isFinite(num);
+              });
 
             if (allNumbers && secondRow.length === headers.length) {
                 columnWidths = secondRow;
                 dataStartRow = 2; // Data starts from row 2 (after header and widths)
-            } else {
-                console.log("Second row is not valid column widths, treating as data.");
-            }
+            } 
         }
 
         // Validation based on whether column widths are present
