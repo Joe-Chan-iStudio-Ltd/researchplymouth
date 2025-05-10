@@ -4,10 +4,11 @@ This page provides a simple, yet powerful, searchable experience for exploring s
 To get started, load your Excel worksheet.  The page will automatically process the first sheet, following a simple structure:
 <ul>
 <li><b>Row 1:</b> Flexible column headers (required). Suggested columns: Author, Year, Title, Abstract, and Keyword.</li>
-<li><b>Row 2:</b> <i>(Optional)</i> Column widths (integers) to customize the table's appearance.  For optimal results, the column widths should sum to 100.</li>
+<li><b>Row 2:</b> <i>Optional</i> Column widths (integers) to customize the table's appearance.  For optimal results, the column widths should sum to 100.</li>
 <li><b>Remaining Rows:</b> Your data.</li>
 </ul>
-Please ensure your Excel file is formatted accordingly for optimal results. Enjoy exploring your literature review!
+Please ensure your Excel file is formatted accordingly for optimal results. Enjoy exploring your literature review!  If 
+Please ensure your Excel file is formatted according to the guidelines for optimal results.  Enjoy exploring your literature review!  If you are interested in creating your own webpage similar to  <a href="/slr/datatables" target="_blank" rel="noopener noreferrer">this one</a>, feel free to contact me at <a href= "mailto: joekcchan@researchplymouth.com">researchplymouth.com</a>.
 
 ## citation
 
