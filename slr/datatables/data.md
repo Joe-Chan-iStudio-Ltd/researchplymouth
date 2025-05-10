@@ -8,7 +8,7 @@ To get started, load your Excel worksheet.  The page will automatically process 
 <li><b>Remaining Rows:</b> Your data.</li>
 </ul>
 Please ensure your Excel file is formatted accordingly for optimal results. Enjoy exploring your literature review!  If 
-Please ensure your Excel file is formatted according to the guidelines for optimal results.  Enjoy exploring your literature review!  If you are interested in creating your own webpage similar to  <a href="/slr/datatables" target="_blank" rel="noopener noreferrer">this one</a>, feel free to contact me at <a href= "mailto: joekcchan@researchplymouth.com">researchplymouth.com</a>.
+Please ensure your Excel file is formatted according to the guidelines for optimal results.  Enjoy exploring your literature review!  If you are interested in creating your own webpage similar to  <a href="/slr/tc" target="_blank" rel="noopener noreferrer">this one</a>, feel free to contact us at <a href= "mailto: research@researchplymouth.com">research@researchplymouth.com</a>.
 
 ## citation
 
