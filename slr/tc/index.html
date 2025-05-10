@@ -33,7 +33,10 @@
         <h1 id="pageTitle"></h1>
         <p id="introduction"></p>
         
-        <table id="dataTable"></table>
+        <div id="dateTableWrapper" class="table-responsive text-left" style="position: relative;;">
+            <div id="spinner" class="spinner-border spinner text-primary" style="display: none;="></div>
+            <table id="dataTable"></table>
+        </div>
         
         <p style="margin-top: 20px; font-style: italic;">Bibliographical Reference:</p>
         <div id="citations" class="scroll-box"></div>
@@ -50,7 +53,7 @@
     // Set the base path dynamically based on the current URL
     const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
 </script>
-<script type="text/javascript" src="/static/js/load_datatables.js?v=202505071827" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/static/js/load_datatables.js?v=202505101026" crossorigin="anonymous"></script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c4399dd2cc0740109ff1533e34ec9a73"}'></script>
 </body>
 </html>

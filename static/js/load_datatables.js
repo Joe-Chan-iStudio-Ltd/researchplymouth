@@ -142,22 +142,22 @@ async function loadExcel(excelFile = null) {
 }
 
 async function loadExcelWithSpinner(file) {
-    switchSpinner(true);
+    showSpinner(true);
     try {
         await loadExcel(file); // Call your original loadExcel function
     } finally {
-        switchSpinner();
+        showSpinner(false);
     }
 }
 
-function switchSpinner(isDisplay = false) {
+function showSpinner(isDisplay = false) {
     document.getElementById('spinner').style.display = isDisplay ? 'block' : 'none';
     document.getElementById('dataTable').style.opacity = isDisplay ? '0.5' : '1';
 }
 
 async function init() {
     await loadMarkdown();
-    await loadExcel();
+    await loadExcelWithSpinner();
 
     document.getElementById('excelUpload').addEventListener('change', function (event) {
         const file = event.target.files[0];
