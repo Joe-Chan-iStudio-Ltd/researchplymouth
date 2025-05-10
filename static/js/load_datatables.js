@@ -32,13 +32,7 @@ async function loadMarkdown() {
         document.getElementById('introduction').innerHTML = introductionContent;
 
         const citationsElement = document.getElementById('citation');
-        // Citations: Wrap each citation in a <div> with class citation-section
-        let citationsContent = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n').trim() : '';
-        citationsContent = citationsContent.split('\n').map(citation => {
-            //const cleanedCitation = citation.replace(/^>\s*/, ''); // Remove "> " from the beginning of each line (if needed)
-            return `<div class="citation-section">${citation}</div>`;
-        }).join('');
-        citationsElement.innerHTML = citationsContent;
+        citationsElement.innerHTML = citationStart !== -1 ? lines.slice(citationStart + 1).join('<br />').trim() : '';
 
     } catch (error) {
         console.error('Error loading Markdown:', error);

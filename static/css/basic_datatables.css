@@ -34,8 +34,8 @@ th, td {
 }
 
 .citation-section {
+    margin-top: 0.5em;
     text-indent: -2em; /* Negative indent for the first line */
-    padding-left: 2em; /* Padding to offset the negative indent */  
     font-size: 1rem;
     line-height: 1.5; 
     color: darkslategray;
