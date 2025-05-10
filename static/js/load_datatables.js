@@ -28,17 +28,17 @@ async function loadMarkdown() {
         const introductionStart = 1;
         const citationStart = lines.findIndex(line => line.startsWith('## citation'));
 
-        // Introduction: Use <p> tags for paragraphs instead of <br />
-        let introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('\n').trim();
-        introductionContent = introductionContent.split('\n\n').map(paragraph => `<p>${paragraph.replace(/\n/g, '<br>')}</p>`).join(''); // Split into paragraphs and add <p> tags, while allowing line breaks within paragraphs
+        const introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('<br />').trim();
         document.getElementById('introduction').innerHTML = introductionContent;
 
         const citationsElement = document.getElementById('citation');
         // Citations: Wrap each citation in a <div> with class citation-section
         let citationsContent = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n').trim() : '';
-        citationsContent = citationsContent.split('\n').map(citation => `<div class="citation-section">${citation}</div>`).join('');
+        citationsContent = citationsContent.split('\n').map(citation => {
+            //const cleanedCitation = citation.replace(/^>\s*/, ''); // Remove "> " from the beginning of each line (if needed)
+            return `<div class="citation-section">${citation}</div>`;
+        }).join('');
         citationsElement.innerHTML = citationsContent;
-
 
     } catch (error) {
         console.error('Error loading Markdown:', error);
