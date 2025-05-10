@@ -4,6 +4,8 @@ This page is dedicated to providing a simple yet powerful searchable experience 
 
 ## citation
 
+<i>Bibliographical Reference:</i>
+
 Abraham, K.G. and Kearney, M.S.  (2020).  “<a href="pdf/Explaining the Decline in the US Employment-to-Population Ratio A Review of the Evidence.pdf" target="_blank">Explaining the Decline in the US Employment-to-Population Ratio: A Review of the Evidence,</a>”  <i>Journal of Economic Literature</i>, 58(3), pp.585-643.  Doi: 10.1257/jel.20191480
 Acemoglu, D., Autor, D., Dorn, D., Hanson, G.H., and Price, B.  (2016).  “<a href="pdf/Import Competition and the Great US Employment Sag of the 2000s.pdf" target="_blank">Import Competition and the Great US Employment Sag of the 2000s,</a>”  <i>Journal of Labor Economics</i>, 34(S1), pp.S141-S198.  Doi: 10.1086/682384
 Albouy, D., Chernoff, A., Lutz, C., and Warman, C.  (2019).  “<a href="pdf/Local Labor Markets in Canada and the United States.pdf" target="_blank">Local Labor Markets in Canada and the United States,</a>”  <i>Journal of Labor Economics</i>, 37(S2): pp.S533-S594.  Doi: 10.1086/703579
