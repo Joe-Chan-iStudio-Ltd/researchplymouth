@@ -8,13 +8,16 @@
     font-weight: 400;
     src: url('/static/fonts/woff2/archivo-black-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-.rp-title-black-200em {
+.rp-title-black {
     font-family: 'Archivo Black', sans-serif;
-    font-size: 2em;
+    color: white;
+    text-decoration: none;
 }
-.rp-title-black-150em {
-    font-family: 'Archivo Black', sans-serif;
+.em150 {
     font-size: 1.5em;
+}
+.em200 {
+    font-size: 2em;    
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -28,9 +31,7 @@ header {
     padding: 20px;
     text-align: center;
 }
-.rp-banner a {
-    text-decoration: none;
-    color: white;
+.rp-banner {
     margin: 0;
 }
 .logo {
