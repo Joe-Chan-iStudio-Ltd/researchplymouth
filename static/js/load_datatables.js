@@ -133,7 +133,7 @@ async function loadExcel(excelFile = null) {
             }
         });
 
-        showStatus('statusMessage', excelFilename + (excelFile ? 'is loaded onto table above successfully.' : 'is loaded for demonstration purposes', false);
+        showStatus('statusMessage', excelFilename + (excelFile ? 'is loaded onto table above successfully.' : 'is loaded for demonstration purposes'), false);
 
     } catch (error) {
         console.error('Error loading Excel:', error);
