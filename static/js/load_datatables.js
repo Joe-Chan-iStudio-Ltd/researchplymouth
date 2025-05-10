@@ -7,8 +7,6 @@ function showStatus(elementId, message, isError = false) {
     if (statusDiv) {
         statusDiv.textContent = message;
         statusDiv.className = isError ? 'error' : 'success'; // Add classes for styling (optional)
-    } else {
-        console.warn(`Element with ID '${elementId}' not found. Cannot display status message.`);
     }
 }
 

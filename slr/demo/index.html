@@ -9,15 +9,18 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/static/css/basic.css">
     <link rel="stylesheet" href="/static/css/basic_datatables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.0/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.3/css/buttons.bootstrap5.css">
     <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Research Plymouth">
-    <meta property="og:description" content="This page is dedicated to providing searchable information.">
+    <meta property="og:title" content="SLR Datatables">
+    <meta property="og:description" content="A simple, yet powerful, searchable experience for systematic literature reviews (SLR), powered by Datatables.">
     <meta property="og:image" content="https://www.researchplymouth.com/static/images/RP-Logo-100x100.png">
     <meta property="og:url" content="https://www.researchplymouth.com">
     <!-- Twitter Card meta tags (optional) -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Research Plymouth">
-    <meta name="twitter:description" content="This page is dedicated to providing searchable information.">
+    <meta name="twitter:title" content="SLR Datatables">
+    <meta name="twitter:description" content="A simple, yet powerful, searchable experience for systematic literature reviews (SLR), powered by Datatables.">
     <meta name="twitter:image" content="https://www.researchplymouth.com/static/images/RP-Logo-100x100.png">
 </head>
 <body>
@@ -29,12 +32,12 @@
     <section style="max-width: 95vw; ">
         <h1 id="pageTitle"></h1>
         <p id="introduction"></p>
-        
+
         <div id="dateTableWrapper" class="table-responsive text-left" style="position: relative;;">
             <div id="spinner" class="spinner-border spinner text-primary" style="display: none;="></div>
             <table id="dataTable"></table>
         </div>
-        
+
         <p style="margin-top: 20px; font-style: italic;">Bibliographical Reference:</p>
         <div id="citations" class="scroll-box"></div>
     </section>
@@ -50,7 +53,7 @@
     // Set the base path dynamically based on the current URL
     const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
 </script>
-<script type="text/javascript" src="/static/js/load_datatable.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/static/js/load_datatables.js?v=202505101026" crossorigin="anonymous"></script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c4399dd2cc0740109ff1533e34ec9a73"}'></script>
 </body>
 </html>
