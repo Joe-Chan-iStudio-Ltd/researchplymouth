@@ -4,4 +4,4 @@ This page provides a simple yet powerful searchable experience for exploring sys
 
 ## citation
 
-Jardine, A.  (2025).  <i>DataTables.</i>  Available at: <http://datatables.net> (Accessed: May 10, 2025)
+<p>Jardine, A.  (2025).  <i>DataTables.</i>  Available at: <a href="http://datatables.net">http://datatables.net</a> (Accessed: May 10, 2025)</p>
