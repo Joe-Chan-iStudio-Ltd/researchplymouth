@@ -8,10 +8,14 @@
     font-weight: 400;
     src: url('/static/fonts/woff2/archivo-black-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-.archivo-black {
+.rp-title-black-200em {
     font-family: 'Archivo Black', sans-serif;
+    font-size: 2em;
 }
-
+.rp-title-black-150em {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 1.5em;
+}
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
