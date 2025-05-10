@@ -1,6 +1,6 @@
 # <i>SLR with Datatables:</i> Searchable Experience with Your Own Excel File
 
-This page provides a simple, yet powerful, searchable experience for exploring systematic literature reviews (SLR), powered by DataTables (Jardine, 2025).  <b>Your Excel file is processed directly in your browser, ensuring confidentiality.</b>  Research Plymouth does not retrieve or store your data; the Excel file remains entirely within your browser.  <br/> <br/>
+This page provides a simple yet powerful searchable experience for exploring systematic literature reviews (SLR), powered by DataTables (Jardine, 2025).  <b>Your Excel file is processed directly in your browser, ensuring confidentiality.</b>  Research Plymouth does not retrieve or store your data; the Excel file remains entirely within your browser.  <br/> <br/>
 To get started, load your Excel worksheet.  The page will automatically process the first sheet, following a simple structure:
 <ul>
 <li><b>Row 1:</b> Flexible column headers (required). Suggested columns: Author, Year, Title, Abstract, and Keyword.</li>
