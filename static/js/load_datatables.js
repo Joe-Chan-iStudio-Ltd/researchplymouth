@@ -144,6 +144,16 @@ async function loadExcel(excelFile = null) {
     }
 }
 
+async function loadExcelWithSpinner(file) {
+    const spinner = document.getElementById('loadingSpinner');
+    spinner.style.display = 'inline-block'; // Show the spinner
+    try {
+        await loadExcel(file); // Call your original loadExcel function
+    } finally {
+        spinner.style.display = 'none'; // Hide the spinner, even if there's an error
+    }
+}
+
 async function init() {
     await loadMarkdown();
     await loadExcel();
@@ -151,7 +161,7 @@ async function init() {
     document.getElementById('excelUpload').addEventListener('change', function (event) {
         const file = event.target.files[0];
         if (file) {
-            loadExcel(file);
+            loadExcelWithSpinner(file);
         } else {
             showStatus('No file selected.', true);
         }
