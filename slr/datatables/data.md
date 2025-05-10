@@ -12,4 +12,4 @@ Please ensure your Excel file is formatted according to the guidelines for optim
 
 ## citation
 
-<p>Jardine, A.  (2025).  <i>DataTables.</i>  Available at: <a href="http://datatables.net">http://datatables.net</a> (Accessed: May 10, 2025)</p>
+Jardine, A.  (2025).  <i>DataTables.</i>  Available at: <a href="http://datatables.net">http://datatables.net</a> (Accessed: May 10, 2025)

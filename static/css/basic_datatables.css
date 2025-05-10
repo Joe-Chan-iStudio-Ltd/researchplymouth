@@ -33,13 +33,10 @@ th, td {
     width: 25vw;    /* Set the width to 50vw */
 }
 
-.scroll-box {
-    max-height: 5em; 
-    overflow-y: auto;  /* Enable vertical scrolling */
-    border: none; 
-    padding: 0; 
-    font-size: 0.9rem;
+.citation-section {
+    font-size: 1rem;
     line-height: 1.5; 
+    color: darkslategray;
 }
 
 #statusMessage {
