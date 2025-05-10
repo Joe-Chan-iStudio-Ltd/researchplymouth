@@ -142,13 +142,17 @@ async function loadExcel(excelFile = null) {
 }
 
 async function loadExcelWithSpinner(file) {
-    const spinner = document.getElementById('loadingSpinner');
-    spinner.style.display = 'inline-block'; // Show the spinner
+    switchSpinner(true);
     try {
         await loadExcel(file); // Call your original loadExcel function
     } finally {
-        spinner.style.display = 'none'; // Hide the spinner, even if there's an error
+        switchSpinner();
     }
+}
+
+function switchSpinner(isDisplay = false) {
+    document.getElementById('spinner').style.display = isDisplay ? 'block' : 'none';
+    document.getElementById('dataTable').style.opacity = isDisplay ? '0.5' : '1';
 }
 
 async function init() {
