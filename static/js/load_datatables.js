@@ -11,8 +11,13 @@ function showStatus(elementId, message, isError = false) {
 }
 
 function italicize(text, findString) {
+    // Check if either text or findString is null or undefined
+    if (!text || !findString) {
+      return text || ""; // Return the original text (or an empty string if text is also null)
+    }
+  
     // Escape special characters in findString for use in a regular expression
-    const escapedFindString = findString.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+    const escapedFindString = findString.replace(/[-/\\^$*+?.()|[]{}]/g, '\\$&');
   
     // Construct a regular expression to find the findString (case-insensitive and global)
     const regex = new RegExp(escapedFindString, 'gi');
@@ -20,7 +25,7 @@ function italicize(text, findString) {
     // Replace all occurrences of findString with <i>findString</i>
     return text.replace(regex, "<i>$&</i>");
 }
-
+  
 function processParagraphs(text) {
     const paragraphs = text.split('\n'); // Split into paragraphs based on double newlines
     const processedParagraphs = paragraphs.map(paragraph => {

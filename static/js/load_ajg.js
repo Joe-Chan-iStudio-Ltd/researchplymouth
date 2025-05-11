@@ -2,8 +2,13 @@
 
 $(document).ready(function() {
     function italicize(text, findString) {
+        // Check if either text or findString is null or undefined
+        if (!text || !findString) {
+          return text || ""; // Return the original text (or an empty string if text is also null)
+        }
+      
         // Escape special characters in findString for use in a regular expression
-        const escapedFindString = findString.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+        const escapedFindString = findString.replace(/[-/\\^$*+?.()|[]{}]/g, '\\$&');
       
         // Construct a regular expression to find the findString (case-insensitive and global)
         const regex = new RegExp(escapedFindString, 'gi');
