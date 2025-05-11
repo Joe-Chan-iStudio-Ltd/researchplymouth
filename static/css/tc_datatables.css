@@ -1,0 +1,57 @@
+/* tc_datatables.css */
+
+@media (max-width: 1800px) {
+    /* Hide columns A-E (first 5 columns) */
+    td:nth-child(1),
+    th:nth-child(1),
+    td:nth-child(2),
+    th:nth-child(2),
+    td:nth-child(3),
+    th:nth-child(3),
+    td:nth-child(4),
+    th:nth-child(4),
+    td:nth-child(5),
+    th:nth-child(5),
+  
+    /* Hide column K (11th column) */
+    td:nth-child(11),
+    th:nth-child(11),
+  
+    /* Hide column L (12th column) */
+    td:nth-child(12),
+    th:nth-child(12),
+  
+    /* Hide column M (13th column) */
+    td:nth-child(13),
+    th:nth-child(13),
+  
+      /* Hide column N (14th column) */
+    td:nth-child(14),
+    th:nth-child(14),
+  
+      /* Hide column O (15th column) */
+    td:nth-child(15),
+    th:nth-child(15),
+  
+    /* Hide column Q (17th column) */
+    td:nth-child(17),
+    th:nth-child(17),
+  
+    /* Hide column R (18th column) */
+    td:nth-child(18),
+    th:nth-child(18),
+  
+    /* Hide column S (19th column) */
+    td:nth-child(19),
+    th:nth-child(19),
+  
+    /* Hide column T (20th column) */
+    td:nth-child(20),
+    th:nth-child(20),
+  
+    /* Hide column U (21th column) */
+    td:nth-child(21),
+    th:nth-child(21) {
+      display: none;
+    }
+  }
