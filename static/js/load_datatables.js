@@ -12,7 +12,7 @@ function showStatus(elementId, message, isError = false) {
 
 function italicize(text, findString) {
     // Check if either text or findString is null or undefined
-    if (!text || !findString) {
+    if (!text || !findString || typeof text !== 'string') {
       return text || ""; // Return the original text (or an empty string if text is also null)
     }
   
@@ -62,7 +62,7 @@ async function loadMarkdown() {
         let introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('\n').trim();
         introductionContent = processParagraphs(introductionContent); 
         document.getElementById('introduction').innerHTML = italicize(introductionContent, "et al.");
-
+        
         // Process Citations
         let citationsContent = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n').trim() : '';
         citationsContent = processParagraphs(citationsContent); 

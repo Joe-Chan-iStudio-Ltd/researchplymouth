@@ -3,8 +3,8 @@
 $(document).ready(function() {
     function italicize(text, findString) {
         // Check if either text or findString is null or undefined
-        if (!text || !findString) {
-          return text || ""; // Return the original text (or an empty string if text is also null)
+        if (!text || !findString || typeof text !== 'string') {
+            return text || ""; // Return the original text (or an empty string if text is also null)
         }
       
         // Escape special characters in findString for use in a regular expression
@@ -56,7 +56,7 @@ $(document).ready(function() {
                         return cell.toFixed(3);
                     }
                     // Replace empty cells with a dash
-                    return (cell === "" || cell === undefined) ? '—' : italicize(cell, "et al.");;
+                    return (cell === "" || cell === undefined) ? '—' : italicize(cell, "et al.");
                 });
 
                 // Check if the row length matches expected columns
