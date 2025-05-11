@@ -149,6 +149,7 @@ async function loadExcel(excelFile = null, columnsToItalicize = {}) {
                 };
 
                 if (columnsToItalicize[header]) {
+                    console.log(`italicizing ${header} ... `);
                     columnDefinition.render = function (data, type, row) {
                         if (type === 'display' && data) {
                             return italicize(data, columnsToItalicize[header]);
