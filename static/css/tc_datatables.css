@@ -13,45 +13,46 @@
     td:nth-child(5),
     th:nth-child(5),
   
-    /* Hide column K (11th column) */
+    /* Hide columns K-N (11th-14th columns) */
     td:nth-child(11),
     th:nth-child(11),
-  
-    /* Hide column L (12th column) */
     td:nth-child(12),
     th:nth-child(12),
-  
-    /* Hide column M (13th column) */
     td:nth-child(13),
     th:nth-child(13),
-  
-      /* Hide column N (14th column) */
     td:nth-child(14),
     th:nth-child(14),
   
-      /* Hide column O (15th column) */
-    td:nth-child(15),
-    th:nth-child(15),
-  
-    /* Hide column Q (17th column) */
+    /* Hide columns Q-U (17th-21st columns) */
     td:nth-child(17),
     th:nth-child(17),
-  
-    /* Hide column R (18th column) */
     td:nth-child(18),
     th:nth-child(18),
-  
-    /* Hide column S (19th column) */
     td:nth-child(19),
     th:nth-child(19),
-  
-    /* Hide column T (20th column) */
     td:nth-child(20),
     th:nth-child(20),
-  
-    /* Hide column U (21th column) */
     td:nth-child(21),
     th:nth-child(21) {
       display: none;
     }
+
+    /* Show abstract column O (15th column) */
+    td:nth-child(15),
+    th:nth-child(15) {
+        display: table-cell; /* Or whatever the default display is */
+        white-space: nowrap; /* Prevent wrapping */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px; /* Limit to 200 characters */
+    }
+
+    /* Apply the 3 line limit */
+    td:nth-child(15) {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        white-space: normal; /* Override nowrap */
+        max-width: none; /* Remove the character limit */
+    }    
   }
