@@ -12,6 +12,12 @@ th, td {
 
 th {
     background-color: #e9ecef;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Zebra striping for rows */
