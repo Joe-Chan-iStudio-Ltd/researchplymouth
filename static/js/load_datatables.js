@@ -44,9 +44,9 @@ async function loadMarkdown() {
     }
 
     function processParagraphs(text) {
-        const paragraphs = text.split('\n\n'); // Split into paragraphs based on double newlines
+        const paragraphs = text.split('\n'); // Split into paragraphs based on double newlines
         const processedParagraphs = paragraphs.map(paragraph => {
-            paragraph = paragraph.trim();
+            paragraph = paragraph.replace(/\n/g, '').trim();
             // Skip if already enclosed in tags
             if (/^<(ul|ol|li|p|div|h[1-6]|blockquote)/i.test(paragraph)) {
                 return paragraph;
