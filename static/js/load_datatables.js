@@ -191,7 +191,7 @@ async function loadExcelWithSpinner(file) {
     showSpinner(true);
     try {
         await loadExcel(file, {
-            "Citation": "et al."
+            "Author": "et al."
         });
     } finally {
         showSpinner(false);
@@ -218,9 +218,7 @@ async function init() {
                 showStatus('No file selected.', true);
             }
         });
-    } else {
-        console.error("Element with ID 'excelUpload' not found!");
-    }
+    } 
 }
 
 document.addEventListener('DOMContentLoaded', function() {
