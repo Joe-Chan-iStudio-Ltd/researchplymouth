@@ -23,7 +23,7 @@ function italicize(text, findString) {
     const regex = new RegExp(escapedFindString, 'gi');
   
     // Replace all occurrences of findString with <i>findString</i>
-    return text.replace(regex, "<i>$&</i>");
+    return text.replace(regex, "<em>$&</em>");
 }
   
 function processParagraphs(text) {
