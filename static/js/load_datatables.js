@@ -10,6 +10,31 @@ function showStatus(elementId, message, isError = false) {
     }
 }
 
+function italicize(text, findString) {
+    // Escape special characters in findString for use in a regular expression
+    const escapedFindString = findString.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+  
+    // Construct a regular expression to find the findString (case-insensitive and global)
+    const regex = new RegExp(escapedFindString, 'gi');
+  
+    // Replace all occurrences of findString with <i>findString</i>
+    return text.replace(regex, "<i>$&</i>");
+}
+
+function processParagraphs(text) {
+    const paragraphs = text.split('\n'); // Split into paragraphs based on double newlines
+    const processedParagraphs = paragraphs.map(paragraph => {
+        paragraph = paragraph.replace(/\n/g, '').trim();
+        // Skip if already enclosed in tags
+        if (/^<(ul|ol|li|p|div|h[1-6]|blockquote)/i.test(paragraph)) {
+            return paragraph;
+        } else {
+            return `<p>${paragraph.replace(/\n/g, '<br>')}</p>`; // Wrap in <p> tags and allow line breaks within paragraphs
+        }
+    });
+    return processedParagraphs.join('');
+}
+
 async function loadMarkdown() {
     try {
         const markdownFilePath = `${basePath}/data.md`;
@@ -31,37 +56,23 @@ async function loadMarkdown() {
         // Process Introduction
         let introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('\n').trim();
         introductionContent = processParagraphs(introductionContent); 
-        document.getElementById('introduction').innerHTML = introductionContent;
+        document.getElementById('introduction').innerHTML = italicize(introductionContent, "et al.");
 
         // Process Citations
         let citationsContent = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n').trim() : '';
         citationsContent = processParagraphs(citationsContent); 
-        document.getElementById('citation').innerHTML = citationsContent;
+        document.getElementById('citation').innerHTML = italicize(citationsContent, "et al.");
 
     } catch (error) {
         console.error('Error loading Markdown:', error);
         showStatus('statusMessage', `Error loading Markdown: ${error.message}`, true);
     }
-
-    function processParagraphs(text) {
-        const paragraphs = text.split('\n'); // Split into paragraphs based on double newlines
-        const processedParagraphs = paragraphs.map(paragraph => {
-            paragraph = paragraph.replace(/\n/g, '').trim();
-            // Skip if already enclosed in tags
-            if (/^<(ul|ol|li|p|div|h[1-6]|blockquote)/i.test(paragraph)) {
-                return paragraph;
-            } else {
-                return `<p>${paragraph.replace(/\n/g, '<br>')}</p>`; // Wrap in <p> tags and allow line breaks within paragraphs
-            }
-        });
-        return processedParagraphs.join('');
-    }
 }
 
-async function loadExcel(excelFile = null) {
+async function loadExcel(excelFile = null, columnsToItalicize = {}) {
     try {
-        const excelFilename = excelFile ? excelFile.name : 'Default file'; 
-        showStatus('statusMessage', `Loading Excel data from ${excelFilename}...`); 
+        const excelFilename = excelFile ? excelFile.name : 'Default file';
+        showStatus('statusMessage', `Loading Excel data from ${excelFilename}...`);
 
         let data;
         if (excelFile) {
@@ -99,12 +110,12 @@ async function loadExcel(excelFile = null) {
             const allNumbers = secondRow.every(value => {
                 const num = Number(value);
                 return !isNaN(num) && isFinite(num);
-              });
+            });
 
             if (allNumbers && secondRow.length === headers.length) {
                 columnWidths = secondRow;
                 dataStartRow = 2; // Data starts from row 2 (after header and widths)
-            } 
+            }
         }
 
         // Validation based on whether column widths are present
@@ -126,10 +137,23 @@ async function loadExcel(excelFile = null) {
 
         dataTable = $('#dataTable').DataTable({
             data: jsonData.slice(dataStartRow),
-            columns: headers.map((header, index) => ({
-                title: header,
-                width: columnWidths ? columnWidths[index] + 'vw' : null // Use null for auto width
-            })),
+            columns: headers.map((header, index) => {
+                let columnDefinition = {
+                    title: header,
+                    width: columnWidths ? columnWidths[index] + 'vw' : null // Use null for auto width
+                };
+
+                if (columnsToItalicize[header]) {
+                    columnDefinition.render = function (data, type, row) {
+                        if (type === 'display' && data) {
+                            return italicize(data, columnsToItalicize[header]);
+                        }
+                        return data;
+                    };
+                }
+
+                return columnDefinition;
+            }),
             paging: true,
             searching: true,
             pageLength: 10,
@@ -161,7 +185,9 @@ async function loadExcel(excelFile = null) {
 async function loadExcelWithSpinner(file) {
     showSpinner(true);
     try {
-        await loadExcel(file); // Call your original loadExcel function
+        await loadExcel(file, {
+            "Citation": "et al."
+        });
     } finally {
         showSpinner(false);
     }

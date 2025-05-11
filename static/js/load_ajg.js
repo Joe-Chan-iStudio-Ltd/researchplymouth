@@ -1,6 +1,17 @@
 /* load_ajg.js */
 
 $(document).ready(function() {
+    function italicize(text, findString) {
+        // Escape special characters in findString for use in a regular expression
+        const escapedFindString = findString.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+      
+        // Construct a regular expression to find the findString (case-insensitive and global)
+        const regex = new RegExp(escapedFindString, 'gi');
+      
+        // Replace all occurrences of findString with <i>findString</i>
+        return text.replace(regex, "<i>$&</i>");
+    }
+      
     // Load the Excel file
     fetch('/static/xlsx/ajg2024.xlsx')
         .then(response => {
@@ -40,7 +51,7 @@ $(document).ready(function() {
                         return cell.toFixed(3);
                     }
                     // Replace empty cells with a dash
-                    return (cell === "" || cell === undefined) ? '—' : cell;
+                    return (cell === "" || cell === undefined) ? '—' : italicize(cell, "et al.");;
                 });
 
                 // Check if the row length matches expected columns
@@ -70,3 +81,4 @@ $(document).ready(function() {
             alert('Error loading the Excel file: ' + error.message);
         });
 });
+
