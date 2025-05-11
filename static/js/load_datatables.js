@@ -148,14 +148,20 @@ async function loadExcel(excelFile = null, columnsToItalicize = {}) {
                     width: columnWidths ? columnWidths[index] + 'vw' : null // Use null for auto width
                 };
 
-                if (columnsToItalicize[header]) {
-                    columnDefinition.render = function (data, type, row) {
-                        if (type === 'display' && data) {
-                            return italicize(data, columnsToItalicize[header]);
+                columnDefinition.render = function (data, type, row) {
+                    if (type === 'display' && data) {
+                        let italicizeValue = columnsToItalicize[header]; // Specific column value
+                
+                        if (columnsToItalicize['*'] !== undefined) { // Wildcard exists
+                            italicizeValue = columnsToItalicize['*']; // Override with wildcard
                         }
-                        return data;
-                    };
-                }
+                
+                        if (italicizeValue) {
+                            return italicize(data, italicizeValue);
+                        }
+                    }
+                    return data;
+                };
 
                 return columnDefinition;
             }),
@@ -191,6 +197,7 @@ async function loadExcelWithSpinner(file) {
     showSpinner(true);
     try {
         await loadExcel(file, {
+            "*": "et al.",
             "Author": "et al."
         });
     } finally {
