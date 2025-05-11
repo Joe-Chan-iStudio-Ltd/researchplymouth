@@ -36,23 +36,5 @@
     th:nth-child(21) {
       display: none;
     }
-
-    /* Show abstract column O (15th column) */
-    td:nth-child(15),
-    th:nth-child(15) {
-        display: table-cell; /* Or whatever the default display is */
-        white-space: nowrap; /* Prevent wrapping */
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 200px; /* Limit to 200 characters */
-    }
-
-    /* Apply the 3 line limit */
-    td:nth-child(15) {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        white-space: normal; /* Override nowrap */
-        max-width: none; /* Remove the character limit */
-    }    
-  }
+    
+}
