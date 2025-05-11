@@ -207,14 +207,22 @@ async function init() {
     await loadMarkdown();
     await loadExcelWithSpinner();
 
-    document.getElementById('excelUpload').addEventListener('change', function (event) {
-        const file = event.target.files[0];
-        if (file) {
-            loadExcelWithSpinner(file);
-        } else {
-            showStatus('No file selected.', true);
-        }
-    });
+    const excelUpload = document.getElementById('excelUpload'); // Get the element here
+
+    if (excelUpload) { // Check if the element exists
+        excelUpload.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                loadExcelWithSpinner(file);
+            } else {
+                showStatus('No file selected.', true);
+            }
+        });
+    } else {
+        console.error("Element with ID 'excelUpload' not found!");
+    }
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', function() {
+    init(); // Call init() when the DOM is ready
+});
