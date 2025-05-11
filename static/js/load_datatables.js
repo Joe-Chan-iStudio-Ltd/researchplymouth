@@ -28,15 +28,33 @@ async function loadMarkdown() {
         const introductionStart = 1;
         const citationStart = lines.findIndex(line => line.startsWith('## citation'));
 
-        const introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('<br />').trim();
+        // Process Introduction
+        let introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('\n').trim();
+        introductionContent = processParagraphs(introductionContent); 
         document.getElementById('introduction').innerHTML = introductionContent;
 
-        const citationsElement = document.getElementById('citation');
-        citationsElement.innerHTML = citationStart !== -1 ? lines.slice(citationStart + 1).join('<br />').trim() : '';
+        // Process Citations
+        let citationsContent = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n').trim() : '';
+        citationsContent = processParagraphs(citationsContent); 
+        document.getElementById('citation').innerHTML = citationsContent;
 
     } catch (error) {
         console.error('Error loading Markdown:', error);
         showStatus('statusMessage', `Error loading Markdown: ${error.message}`, true);
+    }
+
+    function processParagraphs(text) {
+        const paragraphs = text.split('\n\n'); // Split into paragraphs based on double newlines
+        const processedParagraphs = paragraphs.map(paragraph => {
+            paragraph = paragraph.trim();
+            // Skip if already enclosed in tags
+            if (/^<(ul|ol|li|p|div|h[1-6]|blockquote)/i.test(paragraph)) {
+                return paragraph;
+            } else {
+                return `<p>${paragraph.replace(/\n/g, '<br>')}</p>`; // Wrap in <p> tags and allow line breaks within paragraphs
+            }
+        });
+        return processedParagraphs.join('');
     }
 }
 
