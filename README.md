@@ -12,7 +12,7 @@ Research Plymouth is dedicated to fostering collaboration and innovation in rese
 
 ## Our Focus Areas
 
-- ccounting and Finance
+- Accounting and Finance
 - Business and Management
 - Economics
 - Marketing
