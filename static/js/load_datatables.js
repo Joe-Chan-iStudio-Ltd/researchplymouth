@@ -145,7 +145,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 let columnDefinition = {
                     title: header,
                     width: columnWidths && columnWidths[index] !== 0 ? columnWidths[index] + 'vw' : null, // Use null for auto width
-                    visible: columnWidths && columnWidths[index] !== 0 // Hide column if width is 0
+//                    visible: columnWidths && columnWidths[index] !== 0 // Hide column if width is 0
                 };
                 columnDefinition.render = function (data, type, row) {
                     if (type === 'display' && data) {
