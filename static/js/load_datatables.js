@@ -104,7 +104,11 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             throw new Error('Excel file must contain at least a header row.');
         }
 
-        const headers = jsonData[0];
+        // Check if headers are defined in HTML
+        const htmlHeaders = Array.from(document.querySelectorAll('#dataTable thead th')).map(th => th.textContent.trim());
+        const tooltips = Array.from(document.querySelectorAll('#dataTable thead th')).map(th => th.title.trim());
+        const headers = htmlHeaders.length > 0 ? htmlHeaders : jsonData[0]; // Use HTML headers if available
+
         let columnWidths = null;
         let dataStartRow = 1; // Default data starts from row 1 (after header)
 
@@ -143,6 +147,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             columns: headers.map((header, index) => {
                 let columnDefinition = {
                     title: header,
+                    tooltip: tooltips[index] || '', // Set tooltip from HTML if available
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
                     visible: columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1) // Hide column if width is -1
                 };
