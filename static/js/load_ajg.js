@@ -211,7 +211,7 @@ function showSpinner(isDisplay = false) {
 }
 
 async function init() {
-    await loadExcelWithSpinner();
+    await loadExcelWithSpinner('static/xlsx/ajg2024.xlsx');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
