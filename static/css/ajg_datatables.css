@@ -14,15 +14,6 @@ th {
     background-color: #e9ecef;
 }
 
-/* Zebra striping for rows */
-.ajgTableRow:nth-child(odd) {
-    background-color: #ffffff; /* White for odd rows */
-}
-
-.ajgTableRow:nth-child(even) {
-    background-color: #f2f2f2; /* Light grey for even rows */
-}
-
 /* Remove all borders */
 th, td {
     border: none; /* No borders for cells */
@@ -53,5 +44,60 @@ td:nth-child(18), th:nth-child(18) {
     td:nth-child(n+5), 
     th:nth-child(n+5) {
         display: none; /* Hide column 3 and columns 5 and beyond */
+    }
+}
+
+/* Zebra striping for rows */
+.dataTableRow:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+.dataTableRow:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey for even rows */
+}
+
+.citation-section {
+    margin-top: 0.5em;
+    text-indent: -2em; /* Negative indent for the first line */
+    padding-left: 2em; 
+    font-size: 1rem;
+    line-height: 1.5; 
+    color: darkslategray;
+}
+
+.citation-section p {
+    margin-bottom: 0.5em;
+}
+
+#statusMessage {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 0px;
+}
+
+#statusMessage.success {
+    background-color: #e9ecef;
+}
+
+#statusMessage.error {
+    background-color: #878a8d;
+}
+
+.spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+}
+  
+@keyframes sk-scaleout {
+    0% {
+        transform: scale(0);
+    }  
+    100% {
+        transform: scale(1);
+        opacity: 0;
     }
 }
