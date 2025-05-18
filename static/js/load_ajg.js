@@ -52,10 +52,6 @@ function addTooltips(htmlHeaders, tooltips) {
     }
 }
 
-
-    rowHeader = document.querySelectorAll('#dataTable thead th')    
-}
-
 async function loadMarkdown() {
     try {
         const markdownFilePath = `${basePath}/data.md`;
