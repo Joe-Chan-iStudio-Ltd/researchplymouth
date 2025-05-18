@@ -147,7 +147,6 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             columns: headers.map((header, index) => {
                 let columnDefinition = {
                     title: header,
-                    tooltip: tooltips[index] || '', // Set tooltip from HTML if available
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
                     visible: columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1) // Hide column if width is -1
                 };
@@ -187,6 +186,15 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 emptyTable: "No data available in table"
             }
         });
+
+        if (htmlHeaders && tooltips && htmlHeaders.length === tooltips.length) {
+            $('#dataTable thead th').each(function(index) {
+                const tooltip = tooltips[index];
+                if (tooltip) {
+                    $(this).attr('abbr', htmlHeaders[index]).attr('title', tooltip); // Set abbr and title
+                }
+            });
+        }
 
         showStatus('statusMessage', excelFilename + (excelFile ? ' is loaded successfully.' : ' is loaded for demonstration purposes.'), false);
 
