@@ -193,7 +193,7 @@ async function loadExcel(excelFile = null, columnsToItalicize = {}) {
     }
 }
 
-async function loadExcelWithSpinner(file) {
+async function loadExcelWithSpinner(file = null) {
     showSpinner(true);
     try {
         await loadExcel(file, {
