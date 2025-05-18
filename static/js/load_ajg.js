@@ -109,6 +109,9 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         const tooltips = Array.from(document.querySelectorAll('#dataTable thead th')).map(th => th.title.trim());
         const headers = htmlHeaders.length > 0 ? htmlHeaders : jsonData[0]; // Use HTML headers if available
 
+        console.log(`htmlHeaders: ${htmlHeaders}`);
+        console.log(`tooltips: ${tooltips}`);
+
         let columnWidths = null;
         let dataStartRow = 1; // Default data starts from row 1 (after header)
 
