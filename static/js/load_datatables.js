@@ -74,7 +74,7 @@ async function loadMarkdown() {
     }
 }
 
-async function loadExcel(excelFile = null, columnsToItalicize = {}) {
+async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalicize = {}) {
     try {
         const excelFilename = excelFile ? excelFile.name : 'Default file';
         showStatus('statusMessage', `Loading Excel data from ${excelFilename}...`);
@@ -89,8 +89,7 @@ async function loadExcel(excelFile = null, columnsToItalicize = {}) {
                 reader.readAsArrayBuffer(excelFile);
             });
         } else {
-            const excelFilePath = `${basePath}/data.xlsx`;
-            const response = await fetch(excelFilePath);
+            const response = await fetch(defaultExcelFilePath);
             if (!response.ok) {
                 throw new Error(`Failed to load default Excel: ${response.status} ${response.statusText}`);
             }
@@ -193,10 +192,10 @@ async function loadExcel(excelFile = null, columnsToItalicize = {}) {
     }
 }
 
-async function loadExcelWithSpinner(file = null) {
+async function loadExcelWithSpinner(file = null, defaultExcelFilePath) {
     showSpinner(true);
     try {
-        await loadExcel(file, {
+        await loadExcel(file, defaultExcelFilePath, {
             "*": "et al.",
             "Author": "et al."
         });
@@ -211,8 +210,9 @@ function showSpinner(isDisplay = false) {
 }
 
 async function init() {
+    const defaultExcelFilePath = `${basePath}/data.xlsx`;
     await loadMarkdown();
-    await loadExcelWithSpinner();
+    await loadExcelWithSpinner(null, defaultExcelFilePath);
 
     const excelUpload = document.getElementById('excelUpload'); // Get the element here
 
@@ -220,7 +220,7 @@ async function init() {
         excelUpload.addEventListener('change', function (event) {
             const file = event.target.files[0];
             if (file) {
-                loadExcelWithSpinner(file);
+                loadExcelWithSpinner(file, defaultExcelFilePath);
             } else {
                 showStatus('No file selected.', true);
             }
