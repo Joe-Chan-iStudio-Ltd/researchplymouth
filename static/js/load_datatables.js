@@ -121,6 +121,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 dataStartRow = 2; // Data starts from row 2 (after header and widths)
             }
         }
+        console.log(`headers: ${headers.length}, columnWidths: ${columnWidths.length}, ${columnWidths}`);
 
         // Validation based on whether column widths are present
         if (columnWidths === null && jsonData.length < 2) {
