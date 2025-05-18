@@ -210,7 +210,7 @@ function showSpinner(isDisplay = false) {
 }
 
 async function init() {
-    await loadExcelWithSpinner('/static/xlsx/ajg2024.xlsx');
+    await loadExcelWithSpinner(null, '/static/xlsx/ajg2024.xlsx');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
