@@ -40,22 +40,6 @@ function processParagraphs(text) {
     return processedParagraphs.join('');
 }
 
-function addTooltips(htmlHeaders, tooltips) {
-    // Check if both arrays are defined and their lengths match
-    if (htmlHeaders && tooltips && htmlHeaders.length === tooltips.length) {
-        $('#dataTable thead tr th').each(function(index) {
-            const tooltip = tooltips[index]; // Declare tooltip variable
-            console.log(`${index}: ${tooltip}`); // Log the current tooltip
-
-            if (tooltip) {
-                $(this).attr('abbr', htmlHeaders[index]).attr('title', tooltip); // Set abbr and title
-            }
-        });
-    } else {
-        console.error("Headers and tooltips must be defined and of equal length.");
-    }
-}
-
 async function loadMarkdown() {
     try {
         const markdownFilePath = `${basePath}/data.md`;
@@ -163,7 +147,8 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             data: jsonData.slice(dataStartRow),
             columns: headers.map((header, index) => {
                 let columnDefinition = {
-                    title: header,
+                    title: (tooltips && tooltips[index] === undefined) ? `${header}<div class="tooltiptext">${tooltips[index]}</div>` : header,
+                    tooltips: true,
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
                     visible: columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1) // Hide column if width is -1
                 };
@@ -203,7 +188,6 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 emptyTable: "No data available in table"
             }
         });
-        addTooltips(htmlHeaders, tooltips);
         showStatus('statusMessage', excelFilename + (excelFile ? ' is loaded successfully.' : ' is loaded for demonstration purposes.'), false);
 
     } catch (error) {
