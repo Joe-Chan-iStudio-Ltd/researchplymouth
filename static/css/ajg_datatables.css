@@ -5,47 +5,6 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
-    padding: 8px;
-    text-align: left; /* Default text alignment for all */
-}
-
-th {
-    background-color: #e9ecef;
-}
-
-/* Remove all borders */
-th, td {
-    border: none; /* No borders for cells */
-}
-
-/* Set width of the second column */
-td:nth-child(2), th:nth-child(2) {
-    min-width: 15vw; /* Set minimum width for the second column */
-}
-
-td:nth-child(3), th:nth-child(3) {
-    min-width: 9vw; /* Set minimum width for the second column */
-}
-
-td:nth-child(17), th:nth-child(17) {
-    min-width: 3vw; /* Set minimum width for the second column */
-}
-
-td:nth-child(18), th:nth-child(18) {
-    min-width: 3vw; /* Set minimum width for the second column */
-}
-
-/* Responsive design for mobile devices */
-@media (max-width: 768px) {
-    /* Hide columns beyond the first four */
-    td:nth-child(3), 
-    th:nth-child(3), 
-    td:nth-child(n+5), 
-    th:nth-child(n+5) {
-        display: none; /* Hide column 3 and columns 5 and beyond */
-    }
-}
 
 /* Zebra striping for rows */
 .dataTableRow:nth-child(odd) {
