@@ -89,7 +89,7 @@ async function loadExcel(excelFile = null, columnsToItalicize = {}) {
                 reader.readAsArrayBuffer(excelFile);
             });
         } else {
-            const excelFilePath = `${basePath}/data.xlsx`;
+            const excelFilePath = '/static/xlsx/ajg2024.xlsx';
             const response = await fetch(excelFilePath);
             if (!response.ok) {
                 throw new Error(`Failed to load default Excel: ${response.status} ${response.statusText}`);
@@ -211,7 +211,7 @@ function showSpinner(isDisplay = false) {
 }
 
 async function init() {
-    await loadExcelWithSpinner('static/xlsx/ajg2024.xlsx');
+    await loadExcelWithSpinner();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
