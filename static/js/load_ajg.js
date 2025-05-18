@@ -41,14 +41,18 @@ function processParagraphs(text) {
 }
 
 function addTooltips(htmlHeaders, tooltips) {
+    // Check if both arrays are defined and their lengths match
     if (htmlHeaders && tooltips && htmlHeaders.length === tooltips.length) {
         $('#dataTable thead tr th').each(function(index) {
-            console.log(`${index}: ${tooltip}`);
-            const tooltip = tooltips[index];
+            const tooltip = tooltips[index]; // Declare tooltip variable
+            console.log(`${index}: ${tooltip}`); // Log the current tooltip
+
             if (tooltip) {
                 $(this).attr('abbr', htmlHeaders[index]).attr('title', tooltip); // Set abbr and title
             }
         });
+    } else {
+        console.error("Headers and tooltips must be defined and of equal length.");
     }
 }
 
