@@ -88,6 +88,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 reader.onerror = (error) => reject(error);
                 reader.readAsArrayBuffer(excelFile);
             });
+            $('#dataTable').empty();
         } else {
             const response = await fetch(defaultExcelFilePath);
             if (!response.ok) {
