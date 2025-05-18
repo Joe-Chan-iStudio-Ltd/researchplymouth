@@ -40,6 +40,22 @@ function processParagraphs(text) {
     return processedParagraphs.join('');
 }
 
+function addTooltips(htmlHeaders, tooltips) {
+    if (htmlHeaders && tooltips && htmlHeaders.length === tooltips.length) {
+        $('#dataTable thead tr th').each(function(index) {
+            console.log(`${index}: ${tooltip}`);
+            const tooltip = tooltips[index];
+            if (tooltip) {
+                $(this).attr('abbr', htmlHeaders[index]).attr('title', tooltip); // Set abbr and title
+            }
+        });
+    }
+}
+
+
+    rowHeader = document.querySelectorAll('#dataTable thead th')    
+}
+
 async function loadMarkdown() {
     try {
         const markdownFilePath = `${basePath}/data.md`;
@@ -108,9 +124,6 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         const htmlHeaders = Array.from(document.querySelectorAll('#dataTable thead th')).map(th => th.textContent.trim());
         const tooltips = Array.from(document.querySelectorAll('#dataTable thead th')).map(th => th.title.trim());
         const headers = htmlHeaders.length > 0 ? htmlHeaders : jsonData[0]; // Use HTML headers if available
-
-        console.log(`htmlHeaders: ${htmlHeaders}`);
-        console.log(`tooltips: ${tooltips}`);
 
         let columnWidths = null;
         let dataStartRow = 1; // Default data starts from row 1 (after header)
@@ -190,16 +203,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 emptyTable: "No data available in table"
             }
         });
-
-        if (htmlHeaders && tooltips && htmlHeaders.length === tooltips.length) {
-            $('#dataTable thead tr th').each(function(index) {
-                const tooltip = tooltips[index];
-                if (tooltip) {
-                    $(this).attr('title', tooltip); // Set abbr and title
-                }
-            });
-        }
-
+        addTooltips(htmlHeaders, tooltips);
         showStatus('statusMessage', excelFilename + (excelFile ? ' is loaded successfully.' : ' is loaded for demonstration purposes.'), false);
 
     } catch (error) {
