@@ -121,7 +121,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 dataStartRow = 2; // Data starts from row 2 (after header and widths)
             }
         }
-        console.log(`headers: ${headers.length}, columnWidths: ${columnWidths.length}, ${columnWidths}`);
+        if (columnWidths) console.log(`headers: ${headers.length}, columnWidths: ${columnWidths.length}, ${columnWidths}`);
 
         // Validation based on whether column widths are present
         if (columnWidths === null && jsonData.length < 2) {
@@ -145,8 +145,9 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             columns: headers.map((header, index) => {
                 let columnDefinition = {
                     title: header,
-                    width: columnWidths && columnWidths[index] !== -1 ? columnWidths[index] + 'vw' : null, // Use null for auto width
-                    visible: columnWidths && columnWidths[index] !== -1 // Hide column if width is -1
+                    width: columnWidths ? columnWidths[index] + 'vw' : null, // Use null for auto width
+                    // width: columnWidths && columnWidths[index] !== -1 ? columnWidths[index] + 'vw' : null,
+                    // visible: columnWidths && columnWidths[index] !== -1 // Hide column if width is -1
                 };
                 columnDefinition.render = function (data, type, row) {
                     if (type === 'display' && data) {
