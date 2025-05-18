@@ -192,10 +192,10 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         });
 
         if (htmlHeaders && tooltips && htmlHeaders.length === tooltips.length) {
-            $('#dataTable thead th').each(function(index) {
+            $('#dataTable thead tr th').each(function(index) {
                 const tooltip = tooltips[index];
                 if (tooltip) {
-                    $(this).attr('abbr', htmlHeaders[index]).attr('title', tooltip); // Set abbr and title
+                    $(this).attr('title', tooltip); // Set abbr and title
                 }
             });
         }
