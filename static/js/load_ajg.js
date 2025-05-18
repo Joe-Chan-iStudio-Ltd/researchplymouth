@@ -104,7 +104,10 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             throw new Error('Excel file must contain at least a header row.');
         }
 
-        const headers = jsonData[0];
+        // Check if headers are defined in HTML
+        const htmlHeaders = Array.from(document.querySelectorAll('#dataTable thead th')).map(th => th.textContent.trim());
+        const headers = htmlHeaders.length > 0 ? htmlHeaders : jsonData[0]; // Use HTML headers if available
+
         let columnWidths = null;
         let dataStartRow = 1; // Default data starts from row 1 (after header)
 
