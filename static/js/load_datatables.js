@@ -125,6 +125,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 dataStartRow = 2; // Data starts from row 2 (after header and widths)
             }
         }
+
         // Validation based on whether column widths are present
         if (columnWidths === null && jsonData.length < 2) {
             throw new Error('Excel file must contain at least a header row and a data row when no column widths are provided.');
@@ -146,7 +147,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             data: jsonData.slice(dataStartRow),
             columns: headers.map((header, index) => {
                 let columnDefinition = {
-                    title: header,
+                    title: (tooltips && tooltips[index]) ? `<abbr title="${tooltips[index]}">${header}</abbr>` : header,
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
                     visible: columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1) // Hide column if width is -1
                 };
@@ -186,16 +187,6 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 emptyTable: "No data available in table"
             }
         });
-
-        if (htmlHeaders && tooltips && htmlHeaders.length === tooltips.length) {
-            $('#dataTable thead th').each(function(index) {
-                const tooltip = tooltips[index];
-                if (tooltip) {
-                    $(this).attr('abbr', htmlHeaders[index]).attr('title', tooltip); // Set abbr and title
-                }
-            });
-        }
-
         showStatus('statusMessage', excelFilename + (excelFile ? ' is loaded successfully.' : ' is loaded for demonstration purposes.'), false);
 
     } catch (error) {
