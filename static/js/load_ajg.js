@@ -147,8 +147,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             data: jsonData.slice(dataStartRow),
             columns: headers.map((header, index) => {
                 let columnDefinition = {
-                    title: (tooltips && tooltips[index] === undefined) ? `${header}<div class="tooltiptext">${tooltips[index]}</div>` : header,
-                    tooltips: true,
+                    title: (tooltips && tooltips[index]) ? `<abbr title="${tooltips[index]}">${header}</abbr>` : header,
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
                     visible: columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1) // Hide column if width is -1
                 };
