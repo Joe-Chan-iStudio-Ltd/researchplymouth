@@ -70,8 +70,9 @@ async function loadMarkdown() {
         // Split citations into an array, sort alphabetically, and join them back
         const citationsArray = citationsContent.split('\n').filter(line => line.trim() !== '');
         citationsArray.sort((a, b) => a.localeCompare(b));
+        const sortedCitationsContent = citationsArray.join('\n');
 
-        document.getElementById('citation').innerHTML = italicize(citationsContent, "et al.");
+        document.getElementById('citation').innerHTML = italicize(sortedCitationsContent, "et al.");
 
     } catch (error) {
         console.error('Error loading Markdown:', error);
