@@ -66,6 +66,11 @@ async function loadMarkdown() {
         // Process Citations
         let citationsContent = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n').trim() : '';
         citationsContent = processParagraphs(citationsContent); 
+
+        // Split citations into an array, sort alphabetically, and join them back
+        const citationsArray = citationsContent.split('\n').filter(line => line.trim() !== '');
+        citationsArray.sort((a, b) => a.localeCompare(b));
+
         document.getElementById('citation').innerHTML = italicize(citationsContent, "et al.");
 
     } catch (error) {
