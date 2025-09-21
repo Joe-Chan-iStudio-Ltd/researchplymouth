@@ -1,4 +1,4 @@
-# Academic Ranking of World Universities 2025
+# Academic Ranking of World Universities (ARWU) Shanghai Ranking 2025
 
 Source: https://www.shanghairanking.com/rankings/arwu/2025
 
