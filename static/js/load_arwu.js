@@ -213,10 +213,62 @@ function showSpinner(isDisplay = false) {
     document.getElementById('dataTable').style.opacity = isDisplay ? '0.5' : '1';
 }
 
+async function loadTooltips() {
+    const headers = document.querySelectorAll('#dataTable th[title]');
+    let tooltip = null;
+
+    headers.forEach(header => {
+        // Create tooltip element on mouseover
+        header.addEventListener('mouseover', function (e) {
+            // Remove existing tooltip if any
+            if (tooltip) tooltip.remove();
+
+            // Create new tooltip
+            tooltip = document.createElement('div');
+            tooltip.className = 'custom-tooltip';
+            tooltip.textContent = header.getAttribute('title');
+            document.body.appendChild(tooltip);
+
+            // Position tooltip near the mouse
+            const rect = header.getBoundingClientRect();
+            tooltip.style.top = (rect.bottom + window.scrollY + 5) + 'px';
+            tooltip.style.left = (rect.left + window.scrollX + (rect.width / 2) - (tooltip.offsetWidth / 2)) + 'px';
+
+            // Show tooltip
+            setTimeout(() => tooltip.classList.add('visible'), 10);
+        });
+
+        // Remove tooltip on mouseout
+        header.addEventListener('mouseout', function () {
+            if (tooltip) {
+                tooltip.remove();
+                tooltip = null;
+            }
+        });
+
+        // Adjust tooltip position on scroll or resize
+        window.addEventListener('scroll', function () {
+            if (tooltip) {
+                const rect = header.getBoundingClientRect();
+                tooltip.style.top = (rect.bottom + window.scrollY + 5) + 'px';
+                tooltip.style.left = (rect.left + window.scrollX + (rect.width / 2) - (tooltip.offsetWidth / 2)) + 'px';
+            }
+        });
+        window.addEventListener('resize', function () {
+            if (tooltip) {
+                const rect = header.getBoundingClientRect();
+                tooltip.style.top = (rect.bottom + window.scrollY + 5) + 'px';
+                tooltip.style.left = (rect.left + window.scrollX + (rect.width / 2) - (tooltip.offsetWidth / 2)) + 'px';
+            }
+        });
+    });
+}
+
 async function init() {
     const defaultExcelFilePath = '/static/xlsx/arwu2025.xlsx';
     await loadMarkdown();
     await loadExcelWithSpinner(null, defaultExcelFilePath);
+    await loadTooltips();
 }
 
 document.addEventListener('DOMContentLoaded', function() {

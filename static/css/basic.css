@@ -239,3 +239,20 @@ footer {
 .qrcode-container a:hover {
     text-decoration: underline;
 }
+
+.custom-tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 1000;
+    max-width: 300px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.custom-tooltip.visible {
+    opacity: 1;
+}
