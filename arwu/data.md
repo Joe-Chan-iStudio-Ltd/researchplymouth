@@ -3,4 +3,3 @@
 
 ## citation
 <em>Source:</em><a href="https://www.shanghairanking.com/rankings/arwu/2025" target="_blank">Shanghai Ranking 2025 | Academic Ranking of World Universities</a>
-
