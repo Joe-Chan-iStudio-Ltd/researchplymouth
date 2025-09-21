@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /istudio/
 Disallow: /static/
-Disallow: /slr/
+Disallow: /slr/tc/
 Disallow: /ems/
 Disallow: /archive/
+Allow: /slr/datatables/
