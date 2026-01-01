@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/svg/RP-Favicon.svg" type="image/svg+xml">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Default title - will be overridden by JS immediately -->
+    <title>Opening PDF...</title>
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "c4399dd2cc0740109ff1533e34ec9a73"}'></script>
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background: #f8f9fa;
+            color: #333;
+        }
+        h2 {
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        #dt_loader.spinner {
+            margin: 20px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        a {
+            color: #0d6efd;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h2>Opening your PDF...</h2>
+    <div id="dt_loader" class="spinner"></div>
+    <p>If the file doesn't open automatically, <a id="manual-link" href="#">click here</a>.</p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const pdfUrl = params.get('file');
+        const pdfName = params.get('text') || 'document';
+
+        if (pdfUrl) {
+            // 1. Set the page/tab title to the actual PDF name
+            document.title = pdfName.trim() + " (PDF)";
+
+            // 2. Update manual fallback link
+            const manualLink = document.getElementById('manual-link');
+            manualLink.href = pdfUrl;
+            manualLink.textContent = `download ${pdfName.trim()}`;
+
+            // 3. Optional: update the heading to show the name
+            document.querySelector('h2').textContent = `Opening "${pdfName.trim()}"...`;
+
+            // 4. Redirect to the actual PDF (replaces the tracking tab)
+            window.location.href = pdfUrl;
+        } else {
+            document.title = "Error";
+            document.body.innerHTML = '<h2 style="margin-top:100px;color:#dc3545;">Error: No PDF URL provided.</h2>';
+        }
+    </script>
+</body>
+</html>
