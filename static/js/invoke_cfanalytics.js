@@ -1,8 +1,7 @@
 /* invoke_cfanalytics.js */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Define your Cloudflare Analytics token (make sure to do this securely)
-    const analyticsToken = "c4399dd2cc0740109ff1533e34ec9a73"; // Example token
+    const analyticsToken = "c4399dd2cc0740109ff1533e34ec9a73"; 
 
     // Select all links with the class 'analytic-link'
     const links = document.querySelectorAll('a.analytic-link');
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 window.cfAnalytics.trackEvent('link_click', {
                     url: this.href,
                     text: this.innerText,
-                    token: analyticsToken // Include the token in the tracking event
+                    token: analyticsToken 
                 });
             }
 
