@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             
             const trackingUrl = `/static/html/pdfviewer.html?file=${encodeURIComponent(this.href)}&text=${encodeURIComponent(this.innerText)}`;
-            console(trackingUrl);
+            console.log(trackingUrl);  
             window.open(trackingUrl, '_blank');
 
         });
