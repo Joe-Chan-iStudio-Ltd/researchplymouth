@@ -7,6 +7,18 @@
     <!-- Default title - will be overridden by JS immediately -->
     <title>Opening PDF...</title>
 
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const filePath = urlParams.get('file');
+
+        if (filePath) {
+            const basePath = new URL(filePath).pathname; 
+            console.log(basePath);
+        } else {
+            const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+            console.log(basePath);
+        }
+    </script>
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
             data-cf-beacon='{"token": "c4399dd2cc0740109ff1533e34ec9a73"}'></script>
