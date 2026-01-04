@@ -6,32 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Default title - will be overridden by JS immediately -->
     <title>Opening PDF...</title>
-
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        let basePath;
-
-        // Retrieve file path from URL parameters
-        if (urlParams.has('file')) {
-            const filePath = urlParams.get('file');
-            basePath = new URL(filePath).pathname; 
-        } else {
-            basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-        }
-
-        // Pass the basePath as an additional property in the data-cf-beacon
-        const cfBeaconData = {
-            token: "c4399dd2cc0740109ff1533e34ec9a73",
-            basePath: basePath
-        };
-        
-        // Set the attribute on the Cloudflare beacon script dynamically
-        const cloudflareScript = document.createElement("script");
-        cloudflareScript.defer = true;
-        cloudflareScript.src = "/static/js/beacon.js";
-        cloudflareScript.setAttribute('data-cf-beacon', JSON.stringify(cfBeaconData));
-    </script>
-
     <style>
         body {
             font-family: system-ui, -apple-system, Arial, sans-serif;
@@ -92,5 +66,6 @@
             document.body.innerHTML = '<h2 style="margin-top:100px;color:#dc3545;">Error: No PDF URL provided.</h2>';
         }
     </script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c4399dd2cc0740109ff1533e34ec9a73"}'></script>
 </body>
 </html>
