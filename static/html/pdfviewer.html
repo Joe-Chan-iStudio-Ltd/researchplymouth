@@ -9,19 +9,54 @@
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const filePath = urlParams.get('file');
+        let basePath;
 
-        if (filePath) {
-            const basePath = new URL(filePath).pathname; 
-            console.log(basePath);
+        // Retrieve file path from URL parameters
+        if (urlParams.has('file')) {
+            const filePath = urlParams.get('file');
+            basePath = new URL(filePath).pathname; 
         } else {
-            const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-            console.log(basePath);
+            basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
         }
+
+        // Pass the basePath as an additional property in the data-cf-beacon
+        const cfBeaconData = {
+            token: "c4399dd2cc0740109ff1533e34ec9a73",
+            basePath: basePath
+        };
+        
+        // Set the attribute on the Cloudflare beacon script dynamically
+        const cloudflareScript = document.createElement("script");
+        cloudflareScript.defer = true;
+        cloudflareScript.src = "https://static.cloudflareinsights.com/beacon.min.js";
+        cloudflareScript.setAttribute('data-cf-beacon', JSON.stringify(cfBeaconData));
+        document.head.appendChild(cloudflareScript);
+
+        // Function to modify window.location.origin simulation
+        function getBaseUrl(e) {
+            let t = "";
+            t = basePath ? basePath : "".concat(window.location.protocol, "://").concat(window.location.host);
+
+            if (e && typeof e === "string") {
+                if (e.startsWith("/")) t += e;
+                else {
+                    try {
+                        const n = new URL(e);
+                        return "".concat(n.protocol, "://").concat(n.host).concat(n.pathname);
+                    } catch (error) {
+                        console.error("Invalid URL:", error);
+                    }
+                }
+            } else {
+                const r = window.location.pathname;
+                if (r && r.length > 0) t += r;
+            }
+            return t;
+        }
+
+        // Example usage of getBaseUrl
+        console.log(getBaseUrl());
     </script>
-    <!-- Cloudflare Web Analytics -->
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-            data-cf-beacon='{"token": "c4399dd2cc0740109ff1533e34ec9a73"}'></script>
 
     <style>
         body {
