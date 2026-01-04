@@ -1,3 +1,4 @@
-for file in *; do 
-    mv "$file" "$(echo "$file" | tr -d '?\"/\\')" 
+for file in *; do
+    mv "$file" "$(echo "$file" | tr -d "?\"'/\\:,")"
 done
+
