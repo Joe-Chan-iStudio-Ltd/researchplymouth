@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('a.pdfviewer-link');
+    console.log(links);  
 
     links.forEach(link => {
         link.addEventListener('click', function(event) {
