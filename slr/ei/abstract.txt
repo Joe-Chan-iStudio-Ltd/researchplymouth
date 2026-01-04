@@ -1,8 +1,128 @@
-Entrepreneurship has become an attractive career option for both the young and the old, but age has not been thoroughly examined as a variable of interest among entrepreneurship scholars. In this review, we present 12 theoretical perspectives regarding the effect of age on entrepreneurs' success and our critiques. We then present results of an exploratory meta-analysis with effect sizes from 102 samples. The results show that age has a weak, positive linear relationship with overall entrepreneurial success, but it does exhibit signs of a U-shaped relationship, with the relationship being negative among younger samples but positive among older samples. The positive effect size becomes more pronounced when more females are included in the sample. The effect size of age does not differ by entrepreneurs' tenure running the firm. In terms of the type of success measures, age has a negative effect on growth but a positive effect on subjective success, firm size, and financial success, and no effect on survival. We compare our results with previous meta-analyses on employees' age to show the uniqueness of entrepreneurs' careers and we offer suggestions for future studies.
-Executive summary: The work population is aging, and entrepreneurship has become an attractive career option for both the young and the old. Age has often been included in empirical studies as a control variable to predict entrepreneurs' success, but with inconsistent empirical findings and inadequate attention to age's theoretical role, it is not clear whether older entrepreneurs are as successful as their younger counterparts.
-The current study has two related components. First, we provided a much-needed review of the alternative theoretical perspectives on the effect of age on entrepreneurial success. These 12 perspectives focused on various age-related mechanisms, namely personal health, rigidity, risk propensity, time's value, discrimination, human capital, social capital, financial capital, emotion, life stages, family obligation, and gender stereotype. We found that explicit theoretical explanations are rare and fragmented for addressing entrepreneurs' age-success relationship. Most of the existing perspectives are simplistic, equivocal, and sometimes contradictory. Guided by the above review, we proposed several research questions about several contingency factors, such as the entrepreneur's life stage, gender, and tenure running the business, which would help us gain a more nuanced understanding of the age-success relationship.
-Second, we empirically examined the research questions in an exploratory meta-analysis based on 102 independent samples. Indeed, we found more nuanced results than are typically apparent. The results show that age has a weak, positive linear relationship with overall entrepreneurial success ( =0.02), but it does exhibit signs of a U-shaped relationship, with the relationship being negative among younger samples but positive among older samples. The positive effect size becomes more pronounced when more females are included in the sample, suggesting female entrepreneurs' chance of success is higher at later life stages. The effect size of age does not differ by entrepreneurs' tenure running the firm, thus ruling out the possibility that the age-success effect is primarily driven by tenure effect or selection bias.
-We performed some robustness checks for the meta-analytic results. We found age's effect is not affected by the study's publication year, but the effect differs across the world. In terms of the type of success measures, we found age has a negative effect on growth, but a positive effect on subjective success, firm size, and financial success, and no effect on firm survival. Older entrepreneurs tend to have larger businesses, so older entrepreneurs are “punished” for having a larger denominator in the calculation of growth, putting them in an unfair position if growth is the sole measure of success.
-We compared our results with previous meta-analyses on employees' age, and one clear distinction is that previous meta-analyses reported an inverted U-shaped relationship between employees' age and overall performance, while our study shows the opposite, U-shaped relationship between entrepreneurs' age and success. This difference is probably due to the fact that entrepreneurial careers involve different resource commitments, job requirements, and success criteria compared to traditional careers, making people at a specific age more likely to succeed in one career but not in the other.
-Our study shows that researchers need to rethink the theoretical role of age, account for potentially simultaneous operation of theoretical mechanisms, and identify new research directions. We call for more studies to address the unique promises and challenges entrepreneurs in each life stage will face, and we provided some suggestions to increase the rigor of future studies. It is imperative to study the intra-individual aging effect through tracking a large cohort of entrepreneurs over decades with repeated measures of their cognitive intelligence, motivations, role identities, and success. Because male entrepreneurs outnumber female entrepreneurs, it is necessary to oversample female entrepreneurs or seek a matched sample, so that any genderrelated differential effects can be demonstrated fully. Because many entrepreneurs work in teams, future studies can compare founding teams of the same age (e.g., college classmates) and teams of different ages, and investigate how members of each type of team can collaborate to maximize their chance of success.
-Age, Entrepreneur, Gender, Diversity, Performance, Career success, Meta-analysis
+Bouncing Back From a Loss Entrepreneurial Orientation Emotions and Failure Narratives.pdf
+Meet me at the backdoor A multiple case study of academic entrepreneurs bypassing their technology transfer offices.pdf
+A Growth Mindset Intervention Enhancing Students Entrepreneurial Self-Efficacy and Career Development.pdf
+A holistic approach to the evolution of an entrepreneurial ecosystem An exploratory study of academic spin-offs.pdf
+A Multilevel Model of Entrepreneurship Education and Entrepreneurial Intention Opportunity Recognition as a Mediator and Entrepreneurial Learning as a Moderator.pdf
+A New Take on the Categorical Imperative Gatekeeping Boundary Maintenance and Evaluation Penalties in Science.pdf
+A Stability Principle for Learning Under Nonstationarity.pdf
+Academic Entrepreneurship Entrepreneurial Advisors and Their Advisees Outcomes.pdf
+Academic entrepreneurship in South East Asia an exploratory study of spin-offs in biotechnology from Hong Kong universities.pdf
+Age and entrepreneurial career success A review and a meta-analysis.pdf
+An Intergeneration Solidarity Perspective on Succession Intentions in Family Firms.pdf
+Anatomy of use-inspired researchers From Pasteurs Quadrant to Pasteurs Cube model.pdf
+Angel funding and entrepreneurs well-being The mediating role of autonomy competence and relatedness.pdf
+Are public subsidies effective for university spinoffs Evidence from SBIR awards in the University of California system.pdf
+Assessing engineering students perspectives of entrepreneurship education within higher education a comparative study in Hong Kong.pdf
+Attention to Exploration The Effect of Academic Entrepreneurship on the Production of Scientific Knowledge.pdf
+Balancing power The role of independent directors on venture boards.pdf
+Beyond scientific excellence International mobility and the entrepreneurial activities of academic scientists.pdf
+Big splash no waves Cognitive mechanisms driving incumbent firms responses to low-price market entry strategies.pdf
+Bridging cognitive scripts in multidisciplinary academic spinoff teams A process perspective on how academics learn to work with non-academic managers.pdf
+Call Me Maybe Does Customer Feedback Seeking Impact Nonsolicited Customers.pdf
+Changing with the times An integrated view of identity legitimacy and new venture life cycles.pdf
+Commercializing university research in transition economies Technology transfer offices or direct industrial funding.pdf
+Constraining entrepreneurial development A knowledge-based view of social networks among academic entrepreneurs.pdf
+Converging Tides Lift All Boats Consensus in Evaluation Criteria Boosts Investments in Firms in Nascent Technology Sectors.pdf
+Corrigendum to Higher Education Policy Why hope for Quality when rewarding Quantity [Research Policy Volume 49 Issue 8(2020) 104083].pdf
+Cultural contingency in the cognitive model of entrepreneurial intention.pdf
+Designing Sparse Graphs for Stochastic Matching with an Application to Middle-Mile Transportation Management.pdf
+Developing sustainable outsourcing strategies for facilities management a study of educational facilities in Hong Kong.pdf
+Different founders different venture outcomes A comparative analysis of academic and non-academic startups.pdf
+Diversity in National Culture and Financial Harvest Exit Strategy in New Technology Ventures.pdf
+Do university entrepreneurship programs promote entrepreneurship.pdf
+Does a Theory-of-Value Add Value Evidence from a Randomized Control Trial with Tanzanian Entrepreneurs.pdf
+Does entrepreneurial self-efficacy really matter for entrepreneurial intention Lesson from covid-19.pdf
+Does institutional change in universities influence high-tech entrepreneurship Evidence from Chinas project 985.pdf
+Does learning from prior collaboration help firms to overcome the two worlds paradox in university-business collaboration.pdf
+Enhancing Social Entrepreneurial Intentions through Entrepreneurial Creativity A Comparative Study Between Taiwan and Hong Kong.pdf
+Enhancing the competitiveness and sustainability of social enterprises in Hong Kong A three-dimensional analysis.pdf
+Entrepreneurial beacons The Yale endowment run-ups and the growth of venture capital.pdf
+Equity Financing for Early-Stage Companies in China.pdf
+Everyday Entrepreneurship—A Call for Entrepreneurship Research to Embrace Entrepreneurial Diversity.pdf
+Explaining heterogeneity in the organization of scientific work.pdf
+Factors Influencing the Entrepreneurial Intentions of Hong Kong and Macao Students in Chinese Mainland Universities in the Context of Guangdong-Hong Kong-Macao Greater Bay Area A Study from the Perspective of Cultivating Innovative Talents.pdf
+Factors that determine the entrepreneurial intention of university students a gender perspective in the context of an emerging economy.pdf
+Feeling capable and valued A prosocial perspective on the link between empathy and social entrepreneurial intentions.pdf
+Female Entrepreneurs Targeting Women Strategic Redirection Under Scientific Decision-Making.pdf
+For what they are not for what they bring The signaling value of gender for financial resource acquisition in academic spin-offs.pdf
+Fostering practice-oriented and use-inspired science in biomedical research.pdf
+Free range startups Market scope academic founders and the role of general knowledge in AI.pdf
+Gender diversity in academic entrepreneurship Social impact motives and the NSF I-corps program.pdf
+Getting schooled Universities and VC-backed immigrant entrepreneurs.pdf
+Higher education policy Why hope for quality when rewarding quantity.pdf
+How do entrepreneurial founding teams allocate task positions.pdf
+How do university-firm interactions affect firm innovation speed The case of Chinese science-intensive SMEs.pdf
+How does university-based entrepreneurship education facilitate the development of entrepreneurial Intention？Integrating passion- and competency-based perspectives.pdf
+How entrepreneurial intentions influence entrepreneurial career choices The moderating influence of social context.pdf
+How entrepreneurial learning impacts ones intention towards entrepreneurship.pdf
+How Should Crowdfunding Research Evolve A Survey of the Entrepreneurship Theory and Practice Editorial Board.pdf
+How the Design of Ranking Systems and Ability Affect Physician Effort.pdf
+Impact of personality traits on start-up preparation of Hong Kong youths.pdf
+Impacts of innovativeness and attitude on entrepreneurial intention among engineering and non-engineering students.pdf
+Improving Students’ Satisfaction with the Quality of Innovation and Entrepreneurship Education in Colleges and Universities in the Guangdong-Hong Kong-Macao Greater Bay Area.pdf
+In Institutions We Trust Trust in Government and the Allocation of Entrepreneurial Intentions.pdf
+Individual and organizational inhibitors to the development of entrepreneurial competencies in universities.pdf
+Innovation effects of academic executives Evidence from China.pdf
+Institutional Barriers to Growth Entrepreneurship Human Capital and Institutional Change.pdf
+Institutional logics and founders identity orientation Why academic entrepreneurs aspire lower venture growth.pdf
+International business research output and rankings of Asia-Pacific universities A 40-year time-series analysis.pdf
+Is microcredit a blessing for the poor A meta-analysis examining development outcomes and contextual considerations.pdf
+Its about time The timing of entrepreneurial experience and the career dynamics of university graduates.pdf
+Knowing thoughts by seeing deeds The role of creative self-concept entrepreneurial mindset and creative behaviour in innovation and entrepreneurship education.pdf
+Knowledge diffusion in nascent industries Asymmetries between startups and established firms in spurring inventions by other firms.pdf
+Knowledge spillover of innovation Entrepreneurial difference.pdf
+Lab Gig or Enterprise How scientist-inventors form nascent startup teams.pdf
+Learning in Temporary Teams The Varying Effects of Partner Exposure by Team Member Role.pdf
+Leveraged Exchange-Traded Funds with Market Closure and Frictions.pdf
+Leveraged Exchange-Traded Funds with Market Closure and Frictions.pdf
+Location choices of graduate entrepreneurs.pdf
+Managing the innovators Organizational and professional commitment among scientists and engineers.pdf
+Mavericks and Diplomats Bridging Commercial and Institutional Entrepreneurship for Society’s Grand Challenges.pdf
+Multidimensional experience and performance of highly skilled administrative staff Evidence from a technology transfer office.pdf
+Navigating managerial and entrepreneurial reforms in research-intensive universities A comparison of early career trajectories in Hong Kong and Canada.pdf
+Opportunities and challenges of graduate entrepreneurship in Chinas Greater Bay Area cases in Hong Kong and Shenzhen.pdf
+Optimizing Personality Traits and Entrepreneurial Creativity to Boost the Precursors of Social Entrepreneurial Intentions Five Studies in Taiwan.pdf
+Personality traits social capital and entrepreneurial creativity comparing green socioentrepreneurial intentions across Taiwan and Hong Kong.pdf
+Problem-based learning approach in accomplishing innovation and entrepreneurship of civil engineering undergraduates.pdf
+Revisiting the Entrepreneurial Commercialization of Academic Science Evidence from “Twin” Discoveries.pdf
+Scientific yield from collaboration with industry The relevance of researchers strategic approaches.pdf
+Second-Order Knowledge Intermediaries and Multi-Country Entrepreneurial Entry into a Nascent Industry.pdf
+Should Entrepreneurially Oriented Firms Have Narcissistic CEOs.pdf
+Signaling in science-based IPOs The combined effect of affiliation with prestigious universities underwriters and venture capitalists.pdf
+Smartphone Trading Technology Investor Behavior and Mutual Fund Performance.pdf
+Social entrepreneurial intentions and its influential factors A comparison of students in Taiwan and Hong Kong.pdf
+Specialists Generalists or Both Founders Multidimensional Breadth of Experience and Entrepreneurial Ventures Fundraising at IPO.pdf
+Spin doctors vs the spawn of capitalism Who founds university and corporate startups.pdf
+Standards for Evaluating Impact in Entrepreneurship Education Research Using a Descriptive Validity Framework to Enhance Methodological Rigor and Transparency.pdf
+Technology ventures engagement of external actors in the search for viable market applications On the relevance of Technology Broadcasting and Systematic Validation.pdf
+The colorblind crowd Founder race and performance in crowdfunding.pdf
+The effects of university rules on spinoff creation The case of academia in Italy.pdf
+The entrepreneurial support and the performance of new venture creation the mediation effect of the acquisition of skills and the learning of novice entrepreneurs.pdf
+The gender gap in PhD entrepreneurship Why balancing employment in academia really matters.pdf
+The Impact of E-Learning Technologies on Entrepreneurial and Sustainability Performance.pdf
+The impact of entrepreneurial education on entrepreneurial intention of engineering students in Hong Kong.pdf
+The impact of family support on young entrepreneurs start-up activities.pdf
+The impact of public funding on science valorisation an analysis of the ERC Proof-of-Concept Programme.pdf
+The importance of pro-social behaviour for the breadth and depth of knowledge transfer activities An analysis of Italian academic scientists.pdf
+The Influence of Hypomania Symptoms on Income in Self-Employment.pdf
+The Influence of Incubator and Accelerator Participation on Nanotechnology Venture Success.pdf
+The interconnections of academic research and universities third mission Evidence from the UK.pdf
+The myth of the flat start-up Reconsidering the organizational structure of start-ups.pdf
+The relationship between interdisciplinarity and distinct modes of university-industry interaction.pdf
+The RICH Entrepreneur Using Conservation of Resources Theory in Contexts of Uncertainty.pdf
+The Role of Justice Perceptions in Formal and Informal University Technology Transfer.pdf
+The Startup Cartography Project Measuring and mapping entrepreneurial ecosystems.pdf
+The technological imprinting of educational experiences on student startups.pdf
+Towards a segmentation of science parks A typology study on science parks in Europe.pdf
+Transdisciplinary Workplace Research Conference 2024.pdf
+Transfer scouts from intermediation to co-constructors of new knowledge and technologies in Germany.pdf
+Troops are Business Schools Military Service and Entrepreneurial Behaviors in China.pdf
+United we stand Organizational groups and spinoff mortality in the context of academic entrepreneurship.pdf
+University Students Entrepreneurial Intentions A Comparative Analysis of Hong Kong and Guangzhou.pdf
+Unpacking entrepreneurial education Learning activities students gender and attitude toward entrepreneurship.pdf
+Unraveling the passion orchestra in academia.pdf
+User-industry spinouts Downstream industry knowledge as a source of new firm entry and survival.pdf
+Virtual Collaboration Technology and International Business Coaching Examining the Impact on Marketing Strategies and Sales.pdf
+Wages in high-tech start-ups - Do academic spin-offs pay a wage premium.pdf
+Weathering a meta-level identity crisis Forging a coherent collective identity for an emerging field.pdf
+When do startups scale Large-scale evidence from job postings.pdf
