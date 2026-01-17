@@ -1,0 +1,8 @@
+(TI=("entrepreneurship" OR "entrepreneurial" OR "startup") OR AB=("entrepreneurship" OR "entrepreneurial" OR "startup")) 
+NOT (TI=("social entrepreneurship" OR "social entrepreneurial" OR "social startup"))
+NOT (AB=("social entrepreneurship" OR "social entrepreneurial" OR "social startup"))
+AND (TI=("university" OR "universities" OR "college" OR "higher education" OR "academia" OR "academic" OR "pedagogy" OR "pedagogical" OR "educational intervention" OR "undergraduate" OR "graduate" OR "postgraduate") OR AB=("university" OR "universities" OR "college" OR "higher education" OR "academia" OR "academic" OR "pedagogy" OR "pedagogical" OR "educational intervention" OR "undergraduate" OR "graduate" OR "postgraduate"))
+AND (TI=("passion" OR "intention" OR "nascent" OR "performance" OR "challenge" OR "systematic review" OR "systematic literature review" OR "evolution" OR "opportunity" OR "opportunities") OR AB=("passion" OR "intention" OR "nascent" OR "performance" OR "challenge" OR "systematic review" OR "systematic literature review" OR "evolution" OR "opportunity" OR "opportunities"))
+AND (TI=("Hong Kong") OR AB=("Hong Kong"))
+AND (PY = (2005 OR 2006 OR 2007 OR 2008 OR 2009 OR 2010 OR 2011 OR 2012 OR 2013 OR 2014 OR 2015 OR 2016 OR 2017 OR 2018 OR 2019 OR 2020 OR 2021 OR 2022 OR 2023 OR 2024 OR 2025 or 2026 or 2027 or 2028 or 2029 or 2030)) 
+AND (DT=("Article"))
