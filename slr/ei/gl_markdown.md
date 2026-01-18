@@ -1,0 +1,259 @@
+Performance Spillover Effects in Entrepreneurial Networks Assessing a Dyadic Theory of Social Capital.pdf
+A holistic approach to the evolution of an entrepreneurial ecosystem An exploratory study of academic spin-offs.pdf
+User-Industry Spinouts Downstream Industry Knowledge as a Source of New Firm Entry and Survival.pdf
+Identifying Merger Opportunities The Case of Air Traffic Control.pdf
+Choosing Between a Student-Run and Professionally Managed Venture Accelerator.pdf
+Does a Theory-of-Value Add Value Evidence from a Randomized Control Trial with Tanzanian Entrepreneurs.pdf
+Immigrant Entrepreneurship The Effect of Early Career Immigration Constraints on New Venture Formation.pdf
+Knowledge sources of entrepreneurship Firm formation by academic, user and employee innovators.pdf
+Rapid institutional shifts and the co-evolution of entrepreneurial firms in transition economies.pdf
+International Entrepreneurship and the Theory of the (Long-Lived) International Firm A Capabilities Perspective.pdf
+The emergence of entrepreneurship as an academic field A personal essay on institutional entrepreneurship.pdf
+On the origins of gender roles Women and the plough.pdf
+Entrepreneurial Opportunities and Poverty Alleviation.pdf
+The Creation Theory of Entrepreneurship and Lean Startup Frameworks Complementary or Contradictory.pdf
+Ability or finances as constraints on entrepreneurship Evidence from survival rates in a natural experiment.pdf
+Virtual Collaboration Technology and International Business Coaching Examining the Impact on Marketing Strategies and Sales.pdf
+Reprint of The Startup Cartography Project Measuring and mapping entrepreneurial ecosystems.pdf
+The Startup Cartography Project Measuring and mapping entrepreneurial ecosystems.pdf
+Role Theory Perspectives Past, Present, and Future Applications of Role Theories in Management Research.pdf
+Measuring enterprise potential in young people.pdf
+Organizational foundings in community context Instruments manufacturers and their interrelationship with other organizations.pdf
+Agency and governance in strategic entrepreneurship.pdf
+International Entrepreneurship and Capability Development-Qualitative Evidence and Future Research Directions.pdf
+Destructive Creation at Work How Financial Distress Spurs Entrepreneurship.pdf
+The Relationship Between Entrepreneurship Education and Entrepreneurial Intentions A Meta-Analytic Review.pdf
+Institutional emergence in an era of globalization The rise of transnational private regulation of labor and environmental conditions.pdf
+Helping Entrepreneurs Help Themselves A Review and Relational Research Agenda on Entrepreneurial Support Organizations.pdf
+Entrepreneurial beacons The Yale endowment, run-ups, and the growth of venture capital.pdf
+The Lean Startup as an Actionable Theory of Entrepreneurship.pdf
+The Sociology of Entrepreneurship Revisited.pdf
+The Varying Effects of Family Relationships in Entrepreneurial Teams.pdf
+Going pro-social Extending the individual-venture nexus to the collective level.pdf
+Distribution channel choice of new entrepreneurial ventures.pdf
+Perceptions of Entrepreneurial Passion and Employees Commitment to Entrepreneurial Ventures.pdf
+Founders, private equity investors, and underpricing in entrepreneurial IPOs.pdf
+Danger zone entrepreneurs The importance of resilience and self-efficacy for entrepreneurial intentions.pdf
+The economic impact of social ties Evidence from german reunification.pdf
+Are entrepreneurs influenced by risk attitude, regulatory focus or both An experiment on entrepreneurs time allocation.pdf
+A Growth Mindset Intervention Enhancing Students Entrepreneurial Self-Efficacy and Career Development.pdf
+Exploring the Heart Entrepreneurial emotion is a hot topic.pdf
+Smartphone Trading Technology, Investor Behavior, and Mutual Fund Performance.pdf
+Homeboy industries An incubator of hope and businesses - A note to instructors.pdf
+Toward a theoretical basis for understanding the dynamics of strategic performance in family firms.pdf
+New trends in technology management education A view from Europe.pdf
+The impact of entrepreneurial capacity, experience and organizational support on academic entrepreneurship.pdf
+Mobilizing for change A study of research units in emerging scientific fields.pdf
+Not in the Job Description The Commercial Activities of Academic Scientists and Engineers.pdf
+Angel Investors and Entrepreneurs Intentions to Exit Their Ventures A Conflict Perspective.pdf
+Regionally asymmetric knowledge capabilities and open innovation Exploring Globalisation 2—A new model of industry organisation.pdf
+Experiential learning within the process of opportunity identification and exploitation.pdf
+How corporate entrepreneurs learn from fledgling innovation initiatives Cognition and the development of a termination script.pdf
+The Measurement of Entrepreneurial Orientation.pdf
+National Rates of Opportunity Entrepreneurship Activity Insights From Institutional Anomie Theory.pdf
+Leveraged Exchange-Traded Funds with Market Closure and Frictions.pdf
+Bribery in the Workplace A Field Experiment on the Threat of Making Group Behavior Visible.pdf
+Understanding Gendered Variations in Business Growth Intentions Across the Life Course.pdf
+Optimal structure, market dynamism, and the strategy of simple rules.pdf
+Which Entrepreneurs Bribe and What Do They Get From It Exploratory Evidence From Vietnam.pdf
+Entrepreneurial policy The case of regional specialization vs. spontaneous industrial diversity.pdf
+Entrepreneurial orientation Assessing the constructs validity and addressing some of its implications for research in the areas of family business and organizational learning.pdf
+The role of gender in opportunity identification.pdf
+Exit strategies in family firms How socioemotional wealth drives the threshold of performance.pdf
+Beyond the single-person, single-insight attribution in understanding entrepreneurial opportunities.pdf
+Grappling With the Unbearable Elusiveness of Entrepreneurial Opportunities.pdf
+The intellectual influence of entrepreneurship journals A network analysis.pdf
+Transnational entrepreneurship An emergent field of study.pdf
+The Effects of Perceived Control on Venture Capitalist Investment Decisions A Configurational Perspective.pdf
+The nature of entrepreneurial Opportunities Understanding the process using the 4I organizational learning framework.pdf
+The impact of environment and entrepreneurial perceptions on venture-creation efforts Bridging the discovery and creation views of entrepreneurship.pdf
+The impact of family support on young entrepreneurs start-up activities.pdf
+Entrepreneurship education Correspondence between practices of nascent entrepreneurs and textbook prescriptions for success.pdf
+In Institutions We Trust Trust in Government and the Allocation of Entrepreneurial Intentions.pdf
+Does Institutional Change in Universities Influence High-Tech Entrepreneurship Evidence from Chinas Project 985.pdf
+Do university entrepreneurship programs promote entrepreneurship.pdf
+Common Venture Capital Investors and Startup Growth.pdf
+Diversity in National Culture and Financial Harvest Exit Strategy in New Technology Ventures.pdf
+Should Entrepreneurially Oriented Firms Have Narcissistic CEOs.pdf
+Knowledge spillover and entrepreneurship Evidence from BITNET.pdf
+Explaining the University-run enterprises in China A theoretical framework for university–industry relationship in developing countries and its application to China.pdf
+Entrepreneurship at the Periphery Exploring Framework Conditions in Core and Peripheral Locations.pdf
+Designing Sparse Graphs for Stochastic Matching with an Application to Middle-Mile Transportation Management.pdf
+The Determinants of Corporate Entrepreneurial Intention Within Small and Newly Established Firms.pdf
+Complements or substitutes The role of universities and local context in supporting the creation of academic spin-offs.pdf
+Emotions and Entrepreneurial Opportunity Evaluation.pdf
+Female Entrepreneurs Targeting Women Strategic Redirection Under Scientific Decision-Making.pdf
+Entrepreneurship-Hop.pdf
+Are you talking to me The nature of community in entrepreneurship scholarship.pdf
+The epistemology of entrepreneurial orientation Conceptual formation, modeling, and operationalization.pdf
+The Business Model in Practice and its Implications for Entrepreneurship Research.pdf
+Frontiers Breaking the Glass Ceiling Empowering Female Entrepreneurs Through Female Mentors.pdf
+An Intergeneration Solidarity Perspective on Succession Intentions in Family Firms.pdf
+Economic freedom and service industry growth in the United States.pdf
+United we stand Organizational groups and spinoff mortality in the context of academic entrepreneurship.pdf
+Does Career Risk Deter Potential Entrepreneurs.pdf
+On the Emergence of Collective Psychological Ownership in New Creative Teams.pdf
+Navigating the validity tradeoffs of entrepreneurship research experiments A systematic review and best-practice suggestions.pdf
+Franchise Partnership and International Expansion A Conceptual Framework and Research Propositions.pdf
+Economic impact of entrepreneurial universities activities An exploratory study of the United Kingdom.pdf
+Industry funding and university professors research performance.pdf
+Individual and organizational inhibitors to the development of entrepreneurial competencies in universities.pdf
+Skill-Biased Technical Change, Again Online Gig Platforms and Local Employment.pdf
+Differences Between Men and Women in Opportunity Evaluation as a Function of Gender Stereotypes and Stereotype Activation.pdf
+The role of gender stereotypes in perceptions of entrepreneurs and intentions to become an entrepreneur.pdf
+Meet me at the backdoor A multiple case study of academic entrepreneurs bypassing their technology transfer offices.pdf
+Entrepreneurial Behavior of Academic Scientists Network and Cognitive Determinants of Commitment to Grant Submissions and Award Outcomes.pdf
+Marshaling resources to form small new ventures Toward a more holistic understanding of entrepreneurial support.pdf
+When Contingency Is a Resource Educating Entrepreneurs in the Balkans, the Bronx, and Beyond.pdf
+How Entrepreneurship Evolves The Founders of New Magazines in America, 1741–1860.pdf
+Constraining entrepreneurial development A knowledge-based view of social networks among academic entrepreneurs.pdf
+The role of affect in the creation and intentional pursuit of entrepreneurial ideas.pdf
+Building the Chicago School.pdf
+From pabst to Pepsi The deinstitutionalization of social practices and the creation of entrepreneurial opportunities.pdf
+Fragmented networks and entrepreneurship in late imperial Russia.pdf
+Evolutionary processes and paths of relationally embedded network ties in emerging entrepreneurial firms.pdf
+Deciding to persist Adversity, values, and entrepreneurs decision policies.pdf
+Experienced entrepreneurial founders, organizational capital, and venture capital funding.pdf
+Remote Work and Job Applicant Diversity Evidence from Technology Startups.pdf
+How the Design of Ranking Systems and Ability Affect Physician Effort.pdf
+Unraveling the passion orchestra in academia.pdf
+The importance of pro-social behaviour for the breadth and depth of knowledge transfer activities An analysis of Italian academic scientists.pdf
+Conceptualizing corporate entrepreneurship strategy.pdf
+Innovation effects of academic executives Evidence from China.pdf
+Second-Order Knowledge Intermediaries and Multi-Country Entrepreneurial Entry into a Nascent Industry.pdf
+How do entrepreneurial founding teams allocate task positions.pdf
+Social Influence and Entrepreneurship The Effect of University Peers on Entrepreneurial Entry.pdf
+Price-Fixing Cartels and Firm Innovation.pdf
+Digital Bricolage and Its Limits How Microenterprises Undertake Digitalization in Resource-Constrained Environments.pdf
+Call Me Maybe Does Customer Feedback Seeking Impact Nonsolicited Customers.pdf
+Is Franchising Entrepreneurship Yes, No, and Maybe So.pdf
+Informal family business in Africa.pdf
+Aging and entrepreneurs emotional exhaustion The role of entrepreneurial strategy, psychological capital, and felt age gap.pdf
+Intuition versus analysis Testing differential models of cognitive style on entrepreneurial self-efficacy and the new venture creation process.pdf
+Learning in Temporary Teams The Varying Effects of Partner Exposure by Team Member Role.pdf
+The Relationship Between Knowledge Transfer, Top Management Team Composition, and Performance The Case of Science-Based Entrepreneurial Firms.pdf
+Computable entrepreneurship.pdf
+The influence of sustainability orientation on entrepreneurial intentions — Investigating the role of business experience.pdf
+Disruptions, Redundancy Strategies, and Performance of Small Firms Evidence from Uganda.pdf
+The RICH Entrepreneur Using Conservation of Resources Theory in Contexts of Uncertainty.pdf
+Location choices of graduate entrepreneurs.pdf
+Measuring the performance of Oxford University, Oxford Brookes University and the government laboratories spin-off companies.pdf
+Small-Business group formation as an entrepreneurial development model.pdf
+When do startups scale Large-scale evidence from job postings.pdf
+A national systems view of university entrepreneurial ism Inferences from comparison of the German and US experience.pdf
+Entrepreneurs decisions on timing of entry Learning from participation and from the experiences of others.pdf
+New Venture Teams and the Quality of Business Opportunities Identified Faultlines Between Subgroups of Founders and Investors.pdf
+Development and cross-cultural application of a specific instrument to measure entrepreneurial intentions.pdf
+Overoptimism and the Performance of Entrepreneurial Firms.pdf
+The role of organizational learning in the opportunity-recognition process.pdf
+Human Capital and Search-Based Discovery A Study of High-Tech Entrepreneurship.pdf
+Revisiting the Entrepreneurial Commercialization of Academic Science Evidence from Twin Discoveries.pdf
+Dynamics of social capital and their performance implications Lessons from biotechnology start-ups.pdf
+On the Theory of Entrepreneurial Incentives and Alertness.pdf
+High-Potential Concepts, Phenomena, and Theories for the Advancement of International Entrepreneurship Research.pdf
+Entrepreneurial self-efficacy Refining the measure.pdf
+Economic freedom and the motivation to engage in entrepreneurial action.pdf
+How entrepreneurial intentions influence entrepreneurial career choices The moderating influence of social context.pdf
+Its about time The timing of entrepreneurial experience and the career dynamics of university graduates.pdf
+Agency, strategic entrepreneurship, and the performance of private equity-backed buyouts.pdf
+The value of an educated population for an individuals entrepreneurship success.pdf
+Governance, social identity, and entrepreneurial orientation in closely held public companies.pdf
+Value creation in university-firm research collaborations A matching approach.pdf
+The central question in entrepreneurial cognition research 2007.pdf
+Beyond simple utility Incentive design and trade-offs for corporate employee-entrepreneurs.pdf
+The impact of strategic entrepreneurship inside the organization Examining job stress and employee retention.pdf
+Entrepreneurial orientation and growth of SMEs A causal model.pdf
+Framing the entrepreneurial experience.pdf
+From human capital to social capital A longitudinal study of technology-based academic entrepreneurs.pdf
+Parental Entrepreneurial Role Model Influence on Male Offspring Is It Always Positive and When Does It Occur.pdf
+A 2×2 Conceptual Foundation for Entrepreneurial Discovery Theory.pdf
+The gender gap in PhD entrepreneurship Why balancing employment in academia really matters.pdf
+Do International Networks and Foreign Market Knowledge Facilitate SME Internationalization Evidence From the Czech Republic.pdf
+ERC science and invention Does ERC break free from the EU Paradox.pdf
+Entrepreneurship in innovation ecosystems Entrepreneurs self-regulatory processes and their implications for new venture success.pdf
+How new market categories emerge Temporal dynamics of legitimacy, identity, and entrepreneurship in satellite radio, 1990-2005.pdf
+Putting university research in context Assessing alternative measures of production and diffusion at Stanford.pdf
+From the ivory tower to the startup garage Organizational context and commercialization processes.pdf
+How to Share A Really Good Secret Managing SharingSecrecy Tensions Around Scientific Knowledge Disclosure.pdf
+Exploring the evolution of supporter networks in the creation of new organizations.pdf
+Towards a segmentation of science parks A typology study on science parks in Europe.pdf
+Transfer scouts from intermediation to co-constructors of new knowledge and technologies in Germany.pdf
+Dominant logic and entrepreneurial firms performance in a transition economy.pdf
+Entrepreneurial orientation, technology transfer and spinoff performance of U.S. universities.pdf
+Unpacking entrepreneurial education Learning activities, students gender, and attitude toward entrepreneurship.pdf
+Recognizing opportunities for sustainable development.pdf
+Entrepreneurial orientation and the performance of religious congregations as predicted by rational choice theory.pdf
+Bankruptcy laws and entrepreneur- friendliness.pdf
+Academic engagement and commercialisation A review of the literature on university–industry relations.pdf
+Knowledge diffusion in nascent industries Asymmetries between startups and established firms in spurring inventions by other firms.pdf
+The process of entrepreneurial learning A conceptual framework.pdf
+Policy orientation effects on performance with licensing to start-ups and small companies.pdf
+What Is an Opportunity From Theoretical Mystification to Everyday Understanding.pdf
+The influence of university departments on the evolution of entrepreneurial competencies in spin-off ventures.pdf
+A Qualitative Approach to Evidence-Based Entrepreneurship Theoretical Considerations and an Example Involving Business Clusters.pdf
+Entrepreneurial orientation and business performance An assessment of past research and suggestions for the future.pdf
+The social and collaborative nature of entrepreneurship scholarship A co-citation and perceptual analysis.pdf
+Can Technology Startups Hire Talented Early Employees Ability, Preferences, and Employee First Job Choice.pdf
+Different founders, different venture outcomes A comparative analysis of academic and non-academic startups.pdf
+On Cultural and Macroeconomic Contingencies of the Entrepreneurial Orientation-Performance Relationship.pdf
+An Effectual Approach to International Entrepreneurship Overlaps, Challenges, and Provocative Possibilities.pdf
+Exploring the role of trust in the deal-making process for early-stage technology ventures.pdf
+Scholarly communities in entrepreneurship research A co-citation analysis.pdf
+Advancing strategic entrepreneurship research The role of complexity science in shifting the paradigm.pdf
+New Venture and Family Business Teams Understanding Team Formation, Composition, Behaviors, and Performance.pdf
+Determinants of Entrepreneurial Intent A Meta-Analytic Test and Integration of Competing Models.pdf
+Angel funding and entrepreneurs well-being The mediating role of autonomy, competence, and relatedness.pdf
+Transnational entrepreneurship Determinants of firm type and owner attributions of success.pdf
+Converging Tides Lift All Boats Consensus in Evaluation Criteria Boosts Investments in Firms in Nascent Technology Sectors.pdf
+Family business, identity conflict, and an expedited entrepreneurial process A process of resolving identity conflict.pdf
+The Lean Startup Framework Closing the Academic-Practitioner Divide.pdf
+The New Field of Sustainable Entrepreneurship Studying Entrepreneurial Action Linking What Is to Be Sustained With What Is to Be Developed.pdf
+Entrepreneurial Perceptions and Intentions The Role of Gender and Culture.pdf
+Assessing the relationship between human capital and firm performance Evidence from technology-based new ventures.pdf
+The Knowledge Spillover Theory of Entrepreneurship in Alliances.pdf
+Tilting at windmills The environmental movement and the emergence of the U.S. wind energy sector.pdf
+Cultural contingency in the cognitive model of entrepreneurial intention.pdf
+Bureaucracy and entrepreneurship Workplace effects on entrepreneurial entry.pdf
+Specialists, Generalists, or Both Founders Multidimensional Breadth of Experience and Entrepreneurial Ventures Fundraising at IPO.pdf
+Performance configurations over time Implications for growth- and profit-oriented strategies.pdf
+Learning From Levi-Strauss Legacy Art, Craft, Engineering, Bricolage, and Brokerage in Entrepreneurship.pdf
+Entrepreneurship as a solution to extreme poverty A review and future research directions.pdf
+Exploring an Inverted U-Shape Relationship between Entrepreneurial Orientation and Performance in Chinese Ventures.pdf
+Note to instructors Building a better rat trap.pdf
+Building a better rat trap Technological innovation, human capital, and the Irula.pdf
+An integrated approach to educating professionals for careers in innovation.pdf
+Anatomy of use-inspired researchers From Pasteurs Quadrant to Pasteurs Cube model.pdf
+Commercializing Science Is There a University Brain Drain from Academic Entrepreneurship.pdf
+Easy Now, Desirable Later The Moderating Role of Temporal Distance in Opportunity Evaluation and Exploitation.pdf
+Institutional determinants of macro-level entrepreneurship.pdf
+Creating the Future Together Toward a Framework for Research Synthesis in Entrepreneurship.pdf
+Path-dependent evolution versus intentional management of investment ties in science-based entrepreneurial firms.pdf
+Structural folds Generative disruption in overlapping groups.pdf
+Green to Gone Regional Institutional Logics and Firm Survival in Moral Markets.pdf
+Mavericks and Diplomats Bridging Commercial and Institutional Entrepreneurship for Societys Grand Challenges.pdf
+The Role of Justice Perceptions in Formal and Informal University Technology Transfer.pdf
+The organizational pervasiveness of entrepreneurial orientation.pdf
+The impact of network capabilities and entrepreneurial orientation on university spin-off performance.pdf
+University departments and self-employment intentions of business students A cross-level analysis.pdf
+Entrepreneurial orientation, learning orientation, and firm performance.pdf
+The entrepreneurship process in base of the pyramid markets The case of multinational enterprisenongovernment organization alliances.pdf
+Forage for thought Mobilizing codes in the movement for grass-fed meat and dairy products.pdf
+Emotions and Opportunities The Interplay of Opportunity Evaluation, Fear, Joy, and Anger as Antecedent of Entrepreneurial Exploitation.pdf
+Contextualizing Entrepreneurship—Conceptual Challenges and Ways Forward.pdf
+The effectiveness of university knowledge spillovers Performance differences between university spinoffs and corporate spinoffs.pdf
+Collective cognition When entrepreneurial teams, not individuals, make decisions.pdf
+Contrasting entrepreneurial economic development in emerging latin american economies Applications and extensions of resource-based theory.pdf
+The influence of the venture capitalists governance activities on the entrepreneurial firms control systems and performance.pdf
+Where to from here EO-as-experimentation, failure, and distribution of outcomes.pdf
+Gender, entrepreneurial self-efficacy, and entrepreneurial career intentions Implications for entrepreneurship education.pdf
+Bouncing Back From a Loss Entrepreneurial Orientation, Emotions, and Failure Narratives.pdf
+Editorial Advancing the field of entrepreneurship The primacy of unequivocal A level entrepreneurship journals.pdf
+The Creation and Configuration of Infrastructure for Entrepreneurship in Emerging Domains of Activity.pdf
+Internal Resources, External Network, and Competitiveness during the Growth Stage A Study of Taiwanese High-Tech Ventures.pdf
+Corporate entrepreneurship as resource capital configuration in emerging market firms.pdf
+Building an innovation hub A case study of the transformation of university roles in regional technological and economic development.pdf
+Regional crowdfunding and high tech entrepreneurship.pdf
+Lab, Gig or Enterprise How scientist-inventors form nascent startup teams.pdf
+Troops are Business Schools Military Service and Entrepreneurial Behaviors in China.pdf
+Age and entrepreneurial career success A review and a meta-analysis.pdf
+The mediating role of self-efficacy in the development of entrepreneurial intentions.pdf

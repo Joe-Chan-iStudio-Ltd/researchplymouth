@@ -1,0 +1,31 @@
+The dyou story gearing the startup during the pandemic.pdf
+University Students Entrepreneurial Intentions A Comparative Analysis of Hong Kong and Guangzhou.pdf
+Problem-based learning approach in accomplishing innovation and entrepreneurship of civil engineering undergraduates.pdf
+Leveraged Exchange-Traded Funds with Market Closure and Frictions.pdf
+Understanding teacher entrepreneurial behavior in schools Conceptualization and empirical investigation.pdf
+How does university-based entrepreneurship education facilitate the development of entrepreneurial Intention？Integrating passion- and competency-based perspectives.pdf
+A Multilevel Model of Entrepreneurship Education and Entrepreneurial Intention Opportunity Recognition as a Mediator and Entrepreneurial Learning as a Moderator.pdf
+Knowing thoughts by seeing deeds The role of creative self-concept, entrepreneurial mindset, and creative behaviour in innovation and entrepreneurship education.pdf
+Equity Financing for Early-Stage Companies in China (CARE Conference Hong Kong Polytechnic University, June 9, 2014).pdf
+Creativity A key link to entrepreneurial behavior.pdf
+Impacts of innovativeness and attitude on entrepreneurial intention among engineering and non-engineering students.pdf
+Determinants of students entrepreneurial intention - a comparative study in Poland and Hong Kong.pdf
+Personality traits, social capital, and entrepreneurial creativity comparing green socioentrepreneurial intentions across Taiwan and Hong Kong.pdf
+Factors Influencing the Entrepreneurial Intentions of Hong Kong and Macao Students in Chinese Mainland Universities in the Context of Guangdong-Hong Kong-Macao Greater Bay Area A Study from the Perspective of Cultivating Innovative Talents.pdf
+Opportunities and challenges of graduate entrepreneurship in Chinas Greater Bay Area cases in Hong Kong and Shenzhen.pdf
+The Impact of E-Learning Technologies on Entrepreneurial and Sustainability Performance.pdf
+Young peoples perceptions of the challenges and opportunities during the Mainland China–Hong Kong convergence.pdf
+Towards corporatized collaborative governance the multiple networks model and entrepreneurial universities in Hong Kong.pdf
+Mapping the landscape a compreheansive bibliometric analysis of literature on entrepreneurship in tourism (2013–2023).pdf
+What makes better career opportunities for young graduates Examining acquired employability skills in higher education institutions.pdf
+Navigating managerial and entrepreneurial reforms in research-intensive universities A comparison of early career trajectories in Hong Kong and Canada.pdf
+Bankruptcy Laws and Entrepreneur- Friendliness.pdf
+Cultural contingency in the cognitive model of entrepreneurial intention.pdf
+The impact of entrepreneurial education on entrepreneurial intention of engineering students in Hong Kong.pdf
+Academic entrepreneurship in South East Asia An exploratory study of spin-offs in biotechnology from Hong Kong universities.pdf
+University-based social innovation and entrepreneurship education in Hong Kong a curriculum analysis.pdf
+Navigating complexity academics agency in establishing social innovation and entrepreneurship education at universities.pdf
+Satisfying higher education students psychological needs through case-based instruction for fostering creativity and entrepreneurship.pdf
+Assessing engineering students perspectives of entrepreneurship education within higher education a comparative study in Hong Kong.pdf
+A mindset of entrepreneurship for sustainability.pdf
+How entrepreneurial learning impacts ones intention towards entrepreneurship.pdf
