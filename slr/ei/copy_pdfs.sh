@@ -12,7 +12,7 @@ source_path="$2"
 destination_path="$3"
 
 # Initialize an output file name for validation
-output_file="${input_file%.*}_markdown.md"
+output_file="${input_file%.*}_pdf.txt"
 
 # Initialize the output file
 > "$output_file"  # Clear or create the output file
