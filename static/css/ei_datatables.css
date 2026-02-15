@@ -1,0 +1,15 @@
+/* tc_datatables.css */
+
+@media (max-width: 1800px) {
+    /* Hide columns E, F, J and beyond */
+
+    td:nth-child(4),
+    th:nth-child(4),
+    td:nth-child(5),
+    th:nth-child(5),
+    td:nth-child(n+9),
+    th:nth-child(n+9) {
+      display: none;
+    }
+    
+}
