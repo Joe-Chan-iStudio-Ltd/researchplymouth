@@ -1,0 +1,417 @@
+[slides]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctoral Mini-Viva Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 1. CORE CONFIGURATION */
+        * { box-sizing: border-box; }
+        body {
+            background-color: #0f172a;
+            display: grid;
+            gap: 40px;
+            grid-template-columns: 1fr;
+            margin: 0;
+            padding: 40px 0;
+            place-items: center;
+        }
+
+        .slide-container {
+            align-items: center;
+            background-color: #f3f0df; /* Academic Cream */
+            border-radius: 0;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+            height: 720px;
+            justify-content: flex-start;
+            overflow: hidden;
+            padding: 60px;
+            position: relative;
+            width: 1280px;
+        }
+
+        /* 2. THEME & DECORATION */
+        .slide-container::before {
+            background: linear-gradient(135deg, #005088 0%, #002d4d 100%);
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 8px; /* Vertical accent bar */
+            z-index: 2;
+        }
+
+        /* Abstract Shape Decoration */
+        .bg-accent {
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 80, 136, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        /* 3. TYPOGRAPHY */
+        .slide-container h1, .slide-container h2, .slide-container h3 {
+            color: #005088;
+            font-family: 'Merriweather', serif;
+            margin: 0;
+        }
+
+        .slide-container .slide-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: left;
+            width: 100%;
+            border-bottom: 2px solid #005088;
+            padding-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .slide-container p, .slide-container li, .slide-container td, .slide-container th {
+            color: #1e293b;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .slide-container .subtitle {
+            color: #475569;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        /* 4. LAYOUTS */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: center;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .title-layout {
+            text-align: center;
+            align-items: center;
+            height: 100%;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            background-color: #005088;
+            color: #f3f0df;
+            padding: 80px;
+            width: 100%;
+        }
+
+        .title-layout h1 { color: #f3f0df; font-size: 64px; margin-bottom: 20px; }
+        .title-layout .subtitle { color: #cdd6e2; font-size: 28px; }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+        }
+
+        .tiled-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .tile {
+            background-color: #fff;
+            border: 1px solid #cdd6e2;
+            padding: 25px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .tile h3 { font-size: 24px; color: #005088; }
+        .tile i { font-size: 32px; color: #005088; }
+
+        .image-wrapper {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            height: 400px;
+        }
+        .image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 15px; border: 1px solid #e2e8f0; text-align: left; font-size: 16px; }
+        th { background-color: #005088; color: #fff; font-family: 'Merriweather', serif; }
+        tr:nth-child(even) { background-color: #f8fafc; }
+
+        /* Bullet Points */
+        .bullet-list { list-style: none; padding: 0; }
+        .bullet-list li { position: relative; padding-left: 35px; margin-bottom: 15px; }
+        .bullet-list i { position: absolute; left: 0; top: 4px; color: #005088; }
+
+        /* Charts - Bar Chart */
+        .chart-container { display: flex; flex-direction: column; gap: 15px; width: 100%; }
+        .bar { display: flex; align-items: center; gap: 20px; }
+        .bar .label { flex: 0 0 200px; font-weight: 700; text-align: right; }
+        .bar .bar-inner { background: #e2e8f0; flex-grow: 1; height: 35px; border-radius: 4px; overflow: hidden; }
+        .bar .bar-fill { height: 100%; background: #005088; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-weight: 700; }
+
+        /* Section Title Layout */
+        .section-title-layout { text-align: center; background-color: #005088; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .section-title-layout h2 { color: #f3f0df; font-size: 80px; }
+        .section-title-layout hr { width: 100px; border: 2px solid #f3f0df; margin: 20px 0; }
+
+        /* Q&A Layout */
+        .qa-layout { text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+        .qa-layout h2 { font-size: 72px; margin-bottom: 10px; }
+        .qa-layout p { font-size: 24px; color: #475569; }
+    </style>
+</head>
+<body>
+
+<div class="slide-container" id="slide1">
+    <div class="title-layout">
+        <h1>From Intention to Creation</h1>
+        <p class="subtitle">Entrepreneurial Passion and Ecosystem Support in Hong Kong</p>
+        <p style="margin-top: 50px; font-weight: 500;">Mini-Viva Presentation | Doctoral Research in Business Administration</p>
+        <div style="margin-top: 20px; font-size: 16px;">Presented by [Your Name] | May 2026</div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">Executive Summary</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <ul class="bullet-list">
+                    <li><i class="fa-solid fa-crosshairs"></i> <strong>Problem:</strong> Investigates the "intent–action gap" in student venture creation within the HK-GBA innovation corridor.</li>
+                    <li><i class="fa-solid fa-brain"></i> <strong>Framework:</strong> Extends the Theory of Planned Behaviour (TPB) by integrating <strong>Entrepreneurial Passion (EP)</strong> as an affective engine.</li>
+                    <li><i class="fa-solid fa-vials"></i> <strong>Methodology:</strong> Explanatory sequential mixed-methods design (PLS-SEM + Thematic Analysis).</li>
+                    <li><i class="fa-solid fa-chart-line"></i> <strong>Contribution:</strong> Bridges the gap between macro-ecosystem capitalisation and micro-level cognitive actions.</li>
+                </ul>
+            </div>
+            <div class="image-wrapper">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/10005639229034111239" alt="Network visualization of intent and action">
+            </div>
+        </div>
+    </div>
+    <div class="bg-accent"></div>
+</div>
+
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">1. Introduction: The HK-GBA Context</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div class="image-wrapper">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/8765313538435284350" alt="HK-GBA Innovation Hub Map">
+            </div>
+            <div>
+                <h3 style="font-size: 28px; margin-bottom: 20px;">The Paradox of Success</h3>
+                <ul class="bullet-list">
+                    <li><strong>Macro Growth:</strong> HK ranked 35th globally; 26.6% annual surge in ecosystem score (StartupBlink, 2026).</li>
+                    <li><strong>The Gap:</strong> Massive capital infusions fail to naturally activate organic student venture volume.</li>
+                    <li><strong>Opportunity Costs:</strong> Lucrative corporate wages inflate <strong>reservation wages</strong>, deterring youth from high-uncertainty paths.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">1.2 Objectives & Research Questions</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Objective</h3>
+                <p>Deconstruct the socio-cognitive mechanisms translating career intentions into active creation.</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-calculator"></i>
+                <h3>Quantitative</h3>
+                <p>RQ1-3: How do traits and Perceived Ecosystem Support (PES) moderate the EP-Intention path?</p>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-comments"></i>
+                <h3>Qualitative</h3>
+                <p>RQ4: What lived experiences and barriers characterise the transition to active creation?</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide5">
+    <h2 class="slide-title">2. Literature Review: SLR Findings</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <h3 style="font-size: 24px; color:#475569;">Empirical Vacuum Identified</h3>
+                <p>SLR of $n=285$ items (WoS, Scopus, EBSCO) reveals:</p>
+                <ul class="bullet-list" style="margin-top: 15px;">
+                    <li><strong>Cognitive Bias:</strong> Regional studies ignore "hot" affective drivers (EP).</li>
+                    <li><strong>Granularity Gap:</strong> Lack of macro-institutional frameworks (KST, INS) in local student contexts.</li>
+                    <li><strong>Static Focus:</strong> Reliance on cross-sectional intent tracking without action-oriented outcomes.</li>
+                </ul>
+            </div>
+            <div class="image-wrapper">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/6874034986981616192" alt="University student incubator setting">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide6">
+    <h2 class="slide-title">2.2 The Passion Ecosystem Model (PEM)</h2>
+    <div class="content-area">
+        <div style="background: white; padding: 40px; border-radius: 12px; border: 2px solid #005088;">
+            <h3 style="text-align: center; margin-bottom: 30px;">Conceptual Framework Integration</h3>
+            <div style="display: flex; justify-content: space-around; align-items: center; text-align: center;">
+                <div style="width: 25%; padding: 20px; background: #e0f2fe; border-radius: 50%;"><strong>Individual Traits</strong><br>(INO, ALT)</div>
+                <div style="font-size: 40px;">&rarr;</div>
+                <div style="width: 25%; padding: 20px; background: #005088; color: white; border-radius: 12px;"><strong>Affective Engine</strong><br>(EP for Inventing, Founding)</div>
+                <div style="font-size: 40px;">&rarr;</div>
+                <div style="width: 25%; padding: 20px; background: #e0f2fe; border-radius: 50%;"><strong>Entrepreneurial Intention</strong><br>(IVC Intent)</div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-style: italic;">Moderated by: <strong>Perceived Ecosystem Support (PES)</strong> & <strong>GBA Infrastructure</strong></p>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide7">
+    <h2 class="slide-title">3. Methodology: Research Design</h2>
+    <div class="content-area">
+        <div class="two-column" style="align-items: center;">
+            <div class="bullet-list">
+                <li style="font-size: 22px;"><i class="fa-solid fa-1"></i> <strong>Phase 1: Quantitative Baseline</strong><br>PLS-SEM ($n \ge 135$) to validate structural paths in the PEM.</li>
+                <li style="font-size: 22px;"><i class="fa-solid fa-2"></i> <strong>Phase 2: Qualitative Nuance</strong><br>Thematic analysis of 10-20 semi-structured interviews with student innovators.</li>
+            </div>
+            <div style="background-color: white; padding: 20px; border: 1px dashed #005088;">
+                <p><strong>Philosophical Stance:</strong> Post-positivist paradigm blending episteme (statistical laws) and phronesis (practical wisdom).</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide8">
+    <h2 class="slide-title">3.2 Sampling & Insider Access</h2>
+    <div class="content-area">
+        <div class="tiled-content">
+            <div class="tile">
+                <h3>Quant Power</h3>
+                <p>Minimum $n=92$ (G*Power), target $n=135$ via professional JOS digital landing page.</p>
+            </div>
+            <div class="tile">
+                <h3>Insider Access</h3>
+                <p>Brokered via **HKMU-DAAO** (Development & Alumni Affairs Office) incubation channels.</p>
+            </div>
+            <div class="tile">
+                <h3>Criteria</h3>
+                <p>Nascent creators within university incubators or recent graduates (24 mos).</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide9">
+    <h2 class="slide-title">4. Anticipated Contributions</h2>
+    <div class="content-area">
+        <div class="two-column">
+            <div>
+                <ul class="bullet-list">
+                    <li><strong>Theoretical:</strong> Integrated affective–behavioural framework resolving the "intent-action gap."</li>
+                    <li><strong>Contextual:</strong> HK-specific benchmark against mature Western templates (Stanford).</li>
+                    <li><strong>Methodological:</strong> Open-science interactive SLR architecture using DataTables.</li>
+                </ul>
+            </div>
+            <div class="image-wrapper">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/17645698248578553904" alt="GBA futuristic innovation hub architecture">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide10">
+    <h2 class="slide-title">5. Data Management & Ethics</h2>
+    <div class="content-area">
+        <table>
+            <thead>
+                <tr>
+                    <th>Dimension</th>
+                    <th>Governance Protocol</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Data Security</strong></td>
+                    <td>256-bit AES encryption; BitLocker hardware encryption; MFA enabled.</td>
+                </tr>
+                <tr>
+                    <td><strong>GDPR Compliance</strong></td>
+                    <td>JOS platform (UK-based); absolute participant pseudonymisation.</td>
+                </tr>
+                <tr>
+                    <td><strong>Preservation</strong></td>
+                    <td>Plymouth Electronic Archive & Research Library (PEARL) for long-term storage.</td>
+                </tr>
+                <tr>
+                    <td><strong>Ethics</strong></td>
+                    <td>UREIC approval required before launch; informed consent via digital landing page.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="slide-container" id="slide11">
+    <h2 class="slide-title">6. Response to Advisor Feedback</h2>
+    <div class="content-area">
+        <div class="chart-container">
+            <div class="bar">
+                <div class="label">Sample Size Justification</div>
+                <div class="bar-inner"><div class="bar-fill" style="width: 100%;">G*Power Validated</div></div>
+            </div>
+            <div class="bar">
+                <div class="label">Mixed-Methods Integration</div>
+                <div class="bar-inner"><div class="bar-fill" style="width: 90%;">Explanatory Sequential</div></div>
+            </div>
+            <div class="bar">
+                <div class="label">Regional Contextualisation</div>
+                <div class="bar-inner"><div class="bar-fill" style="width: 95%;">GBA Corridor Focus</div></div>
+            </div>
+        </div>
+        <p style="margin-top: 30px; border-left: 4px solid #005088; padding-left: 20px;">
+            "We have rigorously addressed the advisor's requirement for a more granular <strong>sampling safety buffer</strong> by increasing the target $n$ to 135 and formalising the <strong>DAAO partnership</strong> for qualitative access."
+        </p>
+    </div>
+</div>
+
+<div class="slide-container" id="slide12">
+    <div class="qa-layout">
+        <h2>Questions & Answers</h2>
+        <p>Thank you for your attention.</p>
+        <div style="margin-top: 40px; color: #005088; font-weight: 700; letter-spacing: 1px;">
+            www.yourresearchhub.com | researcher@email.edu
+        </div>
+    </div>
+    <div class="bg-accent"></div>
+</div>
+
+</body>
+</html>
+
