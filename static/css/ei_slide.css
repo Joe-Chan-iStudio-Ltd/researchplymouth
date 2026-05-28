@@ -1,0 +1,216 @@
+/* ei_slide.css */
+
+/* 1. CORE PRESENTATION ENGINE */
+* { box-sizing: border-box; }
+body {
+  background-color: #0f172a; /* Dark background to highlight the slide */
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  overflow: hidden; /* Prevent body scroll during presentation */
+}
+
+.title-layout h1 { color: #f3f0df; font-size: 54px; padding-top: 40px; margin-top: 20px; margin-bottom: 20px; }
+.title-layout .subtitle { color: #cdd6e2; font-size: 36px; font-weight: 600; padding-bottom: 40px;}
+.title-layout .miniviva { color: #6895d0; font-size: 32px; margin-top: 60px;  }
+.title-layout .presenter { font-size: 24px; margin-top: 10px; color: #c7d068; }
+
+/* Slide Container: Fixed 1280x720 aspect ratio */
+.slide-container {
+  display: none; /* Hidden by default; JS shows active slide */
+  width: 1280px;
+  height: 720px;
+  background-color: #f3f0df; /* Academic Cream */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  padding: 60px 80px;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.slide-container.active {
+  display: flex;
+}
+
+/* 2. NAVIGATION CONTROLS */
+.nav-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 80, 136, 0.2);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 80, 136, 0.8);
+}
+
+.btn-left { left: 30px; }
+.btn-right { right: 30px; }
+
+.slide-number, .slide-number-white {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: #64748b;
+  font-weight: 500;
+  z-index: 10;
+}
+
+.slide-number-white {
+  color: #ffffff;
+}
+
+/* 3. THEME TYPOGRAPHY & DESIGN */
+.slide-container h1, .slide-container h2, .slide-container h3 {
+  color: #005088;
+  font-family: 'Merriweather', serif;
+  margin: 0;
+}
+
+.slide-container .slide-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: left;
+  width: 100%;
+  border-bottom: 2px solid #005088;
+  padding-bottom: 10px;
+}
+
+.slide-container p, .slide-container li {
+  color: #1e293b;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 4. LAYOUT COMPONENTS */
+.quadrant-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+}
+
+.quadrant-tile {
+  background: white;
+  border: 1px solid #cdd6e2;
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.quadrant-tile i {
+  font-size: 32px;
+  color: #005088;
+  margin-top: 5px;
+}
+
+.quadrant-tile h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bullet-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.bullet-list li:last-child {
+    margin-bottom: 0; /* Prevents awkward extra space at the bottom of a box */
+}
+
+.bullet-list li i {
+    color: #005088;
+    font-size: 20px;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.small-font {
+    font-size: 14px; /* Shifting to 14px for better scannability on slides */
+    margin: 0; 
+    color: #334155;
+    line-height: 1.4;
+}
+
+/* Charts */
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.bar-label { flex: 0 0 250px; text-align: right; font-weight: 700; }
+.bar-track { background: #e2e8f0; flex-grow: 1; height: 35px; border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; background: #005088; }
+
+/* 5. SPECIFIC SLIDE STYLES */
+.title-slide {
+  justify-content: center;
+  text-align: center;
+  background-color: #005088;
+  color: white;
+}
+.title-slide h1, .title-slide h2, .title-slide p { color: white; }
+.title-slide h1 { font-size: 64px; }
+
+.logo-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.logo-container img {
+    height: 70px;
+    object-fit: contain;
+}
+
+/* Q&A Layout */
+.qa-layout { text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+.qa-layout h2 { font-size: 72px; margin-bottom: 10px; }
+.qa-layout p { font-size: 24px; color: #475569; }
+.qa-layout .logo {
+    height: 50px; /* Adjust size as needed */
+    margin-top: -10px; /* Space between logo and text */
+    vertical-align: middle; /* Aligns logo with text */
+}

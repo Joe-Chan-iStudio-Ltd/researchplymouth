@@ -1,0 +1,310 @@
+[slides]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Viva: From Intention to Creation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+/* 1. THE SETUP */
+* { box-sizing: border-box; }
+body {
+  background-color: #0f172a;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px 0;
+  place-items: center;
+}
+
+.slide-container {
+  align-items: center;
+  background-color: #f3f0df; /* Academic Cream */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  font-family: 'DM Sans', sans-serif;
+  height: 720px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 60px;
+  position: relative;
+  width: 1280px;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 80, 136, 0.8);
+}
+
+.btn-left { left: 30px; }
+.btn-right { right: 30px; }
+
+.slide-number {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: #64748b;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/* Background Design: Professional Flowing Lines */
+.slide-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at 100% 100%, rgba(0, 80, 136, 0.05) 0%, transparent 50%);
+  z-index: 0;
+}
+
+/* 2. TYPOGRAPHY */
+.slide-container h1, .slide-container h2, .slide-container h3 {
+  color: #005088;
+  font-family: 'Merriweather', serif;
+  margin: 0;
+}
+
+.slide-container .slide-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: left;
+  width: 100%;
+  border-bottom: 2px solid #005088;
+  padding-bottom: 10px;
+}
+
+.slide-container p, .slide-container li, .slide-container .subtitle {
+  color: #1e293b;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.slide-container .content-area {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+  z-index: 1;
+}
+
+/* 3. LAYOUT: 2x2 QUADRANTS */
+.quadrant-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.quadrant-tile {
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid #cdd6e2;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px;
+}
+
+.quadrant-tile i {
+  color: #005088;
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.quadrant-tile h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Logo Alignment */
+.logo-box {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.logo-box img {
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Title Slide Styles */
+.title-layout {
+  text-align: center;
+  width: 100%;
+}
+
+.title-layout h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.metadata-footer {
+  font-size: 18px;
+  color: #334155;
+  margin-top: 50px;
+  font-weight: 400;
+}
+
+/* Chart Styles */
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.bar-label {
+  flex: 0 0 250px;
+  text-align: right;
+  font-weight: 700;
+}
+.bar-track {
+  background: #e2e8f0;
+  flex-grow: 1;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  background: #005088;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+  font-weight: 700;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="slide-container" id="slide1">
+    <div class="logo-box">
+        <img src="https://www.researchplymouth.com/static/images/UoP.png" alt="University of Plymouth">
+        <img src="https://www.researchplymouth.com/static/images/UoP_PBS_grey.png" alt="Plymouth Business School">
+    </div>
+    <div class="title-layout">
+        <h1>From Intention to Creation:</h1>
+        <p class="subtitle" style="font-size: 28px;">Entrepreneurial Passion and Ecosystem Support in Hong Kong</p>
+        <p style="margin-top: 30px; font-weight: 700; color: #005088; letter-spacing: 1px;">DBA801HK DOCTORAL RESEARCH PROPOSAL</p>
+        
+        <div class="metadata-footer">
+            Supervised by Dr. Atul Mishra &nbsp;&ndash;&nbsp; Presented by King Chan &nbsp;&ndash;&nbsp; May 29, 2026
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">Executive Summary: Research Architecture</h2>
+    <div class="content-area">
+        <div class="quadrant-grid">
+            <div class="quadrant-tile">
+                <i class="fa-solid fa-road-barrier"></i>
+                <div>
+                    <h3>1. The Problem</h3>
+                    <p>Deconstructing the <strong>"intent–action gap"</strong> where high career intentions fail to materialise into venture creation due to high HK reservation wages.</p>
+                </div>
+            </div>
+            <div class="quadrant-tile">
+                <i class="fa-solid fa-gears"></i>
+                <div>
+                    <h3>2. The Framework</h3>
+                    <p>The <strong>Passion Ecosystem Model (PEM)</strong>: Integrating affective engines (Passion) into cognitive models to override economic trade-offs.</p>
+                </div>
+            </div>
+            <div class="quadrant-tile">
+                <i class="fa-solid fa-flask-vial"></i>
+                <div>
+                    <h3>3. Methodology</h3>
+                    <p>Explanatory sequential mixed-methods. <strong>PLS-SEM</strong> ($n \ge 135$) followed by purposive qualitative interviews via <strong>HKMU-DAAO</strong>.</p>
+                </div>
+            </div>
+            <div class="quadrant-tile">
+                <i class="fa-solid fa-rocket"></i>
+                <div>
+                    <h3>4. Contribution</h3>
+                    <p>Theoretical path validation + a tangible <strong>Open-Science Web Repository</strong> for regional entrepreneurship researchers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">1. Introduction & Research Positionality</h2>
+    <div class="content-area">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start;">
+            <div>
+                <h3 style="font-size: 28px; margin-bottom: 20px;">The Scholar-Practitioner Perspective</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-user-gear" style="color:#005088; margin-right: 10px;"></i> <strong>Professional Role:</strong> Programmer at DSD, HKSAR Government.</li>
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-graduation-cap" style="color:#005088; margin-right: 10px;"></i> <strong>Academic Core:</strong> Computing (OUHK) & MBA (HKMU).</li>
+                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-link" style="color:#005088; margin-right: 10px;"></i> <strong>Motivation:</strong> Bridging technical infrastructure with entrepreneurial ecosystems.</li>
+                </ul>
+            </div>
+            <div style="background-color: white; padding: 30px; border-left: 5px solid #005088;">
+                <h3 style="font-size: 24px;">The HK-GBA Context</h3>
+                <p>Hong Kong represents a unique institutional paradox: world-class financial capitalization ($GSEI$ 35th globally) vs. micro-foundational creative bottlenecks.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide11">
+    <h2 class="slide-title">Advisor Feedback Integration</h2>
+    <div class="content-area">
+        <div class="bar-chart">
+            <div class="bar">
+                <div class="bar-label">Sample Size Safety Buffer</div>
+                <div class="bar-track"><div class="bar-fill" style="width: 100%;">Increased to $n=135$</div></div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Mixed-Methods Cross-over</div>
+                <div class="bar-track"><div class="bar-fill" style="width: 90%;">Integrated Analysis</div></div>
+            </div>
+            <div class="bar">
+                <div class="bar-label">Institutional Access (DAAO)</div>
+                <div class="bar-track"><div class="bar-fill" style="width: 95%;">Formalised Pathway</div></div>
+            </div>
+        </div>
+        <div style="margin-top: 40px; border-top: 1px solid #cdd6e2; padding-top: 20px;">
+            <p><strong>Action taken:</strong> In response to Dr. Mishra's guidance, the sampling strategy now includes automated ex-ante validation filters to ensure absolute data integrity for the PLS-SEM phase.</p>
+        </div>
+    </div>
+</div>
+
+<div class="slide-container" id="slide12" style="background-color: #005088; color: white;">
+    <div class="title-layout">
+        <h2 style="color: #f3f0df; font-size: 72px; margin-bottom: 10px;">Questions?</h2>
+        <p style="color: #cdd6e2; font-size: 24px;">Thank you for your attention.</p>
+        <div style="margin-top: 50px;">
+            <p style="font-family: 'DM Sans', sans-serif;">Live Repository Demo: <strong>researchplymouth.com/slr/ei/mv/</strong></p>
+            <p style="font-size: 16px; opacity: 0.8; margin-top: 20px;">King Chan &ndash; DBA Doctoral Research Proposal</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
