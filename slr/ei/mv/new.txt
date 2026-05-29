@@ -153,3 +153,226 @@ By evaluating PES through both macro-level cross-boundary integration (GIS) and 
 
 Chapter Summary
 This chapter has provided a rigorous systematic synthesis of literature surrounding the student “intent–action gap”, tracing the conceptual evolution from static socio-cognitive models to dynamic, affective–behavioural economic frameworks. The descriptive bibliometric baseline established an acute theoretical mismatch within the regional domain: HK scholarship remains saturated by baseline cognitive intent tracking, leaving a critical empirical vacuum regarding macro-institutional frameworks, knowledge spillover models, and Schumpeterian creation mechanics. By infusing behavioural bias taxonomy and multi-dimensional EP engines, this review has structured an explanatory path core capable of modelling how localised alternative corporate reservation wages are psychological countered by cognitive distortions. Finally, by benchmarking local institutional inhibitors against mature Western archetypes, this chapter has highlighted the vital, catalytic role of cross-boundary GIS, setting an empirical foundation for the mixed-methods operational design detailed in Chapter 3.
+
+
+
+
+
+
+ Methodology
+Chapter Overview
+This chapter delineates the explanatory sequential mixed-methods architecture engineered to empirically evaluate the PEM within the unique socio-cognitive landscape of students in HK and the broader GBA. Grounded in a post-positivist paradigm, this study deploys an integrated, two-phase chronological design wherein qualitative insights directly decode the statistical boundaries of a quantitative path model. The chapter begins by mapping the core theoretical frameworks before outlining the quantitative core (n≥135) and a purposive qualitative sampling strategy brokered via Development and Alumni Affairs Office (“DAAO”) of the Hong Kong Metropolitan University (“HKMU”). Finally, the discussion specifies the 37-item context-adapted psychometric instruments, a six-block operational timeline, and rigorous governance protocols for data management, systematic data analysis, research ethics, and results presentation.
+
+Theoretical Framework
+The structural architecture is grounded in a post-positivist, socio-cognitive paradigm that blends “cold” cognitive frameworks with “hot” affective drivers to explain behaviour within a specific institutional environment. To mathematically evaluate and qualitatively contextualise the mechanisms translating student career intentions into actual IVC, the PEM synthesises three foundational pillars, as exhibited in Table 14.
+
+Research Design
+This dissertation implements an explanatory sequential mixed-methods design to investigate the socio-cognitive dynamics of potential student entrepreneurs. Rather than treating quantitative and qualitative data as isolated streams, this design deploys two distinct, integrated chronological phases where the qualitative findings directly explain the statistical boundaries of the quantitative path model (see Figure 2).
+
+Quantitative Core (Empirical Baseline)
+The initial phase takes a deductive approach using macro-survey data to validate the structural paths of PEM. Relationships among individual traits, cognitive filters, affective passion, and environmental moderators are computed using PLS-SEM in SmartPLS (Ringle et al., 2024). This causal-predictive modelling utilises a two-step estimation and specification process (Anderson and Gerbing, 1988) to isolate significant path coefficients and interaction effects across student cohorts.
+
+Qualitative Contextualisation (Nuance Engine)
+Rooted in constructivist approach to grounded theory (Charmaz, 2006), the second phase uses an inductive method to address the “intent–action gap”. While quantitative data show what structural paths are statistically significant, they cannot capture the underlying anxieties or personal risk calculations of student creators facing capital investment hurdles. Using thematic analysis via NVivo (Braun and Clarke, 2006), semi-structured interviews explore the lived experiences, risk-taking behaviours, and socio-cultural pressures unique to HK’s landscape, providing an explanatory lens for the validated PLS-SEM coefficients.
+
+Participants and Sampling
+Quantitative Sampling Architecture
+To establish sufficient statistical power for the PLS-SEM path analysis, the minimum sample size was calculated using G*Power 3.1 (Faul et al., 2009). The full measurement instrument comprises 37 items operationalising 10 distinct intent construct dimensions. For the structural path configuration, the maximum number of directional predictors pointing toward a single endogenous construct is five (5). Assuming a conservative medium effect size (f^2=0.15), an alpha error probability (α) of 0.05, and a target statistical power (1-β) of 0.80, G*Power dictates a strict minimum sample size of 92 valid responses.
+
+To maximise predictive validity, ensure structural parsimony, and provide an analytical safety buffer for potential data scrubbing, this study establishes a target threshold of at least 135 valid responses. This benchmark aligns with the robust response rate conventions verified during the researcher’s previous quantitative institutional research, ensuring a statistically sound foundation for complex path estimation.
+
+Participants will be recruited using a convenience sampling approach, supplemented by a secondary snowball sampling mechanism across major local tertiary academic institutions. The 37-item instrument will be hosted on a professional, GDPR-compliant digital landing page via Jisc Online Surveys (“JOS”). To execute this recruitment effectively, the researcher will implement a multi-channel deployment strategy derived from proven, workable fieldwork methodologies applied in the researcher’s previous quantitative institutional research. This integrated approach combines digital broadcasting, hyper-local physical targeting, financial incentives, and peer-to-peer referral networks, as systematically detailed in Table 15.
+
+The quantitative data collection window will run for a strict 60-day period, applying automated ex-ante validation filters to systematically exclude incomplete, low-effort straight-lining, or non-student submissions.
+
+Qualitative Purposive Sampling and Insider Access
+For the qualitative phase, standard convenience sampling is replaced by highly specialised purposive sampling to target active, nascent innovators within the student population. The researcher will leverage an “insider–outsider” positionality as an alumnus of the HKMU MBA entrepreneurship program (HKMU, 2026a). 
+
+Rather than relying on informal alumni associations, recruitment is coordinated directly through the DAAO at HKMU (2026b). Because the DAAO employs full-time, dedicated institutional staff explicitly tasked with driving alumni network integration and campus entrepreneurship initiatives, they provide a reliable channel to access the university’s official incubation programs. 
+
+Through this DAAO partnership, the researcher will gain access to student founders and incubation project teams. A final sample of 10 to 20 in-depth interviewees will be selected based on the following strict criteria: 
+	Current enrolment or recent graduation (within 24 months) from a HK university program. 
+	Direct participation in a university incubator or startup competition. 
+	Active engagement with an innovation-oriented project (Schumpeterian focus) requiring future capital investment. 
+
+This targeted recruitment ensures that the qualitative narratives capture the precise risk profiles and ecosystem friction points specified in the research objectives.
+
+Instruments
+To evaluate the PEM structural paths, a 37-item survey instrument was compiled by adapting validated psychometric scales from established entrepreneurship and socio-cognitive literature. To ensure contextual relevance, the original scale items were deliberately rephrased to fit the specific educational, economic, and institutional landscapes encountered by university students within the HK-GBA corridor. All items are operationalised utilising a standardised 7-point Likert scale, ranging from 1 (strongly disagree) to 7 (strongly agree). Table 16 itemises the final measurement configuration.
+
+Research Procedures
+The operational workflow balances empirical data collection with rigorous text drafting over a two-year candidacy window, preceded by a strategic summer preparation block. The DBA research schedule is divided into six distinct four-month operational blocks, mapping the trajectory from initial instrument design, ethical clearance, fieldwork execution, and data analysis to advanced writing and the final viva defence. The timeline architecture is visualised in Figure 3 and explicitly detailed in Table 17.
+
+Data Management Plan
+Appendix F presents the comprehensive data management plan (“DMP”), adopted from Digital Curation Centre (“DCC”) (2026) framework to uphold the data integrity, security, and accessibility. Adhering to the University of Plymouth’s data governance protocols (Sun et al., 2017; University of Plymouth, 2026a) and the UK Data Protection Act 2018, the plan coordinates a secure, sequential data lifecycle.
+
+The JOS platform operates within UK, complying fully with the General Data Protection Regulation (“GDPR”) and ISO/IEC 27001 security standards (University of Plymouth, 2026b). Survey data are exported directly into anonymised files. For phase 2, interview audio-visual files are captured via secured Zoom accounts and transcribed verbatim.
+
+Data resilience is prioritised through Plymouth’s institutional infrastructure; primary storage utilising Microsoft OneDrive leverages 256-bit AES encryption and SharePoint versioning for Point in Time Restore (“PITR”) capabilities. Local processing is strictly limited to local hardware encrypted via Microsoft BitLocker or Apple FileVault with multi-factor authentication (“MFA”) enabled. Long-term preservation will utilise the Plymouth Electronic Archive and Research Library (“PEARL”), balancing open-access mandates with absolute participant confidentiality via strict data masking and pseudonymisation.
+
+Data Analytical Plan
+The analytical framework mirrors the sequential architecture of the study. Utilising SmartPLS 4 (Ringle et al., 2024) in the first phase, a two-step causal-predictive quantitative analysis is executed to establish structural relationships (Anderson and Gerbing, 1988). Applying constructivist grounded theory (Charmaz, 2006) and the thematic analysis framework (Braun and Clarke, 2006), textual data are then processed inductively with Lumivero NVivo in the second phase to uncover underlying mechanisms. Figure 4 illustrates the overview of the quantitative-to-qualitative transition while the details are set out in Table 18.
+
+Ethical Considerations
+Institutional ethical clearance must be officially obtained from the University Research Ethics and Integrity Committee (“UREIC”) before production launch of the quantitative and qualitative research. Respect for human subjects is operationalised through a series of clear safeguards—covering informed consent, voluntary autonomy, anonymisation, and incentive integrity—as summarised in Table 19.
+
+Results Presentation Plan
+The empirical findings of this mixed-methods inquiry will be integrated and presented across two separate, structurally distinct chapters to maximise analytical clarity and maintain academic rigor. Rather than blending data prematurely, this layout segregates the macro-predictive statistical models from the micro-foundational qualitative narratives, preparing the text for a complete meta-synthesis in the final discussion chapter. The presentation plan is summarised in Table 20.
+
+Chapter Summary
+This chapter has systematically detailed the post-positivist, explanatory sequential mixed-methods framework engineered to deconstruct the HK student “intent–action gap”. By linking a robust PLS-SEM quantitative baseline (n≥135) with inductive, purposive qualitative data gathered through strategic HKMU-DAAO pathways, the methodology ensures both statistical objectivity and deep contextual insight. Stringent operational parameters—guaranteed by ISO-certified data management plans, validated 37-item psychometric instruments, and proactive UREIC ethical compliance—safeguard the scientific integrity of the inquiry. With this empirical blueprint established, the proposal turns to Chapter 4 to delineate the anticipated theoretical, contextual, and methodological contributions.
+
+
+Data Management Plan
+This research utilised the DMPOnline (Digital Curation Centre, 2026) to develop the comprehensive plan illustrated in Figure 14.
+
+Figure 14. Comprehensive DMP for Innovation-Oriented Entrepreneurial Research
+
+Plan Overview
+A Data Management Plan created using DMPonline
+
+Title: From intention to creation: Entrepreneurial passion and ecosystem support in Hong Kong
+
+Creator: King Chan
+
+Principal Investigator: King Chan
+
+Data Manager: King Chan
+
+Project Administrator: King Chan
+
+Affiliation: University of Plymouth
+
+Template: DCC Template
+
+Project Abstract: 
+This research investigates the formation of innovation-oriented entrepreneurial intentions (“EIs”) among university students in Hong Kong (“HK”). Utilizing a mixed-methods sequential explanatory design, the study examines how internal psychological antecedents—grounded in the Theory of Planned Behaviour (“TPB”)—and external contextual influences within the Greater Bay Area (“GBA”) shape entrepreneurial action. The project aims to provide a multi-level perspective on the pedagogical and institutional ecosystems driving regional economic sustainability.”
+
+ID: 204216
+
+Last Modified: 14-05-2026
+
+
+ 
+DATA COLLECTION
+
+What data will you collect or create?
+
+	Primary Quantitative Data: This research utilises a mixed-methods sequential explanatory design. Primary quantitative data (n=300-500) will be collected from HK university students regarding their entrepreneurial intentions (“EIs”), personal traits (e.g., narcissism, passion, and creativity self-concept), and contextual influences. Data will be captured in numerical format (Likert scales).
+
+	Primary Qualitative Data: Semi-structured interviews with approximately 10-20 participants (founders and students) will generate audio-visual recordings and textual transcripts.
+
+	Secondary Data: The study will also create a systematic literature review (“SLR”) dataset summarizing 285 identified articles, including metadata like Academic Journal Guide (“AJG”) 2024 rankings and synthetic relevance scores.
+
+How will the data be collected or created?
+
+	Quantitative: Data collection will be facilitated via Jisc Online Surveys, an ISO 27001 certified platform. Participation is anonymous; no IP addresses or identifying personal details will be logged.
+
+	Qualitative: Interviews will be conducted via Zoom (University of Plymouth institutional license). The “Cloud Recording” feature will be disabled; recordings will be saved directly to the researcher’s encrypted local drive and immediately moved to the University Microsoft OneDrive for secure processing.
+
+	Transcription: Initial transcripts generated by Zoom’s AI will be manually audited for accuracy and anonymised (replacing names with alphanumeric codes like P01) before thematic analysis in NVivo.
+
+
+DOCUMENTATION AND METADATA
+
+What documentation and metadata will accompany the data?
+
+	Metadata Standards: Data will be accompanied by a README file following the Dublin Core metadata standard recommended by Digital Curation Centre.
+
+	Documentation: This includes a codebook defining all survey variables (e.g., Entrepreneurial Intention (“EI”) measured via TPB constructs), the interview protocol, and a data dictionary for the SLR dataset. All files will follow a standardised “chronological” naming convention recommended by University of Plymouth: DateStamp_ProjectTitle_Subject_Status. (e.g., 20260130_EIHK_SurveyData_Raw, 20260215_EIHK_InterviewP01_Transcript_Anonymised)
+
+
+ 
+ETHICS AND LEGAL COMPLIANCE
+
+How will you manage any ethical issues?
+
+	Informed consent: All participants will receive a participant information sheet (“PIS”). Explicit consent will be captured digitally via Jisc (for surveys) or digital-signed forms (for interviews).
+
+	Privacy: Although the research focuses on academic and professional traits, all processing will comply with the UK General Data Protection Regulation (“GDPR”) and Data Protection Act 2018.
+
+	Anonymization: For qualitative data, all identifying institutional or personal names will be redacted during the transcription phase to ensure “absolute confidentiality”.
+
+How will you manage copyright and Intellectual Property Rights (IPR) issues?
+
+	The principal investigator (King Chan) holds the copyright for the primary data collected. Data will be made available under a Creative Commons Attribution-NonCommercial (“CC BY-NC”) license upon completion of the DBA, facilitating open-access sharing while protecting the researcher’s intellectual contribution.
+
+
+STORAGE AND BACKUP
+
+How will the data be stored and backed up during the research?
+
+	Primary storage: The University of Plymouth’s Microsoft OneDrive (Institutional Account) will serve as the primary storage and backup solution. This platform provides 256-bit AES encryption and storage resiliency, utilising embedded SharePoint versioning feature to enable comprehensive data backup and Point in Time Restore (“PITR”) capabilities.
+
+	Local security: Temporary local files will be stored on drives encrypted via Microsoft BitLocker or Apple FileVault. All personal devices utilised for research processing will be password-protected with multi-factor authentication (“MFA”) enabled.
+
+How will you manage access and security?
+
+	Access control: Access is strictly limited to the principal investigator (King Chan) and the supervisory team if required for quality control.
+
+	Data integrity: To minimise disclosure risk, only aggregated and anonymised results will be extracted for inclusion in the final thesis or publications.
+
+
+ 
+SELECTION AND PRESERVATION
+
+Which data are of long-term value and should be retained, shared, and/or preserved?
+
+	Anonymised Quantitative Datasets: These hold long-term value for longitudinal comparisons with datasets.
+
+	Retention Period: In accordance with the University of Plymouth Records Retention Schedule, all research data and associated metadata will be preserved for a minimum of 5 years following the completion of the project.
+
+What is the long-term preservation plan for the dataset?
+
+	Selected anonymised datasets will be deposited in the Plymouth Electronic Archive and Research Library (“PEARL”) repository. This ensures the data remains discoverable via a Digital Object Identifier (“DOI”) even after the Microsoft OneDrive account is closed.
+
+
+DATA SHARING
+
+How will you share the data?
+
+	Findings will be disseminated through open-access journal publications and the University’s repository (PEARL). Anonymised survey datasets may be shared upon reasonable request for the purpose of verifying research results.
+
+Are any restrictions on data sharing required?
+
+	All data sharing must strictly adhere to the University of Plymouth’s information security standards.
+	Formal approval must be obtained from the University Research Ethics and Integrity Committee (“UREIC”) prior to any external data disclosure or sharing.
+
+
+RESPONSIBILITIES AND RESOURCES
+
+Who will be responsible for data management?
+
+	The Data Manager (King Chan) is responsible for data capture, metadata creation, and storage. The University of Plymouth IT Services is responsible for the underlying infrastructure of the OneDrive environment.
+
+	Resources: No additional financial resources are required. The researcher will utilise existing university-licensed software (Jisc, Zoom, SmartPLS, NVivo, and OneDrive).
+
+What resources will you require to deliver your plan?
+
+	No additional resources are required. 
+
+
+
+Anticipated Contributions
+Chapter Overview
+This dissertation departs from traditional, isolated intent studies to offer a three-dimensional contribution to the domains of entrepreneurship theory, regional institutional analysis, and open-science research methodology. This chapter delineates the strategic, structural, and practical value of the study, mapping its projected outputs against the systemic gaps identified within contemporary scholarship.
+
+Resolving the “Intent–action Gap” via Behavioural Economics
+This study advances contemporary socio-cognitive literature by shifting the scholarly conversation from “cold” cognitive intention models to an integrated, affective–behavioural framework. Baseline scholarship treating the student decision-making matrix remains hyper-focused on static career intent, yet it fails to explain why highly intentional students are systematically reluctant to pursue active entrepreneurship when entering high-wage labour markets (McMullen et al., 2008).
+
+By infusing foundational insights from behavioural economics and cognitive bias theory, this research models the venture entry choice not as a homogeneous rational calculation, but as an intense psychological conflict between localised labour economics and individual cognitive distortions. Specifically, this study evaluates how EP multi-dimensionally triggers the core behavioural biases isolated by Nobre et al. (2022)—most notably optimism and overconfidence, loss aversion, and self-attribution.
+
+The theoretical framework posits that these cognitive biases must be potent enough to structurally override the objective economic pull of the student’s reservation wage and the secure, high-salaried corporate opportunities characteristic of HK’s metropolitan landscape, thereby providing a clear behavioural explanation for the “intent–action gap”.
+
+HK’s Milieu versus the Stanford Benchmark
+Contextually, this research addresses a profound empirical vacuum regarding macro-institutional and strategic frameworks within Asian academia. While Western benchmarks—most notably Stanford University’s incubation ecosystem—operate within a high-density cluster characterised by aggressive venture capital, low social stigma toward failure, and rapid knowledge spillovers that lower the psychological cost of entry, HK’s milieu presents a unique structural paradox.
+
+Serving as a critical empirical benchmark of HK’s institutional landscape against these Western counterparts, this study evaluates how the historical, highly conservative Kirznerian legacy of the local economy interacts with the regional infrastructure. By measuring PES across universities through both macro-level GBA infrastructure integration and micro-level institutional TTOs, this study uncovers how localised real estate friction, family face-saving dynamics, and academic resource allocation either support or suppress a student’s willingness to execute Schumpeterian creation behaviours.
+
+Open-science Interactive SLR Architecture
+Methodologically, this dissertation addresses the pervasive “granularity gap” found within regional grey and localised academic literature by implementing a two-phase explanatory sequential mixed-methods design. Furthermore, this study delivers a tangible, practical asset to the broader academic community by transforming the raw SLR corpus (n=285) into a dynamic research architecture. 
+
+Leveraging DataTables (Jardine, 2026), the study builds a searchable, quasi-experimental web repository (Chervova et al., 2024). This tool eliminates traditional coding barriers, enabling future researchers to upload and implement their own spreadsheet data to instantaneously isolate and sort theoretical combinations (see Appendix D for the live digital directory).
+
+Chapter Summary
+As summarised in Table 21, this chapter has structurally articulated the dissertation’s three-dimensional contribution, moving beyond passive intent metrics to deliver an actionable behavioural framework, a localised institutional benchmark, and a tangible open-science digital repository. By bridging the gap between macro-level ecosystem capitalisation and micro-level cognitive actions, these combined outputs establish a robust foundation for the bibliographical references and operational appendices.
