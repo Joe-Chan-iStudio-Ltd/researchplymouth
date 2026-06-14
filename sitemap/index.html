@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | Innoservo Academic Research Directory</title>
+    <link rel="icon" href="/static/ico/favicon.ico" type="image/x-icon">
+    
+    <style>
+        :root {
+            --primary-color: #0b2c5c;
+            --text-color: #222222;
+            --link-color: #0066cc;
+            --bg-color: #f8fafc;
+            --border-color: #e1e4e8;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .sitemap-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #555555;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+        }
+
+        .sitemap-section {
+            margin-bottom: 35px;
+        }
+
+        .sitemap-section h2 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .sitemap-tree {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .sitemap-tree > li {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .sitemap-nested {
+            list-style-type: none;
+            padding-left: 30px;
+            margin-top: 10px;
+            border-left: 2px solid var(--border-color);
+        }
+
+        .sitemap-nested li {
+            font-size: 15px;
+            font-weight: normal;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .sitemap-nested li::before {
+            content: "—";
+            position: absolute;
+            left: -20px;
+            color: #aaa;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #004499;
+        }
+
+        .page-desc {
+            display: block;
+            font-size: 14px;
+            color: #666666;
+            font-weight: normal;
+            margin-top: 3px;
+            line-height: 1.4;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 13px;
+            color: #777777;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<main class="sitemap-container">
+    <h1>Sitemap</h1>
+    <div class="subtitle">Comprehensive directory of academic ranking platforms and research insights on Innoservo.</div>
+
+    <section class="sitemap-section">
+        <h2>Navigation Structure</h2>
+        <ul class="sitemap-tree">
+            <li>
+                <a href="/">Innoservo Home</a>
+                <span class="page-desc">Main corporate portal and cross-disciplinary innovation hub.</span>
+                
+                <ul class="sitemap-nested">
+                    <li>
+                        <a href="/researchplymouth/">Welcome to Research Plymouth Hub</a>
+                        <span class="page-desc">Dedicated to fostering collaboration and innovation in research across various disciplines. Supporting researchers, students, and the community in advancing knowledge.</span>
+                    </li>
+                    <li>
+                        <a href="/researchplymouth/arwu/">ARWU Shanghai Ranking 2025</a>
+                        <span class="page-desc">Explore the Shanghai Ranking 2025 — Academic Ranking of World Universities (ARWU) — featuring interactive searchable insights.</span>
+                    </li>
+                    <li>
+                        <a href="/researchplymouth/ajg/">ABS / AJG Journal Ranking 2024</a>
+                        <span class="page-desc">Explore the 2024 Academic Journal Guide (ABS) Rankings. Discover top journals, publishers, and metrics with searchable performance insights.</span>
+                    </li>
+                    <li>
+                        <a href="/researchplymouth/the/">THE World University Rankings 2025</a>
+                        <span class="page-desc">Explore the Times Higher Education (THE) World University Rankings 2025 dataset with comprehensive searchable lookup metrics.</span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    &copy; 2026 Innoservo. All Rights Reserved. | <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a>
+</footer>
+
+</body>
+</html>
