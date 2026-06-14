@@ -12,7 +12,7 @@
     <loc>https://www.researchplymouth.com/ajg/</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1.00</priority>
+    <priority>0.90</priority>
   </url>
 
   <url>
@@ -33,35 +33,35 @@
     <loc>https://www.researchplymouth.com/slr/datatables/</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://www.researchplymouth.com/slr/demo/</loc>
-    <lastmod>2026-06-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.researchplymouth.com/slr/tc/</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.80</priority>
   </url>
 
   <url>
     <loc>https://www.researchplymouth.com/slr/ei/</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.researchplymouth.com/slr/demo/</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.40</priority>
   </url>
 
   <url>
     <loc>https://www.researchplymouth.com/pilottest/</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+    <priority>0.40</priority>
   </url>
 
 </urlset>
