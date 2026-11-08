@@ -88,12 +88,6 @@ async function scanAvailableRankingYears() {
         }
     }
 
-    // Fallback: If no files are discovered, default gracefully to 2025
-    if (validYearsFound.length === 0) {
-        console.warn("No custom year files detected via network scan. Falling back to default.");
-        validYearsFound =;
-    }
-
     // Populate dropdown options (ordered latest year first)
     validYearsFound.forEach(y => {
         const option = document.createElement('option');
