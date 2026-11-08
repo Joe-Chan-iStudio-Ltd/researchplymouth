@@ -50,16 +50,19 @@ async function loadMarkdown() {
         const introductionStart = 1;
         const citationStart = lines.findIndex(line => line.startsWith('## citation'));
 
+        // Process Introduction
         let introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('\n').trim();
         introductionContent = processParagraphs(introductionContent); 
         document.getElementById('introduction').innerHTML = italicize(introductionContent, "et al.");
         
+        // Process Citations
         let citationsContent = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n').trim() : '';
         citationsContent = processParagraphs(citationsContent); 
         document.getElementById('citation').innerHTML = italicize(citationsContent, "et al.");
 
     } catch (error) {
         console.error('Error loading Markdown:', error);
+        showStatus('statusMessage', `Error loading Markdown: ${error.message}`, true);
     }
 }
 
@@ -76,7 +79,7 @@ async function scanAvailableRankingYears() {
 
     // Scan backwards from the future down to 2011 to find available matrices instantly
     for (let year = currentYear + 1; year >= startYear; year--) {
-        const checkUrl = `/static/xlsx/the/the${year}.xlsx`;
+        const checkUrl = `/static/xlsx/the/${year}.xlsx`;
         try {
             // Lightweight HEAD request to check file existence without downloading the data
             const checkResponse = await fetch(checkUrl, { method: 'HEAD' });
