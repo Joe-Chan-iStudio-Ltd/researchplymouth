@@ -79,7 +79,7 @@ async function scanAvailableRankingYears() {
 
     // Scan backwards from the future down to 2011 to find available matrices instantly
     for (let year = currentYear + 1; year >= startYear; year--) {
-        const checkUrl = `/static/xlsx/the/the${year}.xlsx`;
+        const checkUrl = `/static/xlsx/the/${year}.xlsx`;
         try {
             // Lightweight HEAD request to check file existence without downloading the data
             const checkResponse = await fetch(checkUrl, { method: 'HEAD' });
@@ -94,7 +94,7 @@ async function scanAvailableRankingYears() {
     // Populate dropdown options (ordered latest year first)
     validYearsFound.forEach(y => {
         const option = document.createElement('option');
-        option.value = `/static/xlsx/the/the${y}.xlsx`;
+        option.value = `/static/xlsx/the/${y}.xlsx`;
         option.textContent = `${y} Rankings`;
         selector.appendChild(option);
     });
