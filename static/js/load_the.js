@@ -94,7 +94,7 @@ async function scanAvailableRankingYears() {
     // Populate dropdown options (ordered latest year first)
     validYearsFound.forEach(y => {
         const option = document.createElement('option');
-        option.value = `/static/xlsx/the/the${y}.xlsx`;
+        option.value = `/static/xlsx/the/${y}.xlsx`;
         option.textContent = `${y} Rankings`;
         selector.appendChild(option);
     });
