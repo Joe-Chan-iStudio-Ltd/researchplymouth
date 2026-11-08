@@ -63,44 +63,38 @@ async function loadMarkdown() {
     }
 }
 
-// 1. Dynamic File Scanner Framework Initialization Engine
+// Optimized File Scanner: Scans from the latest year backward to 2011
 async function scanAvailableRankingYears() {
     const selector = document.getElementById('yearSelector');
-    selector.innerHTML = ''; // Reset configuration choices
+    if (!selector) return null;
+    
+    selector.innerHTML = ''; // Clear status message
 
-    let year = 2011; 
+    const currentYear = new Date().getFullYear(); // Dynamic baseline (e.g., 2026)
+    const startYear = 2011;
     let validYearsFound = [];
-    let consecutiveFailures = 0;
-    const maxConsecutiveFailures = 2; // Safeguard configuration gap spaces
 
-    while (consecutiveFailures < maxConsecutiveFailures) {
+    // Scan backwards from the future down to 2011 to find available matrices instantly
+    for (let year = currentYear + 1; year >= startYear; year--) {
         const checkUrl = `/static/xlsx/the/the${year}.xlsx`;
         try {
-            // Use light context HEAD method validation probe request
+            // Lightweight HEAD request to check file existence without downloading the data
             const checkResponse = await fetch(checkUrl, { method: 'HEAD' });
             if (checkResponse.ok) {
                 validYearsFound.push(year);
-                consecutiveFailures = 0; 
-            } else {
-                consecutiveFailures++;
             }
         } catch (e) {
-            consecutiveFailures++;
+            console.warn(`File check skipped for year ${year}:`, e);
         }
-        year++;
-        
-        // Safety lock config sequence escape
-        if (year > 2040) break;
     }
 
+    // Fallback: If no files are discovered, default gracefully to 2025
     if (validYearsFound.length === 0) {
-        // Fallback safety if scan fails completely
+        console.warn("No custom year files detected via network scan. Falling back to default.");
         validYearsFound =;
     }
 
-    // Populate drop menu array ordering descending (latest years first)
-    validYearsFound.sort((a, b) => b - a);
-
+    // Populate dropdown options (ordered latest year first)
     validYearsFound.forEach(y => {
         const option = document.createElement('option');
         option.value = `/static/xlsx/the/the${y}.xlsx`;
@@ -108,17 +102,41 @@ async function scanAvailableRankingYears() {
         selector.appendChild(option);
     });
 
+    // Activate the interactive dropdown menu controls
     selector.disabled = false;
     
-    // Register listener interface for change events
-    selector.addEventListener('change', async function() {
-        if (this.value) {
-            await loadExcelWithSpinner(null, this.value);
-        }
-    });
+    // Bind selection change event to refresh the table with the new file target
+    selector.removeEventListener('change', handleYearChange); // Prevent duplicate bindings
+    selector.addEventListener('change', handleYearChange);
 
-    return selector.value; // Return path string configuration entry point
+    return selector.value; // Returns the latest available file path (first option)
 }
+
+// Named event handler for clean binder state tracking
+async function handleYearChange(e) {
+    if (e.target.value) {
+        await loadExcelWithSpinner(null, e.target.value);
+    }
+}
+
+// Enhanced init configuration structure execution chain
+async function init() {
+    await loadMarkdown();
+    
+    // 1. Scan repository files and identify the latest active spreadsheet path
+    const latestAvailableFile = await scanAvailableRankingYears();
+    
+    // 2. Initialize DataTable using the newest available year discovered
+    if (latestAvailableFile) {
+        await loadExcelWithSpinner(null, latestAvailableFile);
+    }
+    
+    await loadTooltips();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    init();
+});
 
 async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalicize = {}) {
     try {
