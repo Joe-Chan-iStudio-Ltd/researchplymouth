@@ -8,4 +8,5 @@ Allow: /slr/demo/
 Allow: /slr/tc/
 Allow: /slr/ei/
 Allow: /the/
+Disallow: /the/raw_data
 Allow: /arwu/

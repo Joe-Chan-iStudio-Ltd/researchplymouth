@@ -1,40 +1,32 @@
-/* load_ajg.js */
+/* load_the.js */
 
-let dataTable; // Declare dataTable in a wider scope
+let dataTable; 
 
 function showStatus(elementId, message, isError = false) {
     const statusDiv = document.getElementById(elementId);
     if (statusDiv) {
         statusDiv.textContent = message;
-        statusDiv.className = isError ? 'error' : 'success'; // Add classes for styling (optional)
+        statusDiv.className = isError ? 'error' : 'success';
     }
 }
 
 function italicize(text, findString) {
-    // Check if either text or findString is null or undefined
     if (!text || !findString || typeof text !== 'string') {
-      return text || ""; // Return the original text (or an empty string if text is also null)
+      return text || "";
     }
-  
-    // Escape special characters in findString for use in a regular expression
     const escapedFindString = findString.replace(/[-/\\^$*+?.()|[]{}]/g, '\\$&');
-  
-    // Construct a regular expression to find the findString (case-insensitive and global)
     const regex = new RegExp(escapedFindString, 'gi');
-  
-    // Replace all occurrences of findString with <i>findString</i>
     return text.replace(regex, "<em>$&</em>");
 }
   
 function processParagraphs(text) {
-    const paragraphs = text.split('\n'); // Split into paragraphs based on double newlines
+    const paragraphs = text.split('\n');
     const processedParagraphs = paragraphs.map(paragraph => {
         paragraph = paragraph.replace(/\n/g, '').trim();
-        // Skip if already enclosed in tags
         if (/^<(ul|ol|li|p|div|h[1-6]|blockquote)/i.test(paragraph)) {
             return paragraph;
         } else {
-            return `<p>${paragraph.replace(/\n/g, '<br>')}</p>`; // Wrap in <p> tags and allow line breaks within paragraphs
+            return `<p>${paragraph.replace(/\n/g, '<br>')}</p>`;
         }
     });
     return processedParagraphs.join('');
@@ -58,91 +50,131 @@ async function loadMarkdown() {
         const introductionStart = 1;
         const citationStart = lines.findIndex(line => line.startsWith('## citation'));
 
-        // Process Introduction
         let introductionContent = lines.slice(introductionStart, citationStart !== -1 ? citationStart : undefined).join('\n').trim();
         introductionContent = processParagraphs(introductionContent); 
         document.getElementById('introduction').innerHTML = italicize(introductionContent, "et al.");
         
-        // Process Citations
         let citationsContent = citationStart !== -1 ? lines.slice(citationStart + 1).join('\n').trim() : '';
         citationsContent = processParagraphs(citationsContent); 
         document.getElementById('citation').innerHTML = italicize(citationsContent, "et al.");
 
     } catch (error) {
         console.error('Error loading Markdown:', error);
-        showStatus('statusMessage', `Error loading Markdown: ${error.message}`, true);
     }
+}
+
+// 1. Dynamic File Scanner Framework Initialization Engine
+async function scanAvailableRankingYears() {
+    const selector = document.getElementById('yearSelector');
+    selector.innerHTML = ''; // Reset configuration choices
+
+    let year = 2011; 
+    let validYearsFound = [];
+    let consecutiveFailures = 0;
+    const maxConsecutiveFailures = 2; // Safeguard configuration gap spaces
+
+    while (consecutiveFailures < maxConsecutiveFailures) {
+        const checkUrl = `/static/xlsx/the/the${year}.xlsx`;
+        try {
+            // Use light context HEAD method validation probe request
+            const checkResponse = await fetch(checkUrl, { method: 'HEAD' });
+            if (checkResponse.ok) {
+                validYearsFound.push(year);
+                consecutiveFailures = 0; 
+            } else {
+                consecutiveFailures++;
+            }
+        } catch (e) {
+            consecutiveFailures++;
+        }
+        year++;
+        
+        // Safety lock config sequence escape
+        if (year > 2040) break;
+    }
+
+    if (validYearsFound.length === 0) {
+        // Fallback safety if scan fails completely
+        validYearsFound =;
+    }
+
+    // Populate drop menu array ordering descending (latest years first)
+    validYearsFound.sort((a, b) => b - a);
+
+    validYearsFound.forEach(y => {
+        const option = document.createElement('option');
+        option.value = `/static/xlsx/the/the${y}.xlsx`;
+        option.textContent = `${y} Rankings`;
+        selector.appendChild(option);
+    });
+
+    selector.disabled = false;
+    
+    // Register listener interface for change events
+    selector.addEventListener('change', async function() {
+        if (this.value) {
+            await loadExcelWithSpinner(null, this.value);
+        }
+    });
+
+    return selector.value; // Return path string configuration entry point
 }
 
 async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalicize = {}) {
     try {
-        const excelFilename = excelFile ? excelFile.name : 'Default file';
-        showStatus('statusMessage', `Loading Excel data from ${excelFilename}...`);
+        const excelFilename = excelFile ? excelFile.name : defaultExcelFilePath.substring(defaultExcelFilePath.lastIndexOf('/') + 1);
 
         let data;
         if (excelFile) {
-            showStatus('statusMessage', `Processing uploaded file ${excelFilename}...`);
             data = await new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.onload = (e) => resolve(e.target.result);
                 reader.onerror = (error) => reject(error);
                 reader.readAsArrayBuffer(excelFile);
             });
-            $('#dataTable').empty();
         } else {
             const response = await fetch(defaultExcelFilePath);
             if (!response.ok) {
-                throw new Error(`Failed to load default Excel: ${response.status} ${response.statusText}`);
+                throw new Error(`Failed to load target data: ${response.status} ${response.statusText}`);
             }
             data = await response.arrayBuffer();
         }
 
         const workbook = XLSX.read(data, { type: 'array' });
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: "" }); // Handle empty cells
+        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: "" });
 
-        if (!Array.isArray(jsonData) || jsonData.length < 1) { // Minimum 1 row (header)
-            throw new Error('Excel file must contain at least a header row.');
+        if (!Array.isArray(jsonData) || jsonData.length < 1) {
+            throw new Error('Spreadsheet format invalid.');
         }
 
-        // Check if headers are defined in HTML
         const htmlHeaders = Array.from(document.querySelectorAll('#dataTable thead th')).map(th => th.textContent.trim());
         const tooltips = Array.from(document.querySelectorAll('#dataTable thead th')).map(th => th.title.trim());
-        const headers = htmlHeaders.length > 0 ? htmlHeaders : jsonData[0]; // Use HTML headers if available
+        const headers = htmlHeaders.length > 0 ? htmlHeaders : jsonData[0];
 
         let columnWidths = null;
-        let dataStartRow = 1; // Default data starts from row 1 (after header)
+        let dataStartRow = 1; 
 
-        // Check if the second row exists and contains only numbers (column widths)
         if (jsonData.length > 1) {
             const secondRow = jsonData[1];
             const allNumbers = secondRow.every(value => {
                 const num = Number(value);
-                return !isNaN(num) && isFinite(num);
+                return value !== "" && !isNaN(num) && isFinite(num);
             });
 
             if (allNumbers && secondRow.length === headers.length) {
                 columnWidths = secondRow;
-                dataStartRow = 2; // Data starts from row 2 (after header and widths)
+                dataStartRow = 2; 
             }
         }
 
-        // Validation based on whether column widths are present
-        if (columnWidths === null && jsonData.length < 2) {
-            throw new Error('Excel file must contain at least a header row and a data row when no column widths are provided.');
-        }
-
-        if (columnWidths && headers.length !== columnWidths.length) {
-            throw new Error('Number of column widths must match the number of headers.');
-        }
-
-        // Destroy existing DataTable
+        // Destroy existing instance gracefully
         if ($.fn.DataTable.isDataTable('#dataTable')) {
             dataTable.destroy();
         }
         $('#dataTable').empty();
 
-        const scrollYHeight = `calc(100vh-400px)`;
+        const scrollYHeight = `calc(100vh - 420px)`;
 
         dataTable = $('#dataTable').DataTable({
             data: jsonData.slice(dataStartRow),
@@ -150,14 +182,14 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 let columnDefinition = {
                     title: (tooltips && tooltips[index]) ? `<abbr title="${tooltips[index]}">${header}</abbr>` : header,
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
-                    visible: columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1) // Hide column if width is -1
+                    visible: columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1)
                 };
                 columnDefinition.render = function (data, type, row) {
                     if (type === 'display' && data) {
-                        let italicizeValue = columnsToItalicize[header]; // Specific column value
+                        let italicizeValue = columnsToItalicize[header];
                 
-                        if (columnsToItalicize['*'] !== undefined) { // Wildcard exists
-                            italicizeValue = columnsToItalicize['*']; // Override with wildcard
+                        if (columnsToItalicize['*'] !== undefined) { 
+                            italicizeValue = columnsToItalicize['*']; 
                         }
                 
                         if (italicizeValue) {
@@ -184,15 +216,14 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             createdRow: function (row) {
                 $(row).addClass('dataTableRow');
             },
-            language: {  // Optional: Customize DataTables text
-                emptyTable: "No data available in table"
+            language: { 
+                emptyTable: "No data found matching selection metrics"
             }
         });
-        showStatus('statusMessage', excelFilename + (excelFile ? ' is loaded successfully.' : ' is loaded for demonstration purposes.'), false);
 
     } catch (error) {
         console.error('Error loading Excel:', error);
-        showStatus('statusMessage', `Error loading Excel: ${error.message}`, true);
+        showStatus('statusMessage', `Error updating matrix parameters: ${error.message}`, true);
     }
 }
 
@@ -209,8 +240,10 @@ async function loadExcelWithSpinner(file = null, defaultExcelFilePath) {
 }
 
 function showSpinner(isDisplay = false) {
-    document.getElementById('spinner').style.display = isDisplay ? 'block' : 'none';
-    document.getElementById('dataTable').style.opacity = isDisplay ? '0.5' : '1';
+    const spinner = document.getElementById('spinner');
+    const table = document.getElementById('dataTable');
+    if(spinner) spinner.style.display = isDisplay ? 'block' : 'none';
+    if(table) table.style.opacity = isDisplay ? '0.5' : '1';
 }
 
 async function loadTooltips() {
@@ -263,14 +296,3 @@ async function loadTooltips() {
         });
     });
 }
-
-async function init() {
-    const defaultExcelFilePath = '/static/xlsx/the2025.xlsx';
-    await loadMarkdown();
-    await loadExcelWithSpinner(null, defaultExcelFilePath);
-    await loadTooltips();
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    init(); // Call init() when the DOM is ready
-});

@@ -1,0 +1,19 @@
+original_field_name -> new_field_name
+
+rank_order -> #
+rank -> Rank
+name -> Institute
+new -> Code
+location -> Country
+scores_overall -> Overall
+scores_teaching -> Teaching
+scores_research -> Research Environment
+scores_citations -> Research Quality
+scores_industry_income -> Industry
+scores_international_outlook -> International Outlook
+new -> Calculated Total
+new -> National Rank
+
+29.5% from Teaching, 29% from Research Environment, 30% from Research Quality, 4% from Industry, and 7.5% from International
+
+

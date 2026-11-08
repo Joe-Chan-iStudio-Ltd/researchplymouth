@@ -3,45 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE World University Rankings 2025</title>
-    <link rel="canonical" href="https://www.researchplymouth.com/the/">
+    <title>THE World University Rankings</title>
+    <link rel="canonical" href="https://researchplymouth.com">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="/static/css/basic.css?v=202509272233">
-    <link rel="stylesheet" href="/static/css/the_datatables.css?v=202509272233">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.0/css/dataTables.bootstrap5.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.2.3/css/buttons.bootstrap5.css">
-    <meta name="description" content="Explore the World University Rankings 2025&#8212;Times Higher Education (THE)&#8212;with Searchable Insights.">
-    <meta name="keywords" content="Times Higher Education (THE) World University Rankings 2025.">
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="THE World University Rankings 2025">
-    <meta property="og:description" content="Explore the World University Rankings 2025&#8212;Times Higher Education (THE)&#8212;with Searchable Insights.">
-    <meta property="og:image" content="https://www.researchplymouth.com/static/images/RP-Logo-100x100.png">
-    <meta property="og:url" content="https://www.researchplymouth.com">
-    <!-- Twitter Card meta tags (optional) -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="THE World University Rankings 2025">
-    <meta name="twitter:description" content="Explore the World University Rankings 2025&#8212;Times Higher Education (THE)&#8212;with Searchable Insights.">
-    <meta name="twitter:image" content="https://www.researchplymouth.com/static/images/RP-Logo-100x100.png">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://datatables.net">
+    <link rel="stylesheet" href="/static/css/basic.css?v=202611082303">
+    <link rel="stylesheet" href="/static/css/the_datatables.css?v=202611082303">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="https://datatables.net">
+    <link rel="stylesheet" href="https://datatables.net">
+    <meta name="description" content="Explore the World University Rankings—Times Higher Education (THE)—with Searchable Insights.">
+    <meta name="keywords" content="Times Higher Education (THE) World University Rankings.">
 </head>
 <body>
     <header class="brandingheader">
         <img src="/static/svg/RP-Logo.svg" alt="Research Plymouth Logo" class="brandinglogo">
-        <a class="rp-banner rp-title-black em150" href="https://www.researchplymouth.com/">Research Plymouth</a>
+        <a class="rp-banner rp-title-black em150" href="https://researchplymouth.com">Research Plymouth</a>
     </header>
     
-    <section style="max-width: 95vw; ">
+    <section style="max-width: 95vw; margin: auto; padding-top: 20px;">
         <h1 id="pageTitle"></h1>
         <h6 id="introduction"></h6>
-        <div id="dataTableWrapper" class="table-responsive text-left" style="position: relative;;">
-            <div id="spinner" class="spinner-border spinner text-primary" style="display: none;"></div>
-            <table id="dataTable">
+        
+        <!-- Enhanced Interactive Dynamic Year Selector Control Framework Container -->
+        <div class="d-flex align-items-center mb-4 gap-2 col-md-4 col-sm-6 col-12">
+            <label for="yearSelector" class="form-label fw-bold text-nowrap mb-0">Select Ranking Year:</label>
+            <select id="yearSelector" class="form-select" disabled>
+                <option value="">Scanning files...</option>
+            </select>
+        </div>
+
+        <div id="dataTableWrapper" class="table-responsive text-left" style="position: relative;">
+            <div id="spinner" class="spinner-border spinner text-primary" style="display: none; position: absolute; top: 50%; left: 50%; z-index: 1000;"></div>
+            <table id="dataTable" class="table table-striped table-bordered dataTable">
                 <thead>
                     <tr>
                         <th title="#">#</th>
-                        <th title="THE World University Rankings 2025">Rank</th>
+                        <th title="THE World University Rankings">Rank</th>
                         <th title="Institution">Institution</th>
                         <th title="Country Code">Code</th>
                         <th title="Country">Country</th>
@@ -57,21 +56,19 @@
                 </thead>
             </table>
         </div>        
-        <div id="citation" class="citation-section"></div>
+        <div id="citation" class="citation-section mt-4"></div>
     </section>
 
     <footer>
         <p>&copy; 2025 Research Plymouth. All rights reserved.</p>
     </footer>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+<script src="https://jquery.com"></script>
+<script src="https://datatables.net"></script>
+<script src="https://cloudflare.com"></script>
 <script>
-    // Set the base path dynamically based on the current URL
     const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
 </script>
-<script type="text/javascript" src="/static/js/load_the.js?v=202509272233" crossorigin="anonymous"></script>
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c4399dd2cc0740109ff1533e34ec9a73"}'></script>
+<script type="text/javascript" src="/static/js/load_the.js?v=202611082303" crossorigin="anonymous"></script>
 </body>
 </html>
