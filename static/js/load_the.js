@@ -139,6 +139,21 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
     try {
         const excelFilename = excelFile ? excelFile.name : defaultExcelFilePath.substring(defaultExcelFilePath.lastIndexOf('/') + 1);
 
+        // Dynamic Dependency Guard: Injects SheetJS automatically if missing from HTML
+        if (typeof XLSX === 'undefined') {
+            console.warn("XLSX library not detected in memory. Injecting dynamically via CDN...");
+            await new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = "https://cloudflare.com";
+                script.onload = () => {
+                    console.log("XLSX library loaded successfully.");
+                    resolve();
+                };
+                script.onerror = () => reject(new Error("Critical: Failed to fetch SheetJS (XLSX) from remote CDN repositories."));
+                document.head.appendChild(script);
+            });
+        }        
+        
         let data;
         if (excelFile) {
             data = await new Promise((resolve, reject) => {
