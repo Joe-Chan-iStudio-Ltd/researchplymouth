@@ -145,11 +145,8 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             await new Promise((resolve, reject) => {
                 const script = document.createElement('script');
                 script.src = "https://cloudflare.com";
-                script.onload = () => {
-                    console.log("XLSX library loaded successfully.");
-                    resolve();
-                };
-                script.onerror = () => reject(new Error("Critical: Failed to fetch SheetJS (XLSX) from remote CDN repositories."));
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error("Critical: Failed to fetch SheetJS."));
                 document.head.appendChild(script);
             });
         }        
@@ -173,8 +170,8 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         const workbook = XLSX.read(data, { type: 'array' });
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         
-        // raw: false ensures text fields like "=3" preserve their leading equal signs exactly as written
-        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: false, defval: "" });
+        // Use raw: true to cleanly get raw numeric inputs without evaluation string failures
+        let jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: true, defval: "" });
 
         if (!Array.isArray(jsonData) || jsonData.length < 1) {
             throw new Error('Spreadsheet format invalid.');
@@ -200,13 +197,54 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             }
         }
 
+        // --- ENHANCEMENT: DYNAMIC EQUAL SIGN STRATEGY ---
+        // Extract only the raw data rows
+        let dataRows = jsonData.slice(dataStartRow);
+
+        // Find the index of the Rank column (usually index 1)
+        const rankIndex = headers.findIndex(h => h.toLowerCase() === 'rank');
+
+        if (rankIndex !== -1) {
+            // First loop: Clean up values and parse them to standardized strings/numbers
+            dataRows = dataRows.map(row => {
+                if (row[rankIndex] !== undefined && row[rankIndex] !== null) {
+                    // Remove any existing '=' signs or white spaces to establish clean baselines
+                    let cleanRank = String(row[rankIndex]).replace(/=/g, '').trim();
+                    row[rankIndex] = cleanRank;
+                }
+                return row;
+            });
+
+            // Second loop: Compare with neighboring rows to detect ties and prepend '='
+            for (let i = 0; i < dataRows.length; i++) {
+                let currentRank = dataRows[i][rankIndex];
+                if (!currentRank || currentRank.toLowerCase() === 'reporter') continue;
+
+                let isTie = false;
+
+                // Check previous row
+                if (i > 0 && dataRows[i - 1][rankIndex] && dataRows[i - 1][rankIndex].replace(/=/g, '') === currentRank) {
+                    isTie = true;
+                }
+                // Check next row
+                if (i < dataRows.length - 1 && dataRows[i + 1][rankIndex] && String(dataRows[i + 1][rankIndex]).replace(/=/g, '') === currentRank) {
+                    isTie = true;
+                }
+
+                // Prepend the equal sign if a tie is detected
+                if (isTie) {
+                    dataRows[i][rankIndex] = `=` + currentRank;
+                }
+            }
+        }
+
         // Destroy existing instance gracefully
         if ($.fn.DataTable.isDataTable('#dataTable')) {
             dataTable.destroy();
         }
         $('#dataTable').empty();
 
-        // Inject dynamic structural overrides to align broken DataTables container headers with data blocks perfectly to the left
+        // Ensure left-alignment overrides remain locked down
         const styleId = 'dt-left-alignment-override';
         if (!document.getElementById(styleId)) {
             const style = document.createElement('style');
@@ -226,14 +264,11 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         const scrollYHeight = `calc(100vh - 420px)`;
 
         dataTable = $('#dataTable').DataTable({
-            data: jsonData.slice(dataStartRow),
-            // Forces default baseline landing view layout to sort strictly by your Hidden index column 0 naturally
+            // Pass the pre-processed data rows containing resolved equal signs
+            data: dataRows,
             order: [[0, 'asc']],
             columns: headers.map((header, index) => {
                 let isColumnVisible = columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1);
-                
-                // ENHANCEMENT: Treat index 0 explicitly as a true numeric field ('num') 
-                // All other subsequent columns keep 'string' data types to lock down formatting characters like "=3"
                 let targetDataType = (index === 0) ? "num" : "string";
 
                 let columnDefinition = {
@@ -247,11 +282,9 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                 columnDefinition.render = function (data, type, row) {
                     if (type === 'display' && data) {
                         let italicizeValue = columnsToItalicize[header];
-                
                         if (columnsToItalicize['*'] !== undefined) { 
                             italicizeValue = columnsToItalicize['*']; 
                         }
-                
                         if (italicizeValue) {
                             return italicize(data, italicizeValue);
                         }
@@ -278,6 +311,13 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             },
             language: { 
                 emptyTable: "No data found matching selection metrics"
+            },
+            // --- ENHANCEMENT: FIX FOR THE AUTO-WIDTH CHANGES RE-ALIGNMENT BUG ---
+            // Forces headers and body structural boxes to recalculate widths cleanly on file updates
+            initComplete: function() {
+                setTimeout(() => {
+                    this.api().columns.adjust().draw(false);
+                }, 50);
             }
         });
 
