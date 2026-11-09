@@ -227,15 +227,20 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
 
         dataTable = $('#dataTable').DataTable({
             data: jsonData.slice(dataStartRow),
-            // ENHANCEMENT REMOVED: Automatic sorting is taken away so rows follow the natural raw file order initially
+            // Forces default baseline landing view layout to sort strictly by your Hidden index column 0 naturally
+            order: [[0, 'asc']],
             columns: headers.map((header, index) => {
                 let isColumnVisible = columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1);
                 
+                // ENHANCEMENT: Treat index 0 explicitly as a true numeric field ('num') 
+                // All other subsequent columns keep 'string' data types to lock down formatting characters like "=3"
+                let targetDataType = (index === 0) ? "num" : "string";
+
                 let columnDefinition = {
                     title: (tooltips && tooltips[index]) ? `<abbr title="${tooltips[index]}">${header}</abbr>` : header,
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
                     visible: isColumnVisible,
-                    type: "string", // Force string typing to stop auto-stripping strings like "=3"
+                    type: targetDataType, 
                     className: "dt-left text-left"
                 };
                 
