@@ -149,7 +149,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                     console.log("XLSX library loaded successfully.");
                     resolve();
                 };
-                script.onerror = () => reject(new Error("Critical: Failed to fetch SheetJS (XLSX) from remote CDN repositories."));
+                script.onerror = () => reject(new Error("Critical: Failed to fetch SheetJS (XLSX) from remote CDN."));
                 document.head.appendChild(script);
             });
         }        
@@ -173,7 +173,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         const workbook = XLSX.read(data, { type: 'array' });
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         
-        // ENHANCEMENT 1: raw: false forces parsing of cell texts as literal string representations, preserving "=3" explicitly
+        // raw: false ensures strings like "=3" preserve their literal characters accurately
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: false, defval: "" });
 
         if (!Array.isArray(jsonData) || jsonData.length < 1) {
@@ -206,10 +206,29 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         }
         $('#dataTable').empty();
 
+        // ENHANCEMENT 1: Inject dynamic structural overrides to align broken DataTables container headers with data blocks perfectly to the left
+        const styleId = 'dt-left-alignment-override';
+        if (!document.getElementById(styleId)) {
+            const style = document.createElement('style');
+            style.id = styleId;
+            style.innerHTML = `
+                .dt-container, .dt-scroll, .dt-scroll-head, .dt-scroll-body, table.dataTable { 
+                    margin-left: 0 !important; 
+                    margin-right: auto !important; 
+                }
+                table.dataTable th, table.dataTable td { 
+                    text-align: left !important; 
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
         const scrollYHeight = `calc(100vh - 420px)`;
 
         dataTable = $('#dataTable').DataTable({
             data: jsonData.slice(dataStartRow),
+            // ENHANCEMENT 2: Force the landing table sequence to order strictly by Hidden Column 0 (ascending) [2]
+            order: [[0, 'asc']],
             columns: headers.map((header, index) => {
                 let isColumnVisible = columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1);
                 
@@ -217,11 +236,15 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                     title: (tooltips && tooltips[index]) ? `<abbr title="${tooltips[index]}">${header}</abbr>` : header,
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
                     visible: isColumnVisible,
-                    // ENHANCEMENT 2: Explicitly type columns as string format to block text dropping algorithms
                     type: "string",
-                    // ENHANCEMENT 3: Force aligning to left across columns to clear headers shifting out of synchronization
-                    className: "dt-left text-left"
+                    className: "dt-left"
                 };
+
+                // ENHANCEMENT 3: Tie the Rank column (Index 1) sorting explicitly to Column 0 [2]
+                // This ensures clicking "Rank" sorts numerically via Column 0, bypasses text character limits like "=3" [2]
+                if (index === 1) {
+                    columnDefinition.orderData = ''; // Use hidden Column 0 configuration indices for sorting calculations [2]
+                }
                 
                 columnDefinition.render = function (data, type, row) {
                     if (type === 'display' && data) {
