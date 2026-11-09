@@ -172,7 +172,9 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
 
         const workbook = XLSX.read(data, { type: 'array' });
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: "" });
+        
+        // ENHANCEMENT: Added raw: false to ensure fields like "=3" are read as formatted text strings instead of breaking formulas
+        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: false, defval: "" });
 
         if (!Array.isArray(jsonData) || jsonData.length < 1) {
             throw new Error('Spreadsheet format invalid.');
@@ -193,7 +195,8 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             });
 
             if (allNumbers && secondRow.length === headers.length) {
-                columnWidths = secondRow;
+                // ENHANCEMENT: Transform elements to true numbers to ensure matching checks down below work reliably
+                columnWidths = secondRow.map(Number);
                 dataStartRow = 2; 
             }
         }
@@ -209,11 +212,15 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         dataTable = $('#dataTable').DataTable({
             data: jsonData.slice(dataStartRow),
             columns: headers.map((header, index) => {
+                // ENHANCEMENT: If the value is strictly -1, visible resolves to false, cleanly hiding the target column dynamically
+                let isColumnVisible = columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1);
+                
                 let columnDefinition = {
                     title: (tooltips && tooltips[index]) ? `<abbr title="${tooltips[index]}">${header}</abbr>` : header,
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
-                    visible: columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1)
+                    visible: isColumnVisible
                 };
+                
                 columnDefinition.render = function (data, type, row) {
                     if (type === 'display' && data) {
                         let italicizeValue = columnsToItalicize[header];
