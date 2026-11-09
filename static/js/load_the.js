@@ -170,7 +170,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         const workbook = XLSX.read(data, { type: 'array' });
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         
-        // Use raw: true to cleanly get raw numeric inputs without evaluation string failures
+        // raw: true cleanly reads raw values to avoid string calculation stripping errors
         let jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: true, defval: "" });
 
         if (!Array.isArray(jsonData) || jsonData.length < 1) {
@@ -198,51 +198,57 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         }
 
         // --- ENHANCEMENT: DYNAMIC EQUAL SIGN STRATEGY ---
-        // Extract only the raw data rows
         let dataRows = jsonData.slice(dataStartRow);
-
-        // Find the index of the Rank column (usually index 1)
         const rankIndex = headers.findIndex(h => h.toLowerCase() === 'rank');
 
         if (rankIndex !== -1) {
-            // First loop: Clean up values and parse them to standardized strings/numbers
             dataRows = dataRows.map(row => {
                 if (row[rankIndex] !== undefined && row[rankIndex] !== null) {
-                    // Remove any existing '=' signs or white spaces to establish clean baselines
                     let cleanRank = String(row[rankIndex]).replace(/=/g, '').trim();
                     row[rankIndex] = cleanRank;
                 }
                 return row;
             });
 
-            // Second loop: Compare with neighboring rows to detect ties and prepend '='
             for (let i = 0; i < dataRows.length; i++) {
                 let currentRank = dataRows[i][rankIndex];
                 if (!currentRank || currentRank.toLowerCase() === 'reporter') continue;
 
                 let isTie = false;
-
-                // Check previous row
                 if (i > 0 && dataRows[i - 1][rankIndex] && dataRows[i - 1][rankIndex].replace(/=/g, '') === currentRank) {
                     isTie = true;
                 }
-                // Check next row
                 if (i < dataRows.length - 1 && dataRows[i + 1][rankIndex] && String(dataRows[i + 1][rankIndex]).replace(/=/g, '') === currentRank) {
                     isTie = true;
                 }
 
-                // Prepend the equal sign if a tie is detected
                 if (isTie) {
                     dataRows[i][rankIndex] = `=` + currentRank;
                 }
             }
         }
 
-        // Destroy existing instance gracefully
+        // --- FIXED: ENHANCED RESET INFRASTRUCTURE TO PREVENT DATA CORRUPTION ON YEAR RELOAD ---
         if ($.fn.DataTable.isDataTable('#dataTable')) {
-            dataTable.destroy();
+            // 1. Completely unbind, purge parameters, and isolate DataTables structure
+            dataTable.clear().destroy();
         }
-        $('#dataTable').empty();
+        
+        // 2. Completely dump the DOM element structure inside the container and inject a clean table footprint
+        // This ensures the old width rows are purged completely from memory and hidden columns don't flash into view
+        const wrapper = document.getElementById('dataTableWrapper');
+        if (wrapper) {
+            wrapper.innerHTML = `
+                <div id="spinner" class="spinner-border spinner text-primary" style="display: none; position: absolute; top: 50%; left: 50%; z-index: 1000;"></div>
+                <table id="dataTable" class="table table-striped table-bordered dataTable">
+                    <thead>
+                        <tr>
+                            ${headers.map((h, i) => `<th title="${tooltips[i] || ''}">${h}</th>`).join('')}
+                        </tr>
+                    </thead>
+                </table>
+            `;
+        }
 
         // Ensure left-alignment overrides remain locked down
         const styleId = 'dt-left-alignment-override';
@@ -263,8 +269,8 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
 
         const scrollYHeight = `calc(100vh - 420px)`;
 
+        // 3. Rebuild clean data matrix footprint
         dataTable = $('#dataTable').DataTable({
-            // Pass the pre-processed data rows containing resolved equal signs
             data: dataRows,
             order: [[0, 'asc']],
             columns: headers.map((header, index) => {
@@ -312,14 +318,18 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
             language: { 
                 emptyTable: "No data found matching selection metrics"
             },
-            // --- ENHANCEMENT: FIX FOR THE AUTO-WIDTH CHANGES RE-ALIGNMENT BUG ---
-            // Forces headers and body structural boxes to recalculate widths cleanly on file updates
             initComplete: function() {
+                // Instantly align column wrappers safely
                 setTimeout(() => {
                     this.api().columns.adjust().draw(false);
-                }, 50);
+                }, 30);
             }
         });
+
+        // Rebind tooltips listener setup since table headers were injected fresh into the DOM
+        if (typeof loadTooltips === 'function') {
+            await loadTooltips();
+        }
 
     } catch (error) {
         console.error('Error loading Excel:', error);
