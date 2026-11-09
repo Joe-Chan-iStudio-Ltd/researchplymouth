@@ -173,7 +173,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         const workbook = XLSX.read(data, { type: 'array' });
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         
-        // ENHANCEMENT: Combined raw: false to ensure text fields like "=3" preserve their leading equal signs exactly as written
+        // ENHANCEMENT 1: raw: false forces parsing of cell texts as literal string representations, preserving "=3" explicitly
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: false, defval: "" });
 
         if (!Array.isArray(jsonData) || jsonData.length < 1) {
@@ -217,8 +217,10 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                     title: (tooltips && tooltips[index]) ? `<abbr title="${tooltips[index]}">${header}</abbr>` : header,
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
                     visible: isColumnVisible,
-                    // ENHANCEMENT: Enforce consistent centered styling rules across both the headers and the body cells
-                    className: "text-center dt-center" 
+                    // ENHANCEMENT 2: Explicitly type columns as string format to block text dropping algorithms
+                    type: "string",
+                    // ENHANCEMENT 3: Force aligning to left across columns to clear headers shifting out of synchronization
+                    className: "dt-left text-left"
                 };
                 
                 columnDefinition.render = function (data, type, row) {
