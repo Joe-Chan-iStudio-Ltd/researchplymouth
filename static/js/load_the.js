@@ -149,7 +149,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                     console.log("XLSX library loaded successfully.");
                     resolve();
                 };
-                script.onerror = () => reject(new Error("Critical: Failed to fetch SheetJS (XLSX) from remote CDN."));
+                script.onerror = () => reject(new Error("Critical: Failed to fetch SheetJS (XLSX) from remote CDN repositories."));
                 document.head.appendChild(script);
             });
         }        
@@ -173,7 +173,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         const workbook = XLSX.read(data, { type: 'array' });
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         
-        // raw: false ensures strings like "=3" preserve their literal characters accurately
+        // CORRECTION 1: raw: false tells SheetJS to parse formula tokens as formatted literal strings, preserving values like "=3"
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: false, defval: "" });
 
         if (!Array.isArray(jsonData) || jsonData.length < 1) {
@@ -206,7 +206,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         }
         $('#dataTable').empty();
 
-        // ENHANCEMENT 1: Inject dynamic structural overrides to align broken DataTables container headers with data blocks perfectly to the left
+        // CORRECTION 2: Inject dynamic structural overrides to align broken DataTables container headers with data blocks perfectly to the left
         const styleId = 'dt-left-alignment-override';
         if (!document.getElementById(styleId)) {
             const style = document.createElement('style');
@@ -227,8 +227,8 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
 
         dataTable = $('#dataTable').DataTable({
             data: jsonData.slice(dataStartRow),
-            // ENHANCEMENT 2: Force the landing table sequence to order strictly by Hidden Column 0 (ascending) [2]
-            order: [[0, 'asc']],
+            // CORRECTION 3: Forces the landing layout engine to follow Hidden Column 0's strict numeric sequence order
+            order: [[0, 'asc']], 
             columns: headers.map((header, index) => {
                 let isColumnVisible = columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1);
                 
@@ -236,15 +236,10 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                     title: (tooltips && tooltips[index]) ? `<abbr title="${tooltips[index]}">${header}</abbr>` : header,
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
                     visible: isColumnVisible,
-                    type: "string",
-                    className: "dt-left"
+                    // CORRECTION 4: Force column type to string to prevent DataTables auto-typing from dropping characters like "="
+                    type: "string", 
+                    className: "dt-left text-left"
                 };
-
-                // ENHANCEMENT 3: Tie the Rank column (Index 1) sorting explicitly to Column 0 [2]
-                // This ensures clicking "Rank" sorts numerically via Column 0, bypasses text character limits like "=3" [2]
-                if (index === 1) {
-                    columnDefinition.orderData = ''; // Use hidden Column 0 configuration indices for sorting calculations [2]
-                }
                 
                 columnDefinition.render = function (data, type, row) {
                     if (type === 'display' && data) {
