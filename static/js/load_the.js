@@ -112,6 +112,14 @@ async function scanAvailableRankingYears() {
 // Named event handler for clean binder state tracking
 async function handleYearChange(e) {
     if (e.target.value) {
+        // 1. Destroy and unbind the old table instantly before fetching new files
+        if ($.fn.DataTable.isDataTable('#dataTable')) {
+            console.log("Purging old DataTable instance from memory...");
+            $('#dataTable').DataTable().clear().destroy();
+            $('#dataTable').empty();
+        }
+
+        // 2. Trigger spinner and pull the new year data cleanly
         await loadExcelWithSpinner(null, e.target.value);
     }
 }
