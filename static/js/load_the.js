@@ -173,7 +173,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         const workbook = XLSX.read(data, { type: 'array' });
         const worksheet = workbook.Sheets[workbook.SheetNames[0]];
         
-        // CORRECTION 1: raw: false tells SheetJS to parse formula tokens as formatted literal strings, preserving values like "=3"
+        // raw: false ensures text fields like "=3" preserve their leading equal signs exactly as written
         const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: false, defval: "" });
 
         if (!Array.isArray(jsonData) || jsonData.length < 1) {
@@ -206,7 +206,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
         }
         $('#dataTable').empty();
 
-        // CORRECTION 2: Inject dynamic structural overrides to align broken DataTables container headers with data blocks perfectly to the left
+        // Inject dynamic structural overrides to align broken DataTables container headers with data blocks perfectly to the left
         const styleId = 'dt-left-alignment-override';
         if (!document.getElementById(styleId)) {
             const style = document.createElement('style');
@@ -227,8 +227,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
 
         dataTable = $('#dataTable').DataTable({
             data: jsonData.slice(dataStartRow),
-            // CORRECTION 3: Forces the landing layout engine to follow Hidden Column 0's strict numeric sequence order
-            order: [[0, 'asc']], 
+            // ENHANCEMENT REMOVED: Automatic sorting is taken away so rows follow the natural raw file order initially
             columns: headers.map((header, index) => {
                 let isColumnVisible = columnWidths === null ? true : (columnWidths[index] !== undefined && columnWidths[index] !== -1);
                 
@@ -236,8 +235,7 @@ async function loadExcel(excelFile = null, defaultExcelFilePath, columnsToItalic
                     title: (tooltips && tooltips[index]) ? `<abbr title="${tooltips[index]}">${header}</abbr>` : header,
                     width: columnWidths === null ? null : (columnWidths[index] !== undefined && columnWidths[index] !== -1) ? columnWidths[index] + 'vw' : null,
                     visible: isColumnVisible,
-                    // CORRECTION 4: Force column type to string to prevent DataTables auto-typing from dropping characters like "="
-                    type: "string", 
+                    type: "string", // Force string typing to stop auto-stripping strings like "=3"
                     className: "dt-left text-left"
                 };
                 
